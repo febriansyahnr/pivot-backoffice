@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@source "../../";
+
+@layer base {
+  pre {
+    overflow-x: auto;
+  }
+}
+

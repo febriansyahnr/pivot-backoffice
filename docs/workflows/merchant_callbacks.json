@@ -1,0 +1,175 @@
+{
+    "name": "merchant_callbacks",
+    "description": "Workflow to deliver callback notifications to merchants",
+    "version": 1,
+    "inputParameters": [
+        "callbackDeliveryTaskName", "payload", "retryDelays"
+    ],
+    "tasks": [
+        {
+            "name": "merchant_callback_preparation",
+            "taskReferenceName": "merchant_callback_preparation",
+            "inputParameters": {
+                "payload": "${workflow.input.payload}"
+            },
+            "type": "SIMPLE"
+        },
+        {
+            "name": "callback_url_configured",
+            "taskReferenceName": "callback_url_configured",
+            "inputParameters": {
+                "callbackUrl": "${merchant_callback_preparation.output.callbackUrl}"
+            },
+            "type": "SWITCH",
+            "evaluatorType": "javascript",
+            "expression": "($.callbackUrl == '' || $.callbackUrl == null) ? 'NOT_CONFIGURED' : 'CONFIGURED'",
+            "defaultCase": [
+                {
+                    "name": "merchant_callback_write_metric",
+                    "taskReferenceName": "merchant_callback_write_metric",
+                    "inputParameters": {
+                        "merchantId": "${merchant_callback_preparation.output.merchantId}",
+                        "eventName": "${merchant_callback_preparation.output.eventName}",
+                        "statusCode": 0,
+                        "durationMs": 0,
+                        "errorDetail": "callback URL is not configured"
+                    },
+                    "type": "SIMPLE"
+                }
+            ],
+            "decisionCases": {
+                "CONFIGURED": [
+                    {
+                        "name": "callback_delivery_management",
+                        "taskReferenceName": "callback_delivery_management",
+                        "inputParameters": {
+                            "retryDelays": "${workflow.input.retryDelays}",
+                            "status": "${workflow.variables.callbackDeliveryStatus}"
+                        },
+                        "type": "DO_WHILE",
+                        "loopCondition": "(function(){ if (($.callback_delivery_management['iteration'] <= $.retryDelays.length) && ($.status != 'SUCCESS' && $.status != 'NON_RETRYABLE_ERROR')) {return true;} {return false;}})()",
+                        "loopOver": [
+                            {
+                                "name": "merchant_callback_delivery",
+                                "taskReferenceName": "merchant_callback_delivery",
+                                "inputParameters": {
+                                    "eventName": "${merchant_callback_preparation.output.eventName}",
+                                    "merchantId": "${merchant_callback_preparation.output.merchantId}",
+                                    "callbackId": "${merchant_callback_preparation.output.callbackId}",
+                                    "callbackUrl": "${merchant_callback_preparation.output.callbackUrl}",
+                                    "payload": "${merchant_callback_preparation.output.request}",
+                                    "isSnap": "${merchant_callback_preparation.output.isSnap}",
+                                    "taskToExecute": "${workflow.input.callbackDeliveryTaskName}"
+                                },
+                                "type": "DYNAMIC",
+                                "dynamicTaskNameParam": "taskToExecute",
+                                "optional": true
+                            },
+                            {
+                                "name": "callback_delivery_status",
+                                "taskReferenceName": "callback_delivery_status",
+                                "inputParameters": {
+                                    "status": "${merchant_callback_delivery.output.status}"
+                                },
+                                "type": "SWITCH",
+                                "evaluatorType": "value-param",
+                                "expression": "status",
+                                "defaultCase": [
+                                    {
+                                        "name": "set_callback_delivery_status",
+                                        "taskReferenceName": "non_retryable_error_status",
+                                        "inputParameters": {
+                                            "callbackDeliveryStatus": "NON_RETRYABLE_ERROR"
+                                        },
+                                        "type": "SET_VARIABLE"
+                                    }
+                                ],
+                                "decisionCases": {
+                                    "RETRYABLE_ERROR": [
+                                        {
+                                            "name": "extract_retry_delay",
+                                            "taskReferenceName": "extract_retry_delay",
+                                            "inputParameters": {
+                                                "i": "${callback_delivery_management.output.iteration}",
+                                                "retryDelays": "${callback_delivery_management.input.retryDelays}",
+                                                "queryExpression": ".retryDelays[.i - 1] // \"0s\""
+                                            },
+                                            "type": "JSON_JQ_TRANSFORM"
+                                        },
+                                        {
+                                            "name": "merchant_callback_write_metric",
+                                            "taskReferenceName": "merchant_callback_write_metric_retry_count",
+                                            "inputParameters": {
+                                                "merchantId": "${merchant_callback_preparation.output.merchantId}",
+                                                "eventName": "${merchant_callback_preparation.output.eventName}",
+                                                "statusCode": "${merchant_callback_delivery.output.statusCode}",
+                                                "iteration": "${callback_delivery_management.output.iteration}"
+                                            },
+                                            "type": "SIMPLE"
+                                        },
+                                        {
+                                            "name": "wait",
+                                            "taskReferenceName": "wait_ref",
+                                            "inputParameters": {
+                                                "duration": "${extract_retry_delay.output.result}"
+                                            },
+                                            "type": "WAIT"
+                                        },
+                                        {
+                                            "name": "set_callback_delivery_status",
+                                            "taskReferenceName": "retryable_error_status",
+                                            "inputParameters": {
+                                                "callbackDeliveryStatus": "RETRYABLE_ERROR"
+                                            },
+                                            "type": "SET_VARIABLE"
+                                        }
+                                    ],
+                                    "SUCCESS": [
+                                        {
+                                            "name": "set_callback_delivery_status",
+                                            "taskReferenceName": "callback_delivery_success_status",
+                                            "inputParameters": {
+                                                "callbackDeliveryStatus": "SUCCESS"
+                                            },
+                                            "type": "SET_VARIABLE"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "merchant_callback_write_log",
+                        "taskReferenceName": "merchant_callback_write_log",
+                        "inputParameters": {
+                            "callbackId": "${merchant_callback_preparation.output.callbackId}",
+                            "eventName": "${merchant_callback_preparation.output.eventName}",
+                            "isSnap": "${merchant_callback_preparation.output.isSnap}",
+                            "referenceId": "${merchant_callback_preparation.output.referenceId}",
+                            "payload": "${merchant_callback_preparation.output.request}",
+                            "response": "${merchant_callback_delivery.output}",
+                            "iteration": "${callback_delivery_management.output.iteration}"
+                        },
+                        "type": "SIMPLE"
+                    }
+                ]
+            }
+        }
+    ],
+    "outputParameters": {
+        "name": "${merchant_callback_preparation.output.name}",
+        "eventName": "${merchant_callback_preparation.output.eventName}",
+        "merchantId": "${merchant_callback_preparation.output.merchantId}",
+        "callbackId": "${merchant_callback_preparation.output.callbackId}",
+        "callbackUrl": "${merchant_callback_preparation.output.callbackUrl}",
+        "referenceId": "${merchant_callback_preparation.output.referenceId}",
+        "isSnap": "${merchant_callback_preparation.output.isSnap}",
+        "callbackLogId": "${merchant_callback_write_log.output.callbackLogId}"
+    },
+    "failureWorkflow": "",
+    "schemaVersion": 2,
+    "restartAble": true,
+    "workflowStatusListenerEnabled": false,
+    "ownerEmail": "backend-portal@service.local",
+    "timeoutPolicy": "TIME_OUT_WF"
+}

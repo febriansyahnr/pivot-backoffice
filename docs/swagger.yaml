@@ -1,0 +1,4898 @@
+basePath: /
+definitions:
+  activityModel.Activity:
+    properties:
+      activity:
+        example: User login
+        type: string
+      createdAt:
+        example: "2024-01-01T00:00:00Z"
+        type: string
+      id:
+        example: b3b3b3b3-3b3b-3b3b-3b3b-3b3b3b3b3b3b
+        type: string
+      merchantId:
+        example: b3b3b3b3-3b3b-3b3b-3b3b-3b3b3b3b3b3b
+        type: string
+      parameter:
+        additionalProperties: {}
+        type: object
+      serviceName:
+        example: User login
+        type: string
+      tag:
+        example: account
+        type: string
+      updatedAt:
+        example: "2024-01-01T00:00:00Z"
+        type: string
+      userId:
+        example: b3b3b3b3-3b3b-3b3b-3b3b-3b3b3b3b3b3b
+        type: string
+    type: object
+  activityModel.CreateActivityReq:
+    properties:
+      activity:
+        type: string
+      params:
+        additionalProperties: {}
+        type: object
+      tag:
+        type: string
+    required:
+    - activity
+    - params
+    - tag
+    type: object
+  activityModel.CreateActivityResp:
+    properties:
+      id:
+        type: string
+    type: object
+  adjustment.BalanceAdjustmentRequest:
+    properties:
+      amount:
+        type: number
+      createdBy:
+        type: string
+      currency:
+        enum:
+        - IDR
+        type: string
+      merchantId:
+        type: string
+      notes:
+        type: string
+    required:
+    - amount
+    - createdBy
+    - currency
+    - merchantId
+    type: object
+  adjustment.BalanceAdjustmentResponse:
+    properties:
+      id:
+        type: string
+    type: object
+  adjustment.ManualTopupRequest:
+    type: object
+  adjustment.ManualTopupResponse:
+    properties:
+      id:
+        type: string
+    type: object
+  bank.BankListResponse:
+    properties:
+      code:
+        example: "016"
+        type: string
+      name:
+        example: BANK MAYBANK INDONESIA
+        type: string
+    type: object
+  beneficiaryAccountModel.BeneficiaryAccount:
+    properties:
+      beneficiaryAccountName:
+        example: Yories Yolanda
+        type: string
+      beneficiaryAccountNo:
+        example: "8000800808"
+        type: string
+      beneficiaryBankCode:
+        example: "008"
+        type: string
+      beneficiaryBankName:
+        example: Bank 008
+        type: string
+      createdAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      updatedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      uuid:
+        example: b3b3b3b3-3b3b-3b3b-3b3b-3b3b3b3b3b3b
+        type: string
+    type: object
+  beneficiaryAccountModel.CheckAccountRequest:
+    properties:
+      additionalInfo:
+        additionalProperties: {}
+        type: object
+      beneficiaryAccountNo:
+        example: "8000800808"
+        type: string
+      beneficiaryBankCode:
+        example: "008"
+        type: string
+    required:
+    - beneficiaryAccountNo
+    - beneficiaryBankCode
+    type: object
+  beneficiaryAccountModel.CheckAccountResponse:
+    properties:
+      beneficiaryAccountName:
+        example: Yories Yolanda
+        type: string
+      beneficiaryAccountNo:
+        example: "8000800808"
+        type: string
+      beneficiaryBankCode:
+        example: "008"
+        type: string
+      beneficiaryBankName:
+        example: Bank 008
+        type: string
+      createdAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      updatedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      uuid:
+        example: b3b3b3b3-3b3b-3b3b-3b3b-3b3b3b3b3b3b
+        type: string
+    type: object
+  callback_model.CallbackAPIKeyResp:
+    properties:
+      apiKey:
+        type: string
+    type: object
+  callback_model.CallbackURLInfoResp:
+    properties:
+      callbackId:
+        type: string
+      callbackLength:
+        type: string
+      callbackLogId:
+        type: string
+      callbackToken:
+        type: string
+      callbackType:
+        type: string
+      event:
+        type: string
+      product:
+        type: string
+      time:
+        type: string
+      url:
+        type: string
+    type: object
+  callback_model.RegisterCallbackRequest:
+    properties:
+      baseUrl:
+        description: For SNAP VA Callback
+        type: string
+      description:
+        type: string
+      merchantId:
+        description: From bearer token
+        type: string
+      name:
+        description: Virtual Account, Disbursement, Bulk Disbursement
+        type: string
+      url:
+        type: string
+    required:
+    - description
+    - name
+    - url
+    type: object
+  callback_model.TestAndSaveCallbackURLReq:
+    properties:
+      name:
+        type: string
+      payload:
+        $ref: '#/definitions/callbackModel.CallbackPayloadRequest'
+      url:
+        type: string
+    required:
+    - name
+    - payload
+    - url
+    type: object
+  callback_model.TestAndSaveCallbackURLResp:
+    properties:
+      body: {}
+      duration:
+        type: string
+      information:
+        $ref: '#/definitions/callback_model.CallbackURLInfoResp'
+      requestId:
+        type: string
+      status:
+        type: boolean
+    type: object
+  callbackModel.CallbackPayloadRequest:
+    properties:
+      data: {}
+      event:
+        type: string
+    type: object
+  card.CreateCardPaymentRequest:
+    properties:
+      amount:
+        type: number
+      authenticationMethod:
+        type: string
+      bankMerchantId:
+        type: string
+      currency:
+        type: string
+      referenceId:
+        type: string
+    required:
+    - amount
+    - authenticationMethod
+    - currency
+    - referenceId
+    type: object
+  commonModel.Amount:
+    properties:
+      currency:
+        example: IDR
+        type: string
+      value:
+        example: "1000000.00"
+        type: string
+    required:
+    - currency
+    - value
+    type: object
+  commonModel.Meta:
+    properties:
+      page:
+        example: 1
+        type: integer
+      perPage:
+        example: 10
+        type: integer
+      totalItems:
+        example: 100
+        type: integer
+      totalPages:
+        example: 10
+        type: integer
+    type: object
+  constant.OTPIdentifier:
+    enum:
+    - 00e2a8f568ff592a6f19d15f6fece067
+    - aaa85d70d6320537095bf5661e3feb53
+    - 63bd25c8db9724f610636fdf20d9a52a
+    - 194fbeea2d29e7bd8106c33e12103b00
+    type: string
+    x-enum-varnames:
+    - OTPIdentifierForgotPassword
+    - OTPIdentifierResetPIN
+    - OTPIdentifierUserLogin
+    - OTPIdentifierFirstTimeLogin
+  credential.ClientSecretResp:
+    properties:
+      lastUpdate:
+        type: string
+      secret:
+        type: string
+      time:
+        type: integer
+    type: object
+  credential.ClientSecretSummary:
+    properties:
+      id:
+        type: string
+      keyName:
+        type: string
+      lastUpdate:
+        type: string
+    type: object
+  credential.CredentialDashboardResp:
+    properties:
+      clientId:
+        type: string
+      clientSecrets:
+        items:
+          $ref: '#/definitions/credential.ClientSecretSummary'
+        type: array
+    type: object
+  disbursementDashboardModel.DisbursementApprovalDashboardResponse:
+    properties:
+      pendingBulkDisbursement:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      pendingSingleDisbursement:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      waitingBulkDisbursement:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      waitingSingleDisbursement:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+    type: object
+  disbursementDashboardModel.DisbursementDashboardResponse:
+    properties:
+      allTodayTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      approvedTodayTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      availableBalance:
+        $ref: '#/definitions/commonModel.Amount'
+      failedTodayTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      pendingBalance:
+        $ref: '#/definitions/commonModel.Amount'
+      pendingTodayTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      rejectedTodayTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      successTodayTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      waitingForTopUpTodayBulkTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      waitingForTopUpTodaySingleTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      waitingForTopUpTodayTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      waitingTodayBulkTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      waitingTodaySingleTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+      waitingTodayTransaction:
+        $ref: '#/definitions/disbursementDashboardModel.SummaryTransaction'
+    type: object
+  disbursementDashboardModel.SummaryTransaction:
+    properties:
+      count:
+        example: 10
+        type: integer
+      sum:
+        $ref: '#/definitions/commonModel.Amount'
+    type: object
+  disbursementModel.ApprovalActionsRequest:
+    properties:
+      approve:
+        items:
+          $ref: '#/definitions/disbursementModel.ApproveActionObject'
+        type: array
+      bulkId:
+        type: string
+      reject:
+        items:
+          $ref: '#/definitions/disbursementModel.RejectActionObject'
+        type: array
+    required:
+    - approve
+    - reject
+    type: object
+  disbursementModel.ApproveActionObject:
+    properties:
+      id:
+        type: string
+    type: object
+  disbursementModel.BulkDisbursementWithAggregate:
+    properties:
+      createdAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      createdBy:
+        example: John Doe
+        type: string
+      deletedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      file:
+        example: https://storage.googleapis.com/bucket-name/object-path
+        type: string
+      fileFailed:
+        example: https://storage.googleapis.com/bucket-name/object-path
+        type: string
+      fileRejected:
+        example: https://storage.googleapis.com/bucket-name/object-path
+        type: string
+      merchantId:
+        example: 50f95963-373a-4a6e-a7c9-79b6cf891f9c
+        type: string
+      status:
+        example: DONE
+        type: string
+      totalAmount:
+        example: 1000000
+        type: number
+      totalApproved:
+        example: 8
+        type: integer
+      totalFailed:
+        example: 2
+        type: integer
+      totalRejected:
+        example: 2
+        type: integer
+      totalSuccess:
+        example: 6
+        type: integer
+      totalTrx:
+        example: 10
+        type: integer
+      updatedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      uuid:
+        example: b7b95825-6ec3-486a-a3cf-62d4ed815757
+        type: string
+    type: object
+  disbursementModel.CreateSingleRequest:
+    properties:
+      amount:
+        example: 100000
+        type: number
+      beneficiaryAccountName:
+        example: Julio Caesar
+        type: string
+      beneficiaryAccountNo:
+        example: "8000800808"
+        type: string
+      beneficiaryBankCode:
+        example: "008"
+        type: string
+      beneficiaryBankName:
+        example: Bank 008
+        type: string
+      inquiryId:
+        example: uuid-uuid-uuid-uuid
+        type: string
+      purposeId:
+        example: b3b3b3b3-3b3b-3b3b-3b3b-3b3b3b3b3b3b
+        type: string
+      referenceId:
+        example: client-ref-from-client
+        type: string
+      remark:
+        example: ASPI testing
+        maxLength: 20
+        type: string
+    required:
+    - amount
+    - beneficiaryAccountName
+    - beneficiaryAccountNo
+    - beneficiaryBankCode
+    - beneficiaryBankName
+    - referenceId
+    type: object
+  disbursementModel.Disbursement:
+    properties:
+      amount:
+        example: 1000000
+        type: number
+      approvedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      approvedBy:
+        example: Lorem Ipsum
+        type: string
+      bankReferenceNo:
+        example: WErft7089990
+        type: string
+      beneficiaryAccountName:
+        example: Yories Yolanda
+        type: string
+      beneficiaryAccountNo:
+        example: "8000800808"
+        type: string
+      beneficiaryBankCode:
+        example: "008"
+        type: string
+      beneficiaryBankName:
+        example: Bank Permata
+        type: string
+      bulkId:
+        example: ff35c906-0144-4a52-8621-4991dd00f945
+        type: string
+      createdAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      createdBy:
+        example: John Doe
+        type: string
+      createdFrom:
+        example: MERCHANT_PORTAL | OPEN_API
+        type: string
+      currency:
+        example: IDR
+        type: string
+      deletedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      fee:
+        example: 4000
+        type: number
+      merchantId:
+        example: 50f95963-373a-4a6e-a7c9-79b6cf891f9c
+        type: string
+      metadata:
+        allOf:
+        - $ref: '#/definitions/disbursementModel.Metadata'
+        description: Internal Data
+      processorReferenceId:
+        example: dce9c63e-8a1c-4d8f-b18d-33de6f772104
+        type: string
+      purposeId:
+        example: bad7bd6f-3459-4e28-97d5-e200469d5cc6
+        type: string
+      reasonDescription:
+        example: User input
+        type: string
+      reasonType:
+        example: OTHER
+        type: string
+      referenceId:
+        example: reference-id-from-client
+        type: string
+      remark:
+        example: Disburse to Yories
+        type: string
+      senderName:
+        example: Google Corp
+        type: string
+      status:
+        example: APPROVED
+        type: string
+      totalAmount:
+        example: 1004000
+        type: number
+      updatedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      uuid:
+        example: b7b95825-6ec3-486a-a3cf-62d4ed815757
+        type: string
+    type: object
+  disbursementModel.DisbursementWithTransactionResponse:
+    properties:
+      amount:
+        example: 1000000
+        type: number
+      approvedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      approvedBy:
+        example: Lorem Ipsum
+        type: string
+      bankReferenceNo:
+        example: WErft7089990
+        type: string
+      beneficiaryAccountName:
+        example: Yories Yolanda
+        type: string
+      beneficiaryAccountNo:
+        example: "8000800808"
+        type: string
+      beneficiaryBankCode:
+        example: "008"
+        type: string
+      beneficiaryBankName:
+        example: Bank Permata
+        type: string
+      bulkId:
+        example: ff35c906-0144-4a52-8621-4991dd00f945
+        type: string
+      createdAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      createdBy:
+        example: John Doe
+        type: string
+      createdFrom:
+        example: MERCHANT_PORTAL | OPEN_API
+        type: string
+      currency:
+        example: IDR
+        type: string
+      deletedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      failedReason:
+        type: string
+      fee:
+        example: 4000
+        type: number
+      merchantId:
+        example: 50f95963-373a-4a6e-a7c9-79b6cf891f9c
+        type: string
+      metadata:
+        allOf:
+        - $ref: '#/definitions/disbursementModel.Metadata'
+        description: Internal Data
+      processorReferenceId:
+        example: dce9c63e-8a1c-4d8f-b18d-33de6f772104
+        type: string
+      purposeId:
+        example: bad7bd6f-3459-4e28-97d5-e200469d5cc6
+        type: string
+      reasonDescription:
+        example: User input
+        type: string
+      reasonType:
+        example: OTHER
+        type: string
+      referenceId:
+        example: reference-id-from-client
+        type: string
+      rejectReason:
+        type: string
+      remark:
+        example: Disburse to Yories
+        type: string
+      senderName:
+        example: Google Corp
+        type: string
+      status:
+        example: APPROVED
+        type: string
+      totalAmount:
+        example: 1004000
+        type: number
+      transactionStatus:
+        type: string
+      updatedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      uuid:
+        example: b7b95825-6ec3-486a-a3cf-62d4ed815757
+        type: string
+    type: object
+  disbursementModel.InquiryTransaction:
+    properties:
+      merchantId:
+        type: string
+    required:
+    - merchantId
+    type: object
+  disbursementModel.Metadata:
+    properties:
+      feeDetail:
+        $ref: '#/definitions/feeModel.FeeMetadataObject'
+    type: object
+  disbursementModel.RejectActionObject:
+    properties:
+      id:
+        type: string
+      reasonDescription:
+        type: string
+      reasonType:
+        type: string
+    type: object
+  disbursementModel.RetryBulkRequest:
+    properties:
+      id:
+        example: b3b3b3b3-3b3b-3b3b-3b3b-3b3b3b3b3b3b
+        type: string
+    required:
+    - id
+    type: object
+  disbursementModel.RetrySingleRequest:
+    properties:
+      id:
+        example: b3b3b3b3-3b3b-3b3b-3b3b-3b3b3b3b3b3b
+        type: string
+    required:
+    - id
+    type: object
+  disbursementModel.RetryTransaction:
+    properties:
+      merchantId:
+        type: string
+    required:
+    - merchantId
+    type: object
+  disbursementModel.TransactionConfigResp:
+    properties:
+      feeDetail: {}
+      maxAmount:
+        type: number
+      minAmount:
+        type: number
+    type: object
+  disbursementTopUpModel.DisbursementTopUpRequest:
+    properties:
+      paymentMethodId:
+        type: string
+    required:
+    - paymentMethodId
+    type: object
+  disbursementTopUpModel.DisbursementTopUpResponse:
+    properties:
+      createdAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      merchantId:
+        example: aef998d3-38d8-42d2-a864-4c16af9c50cf
+        type: string
+      paymentMethodId:
+        example: a60ce359-d2ec-47b8-9b95-28a32541c7da
+        type: string
+      referenceNumber:
+        example: reference_number
+        type: string
+      updatedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      uuid:
+        example: 58f61006-7847-4548-9024-507a6e05746b
+        type: string
+    type: object
+  feeModel.FeeMetadataObject:
+    properties:
+      amount:
+        type: number
+      amountType:
+        type: string
+      deductionType:
+        type: string
+      linked_transaction_id:
+        description: For fee that have a parent transaction recorded in the account_transactions
+          table
+        type: string
+      method:
+        type: string
+      percentage:
+        type: number
+      taxAmount:
+        type: number
+      taxPercentage:
+        type: number
+      taxType:
+        type: string
+      type:
+        type: string
+    type: object
+  github_com_paper-indonesia_backend-portal_internal_model_snapCore_topUpSimulation.Amount:
+    properties:
+      currency:
+        enum:
+        - IDR
+        type: string
+      value:
+        minLength: 1
+        type: string
+    required:
+    - currency
+    - value
+    type: object
+  location.LocationResp:
+    properties:
+      cityList: {}
+      districtList: {}
+      provinceList: {}
+    type: object
+  merchant.AddressDetail:
+    properties:
+      city:
+        type: string
+      district:
+        type: string
+      province:
+        type: string
+    type: object
+  merchant.BoardOfDirectorResp:
+    properties:
+      createdAt:
+        type: string
+      createdBy:
+        type: string
+      id:
+        type: string
+      identityFile:
+        type: string
+      identityNumber:
+        type: string
+      name:
+        type: string
+      positionLong:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  merchant.DisbursementConfig:
+    properties:
+      maxAmount:
+        description: 'Ref: constant.DisbursementMaxAmount'
+        maximum: 250000000
+        minimum: 10000
+        type: number
+      minAmount:
+        description: 'Ref: constant.DisbursementMinAmount'
+        minimum: 10000
+        type: number
+    type: object
+  merchant.GenSignatureReq:
+    properties:
+      privateKey:
+        type: string
+    required:
+    - privateKey
+    type: object
+  merchant.GenSignatureResp:
+    properties:
+      signature:
+        type: string
+    type: object
+  merchant.ListBoardOfDirectorResp:
+    properties:
+      commissionerList:
+        items:
+          $ref: '#/definitions/merchant.BoardOfDirectorResp'
+        type: array
+      directorList:
+        items:
+          $ref: '#/definitions/merchant.BoardOfDirectorResp'
+        type: array
+    type: object
+  merchant.MerchantFeeResponse:
+    properties:
+      amount:
+        type: number
+      amountType:
+        type: string
+      createdAt:
+        type: string
+      deductionType:
+        type: string
+      merchantId:
+        type: string
+      paymentMethod:
+        type: string
+      percentage:
+        type: number
+      reference:
+        type: string
+      taxPercentage:
+        type: number
+      taxType:
+        type: string
+      updatedAt:
+        type: string
+      uuid:
+        type: string
+    type: object
+  merchant.MerchantRequest:
+    properties:
+      address:
+        maxLength: 254
+        type: string
+      businessCountry:
+        type: string
+      businessStructure:
+        type: string
+      businessType:
+        type: string
+      description:
+        type: string
+      districtId:
+        minimum: 1
+        type: integer
+      logo:
+        type: string
+      merchantEmail:
+        type: string
+      merchantPhone:
+        type: string
+      name:
+        type: string
+      parentID:
+        type: string
+      picEmail:
+        type: string
+      picJobTitle:
+        type: string
+      picName:
+        type: string
+      picPhone:
+        type: string
+      postcode:
+        type: string
+      requesterID:
+        type: string
+      requesterType:
+        type: string
+      shortName:
+        maxLength: 25
+        type: string
+      userId:
+        type: string
+    required:
+    - address
+    - businessCountry
+    - businessStructure
+    - businessType
+    - districtId
+    - logo
+    - merchantEmail
+    - merchantPhone
+    - name
+    - picEmail
+    - picName
+    - picPhone
+    - postcode
+    - shortName
+    type: object
+  merchant.MerchantResponse:
+    properties:
+      active:
+        type: boolean
+      address:
+        type: string
+      addressDetail:
+        $ref: '#/definitions/merchant.AddressDetail'
+      businessCountry:
+        type: string
+      businessStructure:
+        type: string
+      businessType:
+        type: string
+      createdAt:
+        type: string
+      description:
+        type: string
+      districtId:
+        type: integer
+      externalId:
+        type: string
+      logo:
+        type: string
+      merchantEmail:
+        type: string
+      merchantPhone:
+        type: string
+      name:
+        type: string
+      parentId:
+        type: string
+      picEmail:
+        type: string
+      picJobTitle:
+        type: string
+      picName:
+        type: string
+      picPhone:
+        type: string
+      postcode:
+        type: string
+      shortName:
+        type: string
+      updatedAt:
+        type: string
+      uuid:
+        type: string
+    type: object
+  merchant.TransactionConfigResp:
+    properties:
+      merchantId:
+        type: string
+      transactionConfigs:
+        $ref: '#/definitions/merchant.TransactionConfigs'
+    type: object
+  merchant.TransactionConfigs:
+    properties:
+      disbursement:
+        $ref: '#/definitions/merchant.DisbursementConfig'
+    type: object
+  merchant.UploadDocumentReq:
+    type: object
+  merchant.UpsertBoardOfDirectorReq:
+    type: object
+  merchant.UpsertBoardOfDirectorResp:
+    properties:
+      id:
+        type: string
+    type: object
+  orchestrator_model.TransactionHistoryDetailResp:
+    properties:
+      amount:
+        type: number
+      channel:
+        type: string
+      createdAt:
+        type: string
+      details:
+        description: Nullable
+      failedReason:
+        type: string
+      id:
+        type: string
+      remarks:
+        type: string
+      status:
+        type: string
+      type:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  otp.SendOTPReq:
+    properties:
+      email:
+        type: string
+      event:
+        $ref: '#/definitions/constant.OTPIdentifier'
+    required:
+    - email
+    - event
+    type: object
+  otp.User2FARes:
+    properties:
+      token:
+        type: string
+    type: object
+  otp.VerifyOTPReq:
+    properties:
+      otp:
+        type: string
+    required:
+    - otp
+    type: object
+  paymentModel.Payment:
+    properties:
+      amount:
+        type: number
+      createdAt:
+        type: string
+      currency:
+        type: string
+      customerId:
+        type: string
+      deletedAt:
+        type: string
+      discount:
+        type: number
+      expiredAt:
+        type: string
+      fee:
+        type: number
+      merchantId:
+        type: string
+      metadata:
+        additionalProperties: {}
+        type: object
+      paymentMethodId:
+        type: string
+      paymentUrl:
+        type: string
+      processorReferenceNumber:
+        type: string
+      referenceId:
+        type: string
+      status:
+        type: string
+      totalAmount:
+        type: number
+      updatedAt:
+        type: string
+      uuid:
+        type: string
+    type: object
+  paymentModel.PaymentMethodResponse:
+    properties:
+      acquirer:
+        example: Permata
+        type: string
+      bankName:
+        example: Permata Bank
+        type: string
+      category:
+        example: disbursement_top_up
+        type: string
+      createdAt:
+        example: "2021-08-10T00:00:00+07:00"
+        type: string
+      description:
+        example: Virtual Account Permata
+        type: string
+      logo:
+        example: https://sandbox.bca.co.id/api/images/logo-bca.png
+        type: string
+      name:
+        example: VA Permata
+        type: string
+      type:
+        example: Virtual Account
+        type: string
+      updatedAt:
+        example: "2021-08-10T00:00:00+07:00"
+        type: string
+      uuid:
+        example: 0d1efc99-8991-41db-acaa-899b60aed8a1
+        type: string
+    type: object
+  paymentModel.PaymentMethodWithPivot:
+    properties:
+      acquirer:
+        type: string
+      bankName:
+        type: string
+      category:
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      description:
+        type: string
+      isActive:
+        type: boolean
+      logo:
+        type: string
+      merchantId:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      updatedAt:
+        type: string
+      uuid:
+        type: string
+    type: object
+  purpose.PurposeListResponse:
+    properties:
+      code:
+        example: "01"
+        type: string
+      name:
+        example: Investment
+        type: string
+      uuid:
+        example: 66e576bb-e829-48a1-9764-11c185c66be3
+        type: string
+    type: object
+  qris.CallbackDetail:
+    properties:
+      applymentCode:
+        type: string
+      auditDetail:
+        items:
+          $ref: '#/definitions/qris.RegistrationCallbackAuditDetail'
+        type: array
+      resultCode:
+        type: string
+    type: object
+  qris.RegistrationCallbackAuditDetail:
+    properties:
+      rejectCode:
+        items:
+          type: string
+        type: array
+      rejectReason:
+        type: string
+    type: object
+  qris.RegistrationListResp:
+    properties:
+      acquirer:
+        type: string
+      acquirerMerchantId:
+        type: string
+      acquirerMerchantParentId:
+        type: string
+      callbackDatetime:
+        type: string
+      callbackDetail:
+        $ref: '#/definitions/qris.CallbackDetail'
+      createdAt:
+        type: string
+      externalId:
+        type: string
+      id:
+        type: string
+      merchantName:
+        type: string
+      merchantType:
+        type: string
+      status:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  qris.RegistrationReq:
+    properties:
+      acquirer:
+        enum:
+        - BNC
+        type: string
+      createdBy:
+        maxLength: 50
+        type: string
+      merchant_type:
+        enum:
+        - Merchant
+        - Franchisee
+        - Sub-Merchant
+        type: string
+      merchantId:
+        type: string
+    required:
+    - acquirer
+    - createdBy
+    - merchantId
+    type: object
+  qris.RegistrationResp:
+    properties:
+      id:
+        type: string
+    type: object
+  qris.ReuploadDocumentReq:
+    properties:
+      documentType:
+        enum:
+        - NationalIdentityCard
+        - BusinessLicense
+        - TaxIdentification
+        - BusinessRegistration
+        - CertificateIncorporation
+        - CertificateNo40
+        - CertificateLastAmendment
+        - CertificateDeedAmendment
+        - CertificateAmendmentAct
+        - CertificateEstablishment
+        - CertificateTaxRegistration
+        - BusinessEnvironmentPhoto
+        type: string
+      registrationId:
+        type: string
+    required:
+    - documentType
+    - registrationId
+    type: object
+  qris.ReuploadDocumentResp:
+    properties:
+      uploaded:
+        type: boolean
+    type: object
+  response.ApiError:
+    properties:
+      details:
+        items:
+          $ref: '#/definitions/response.ApiErrorDetail'
+        type: array
+      traceId:
+        type: string
+      type:
+        type: string
+    type: object
+  response.ApiErrorDetail:
+    properties:
+      field:
+        type: string
+      message:
+        type: string
+    type: object
+  response.ApiResponse:
+    properties:
+      code:
+        example: "00"
+        type: string
+      data: {}
+      error:
+        $ref: '#/definitions/response.ApiError'
+      message:
+        type: string
+      pagination: {}
+    type: object
+  response.OpenApiError:
+    properties:
+      message:
+        type: string
+      recommendation:
+        type: string
+      type:
+        type: string
+    type: object
+  response.OpenApiResponse:
+    properties:
+      code:
+        example: "00"
+        type: string
+      data: {}
+      error:
+        $ref: '#/definitions/response.OpenApiError'
+      message:
+        type: string
+      pagination: {}
+    type: object
+  response.Response:
+    properties:
+      code:
+        example: "00"
+        type: string
+      data: {}
+      errors: {}
+      meta: {}
+    type: object
+  role.CreateRoleRequest:
+    properties:
+      menus:
+        items:
+          $ref: '#/definitions/role.RoleMenuRequest'
+        minItems: 1
+        type: array
+        uniqueItems: true
+      name:
+        type: string
+    required:
+    - name
+    type: object
+  role.RoleMenuPermissionResponse:
+    properties:
+      name:
+        type: string
+      permission:
+        items:
+          type: string
+        type: array
+    type: object
+  role.RoleMenuRequest:
+    properties:
+      permissions:
+        items:
+          type: string
+        minItems: 1
+        type: array
+        uniqueItems: true
+      slug:
+        type: string
+    required:
+    - permissions
+    - slug
+    type: object
+  role.RoleMenuResponse:
+    properties:
+      id:
+        type: string
+      menus:
+        items:
+          $ref: '#/definitions/role.RoleMenuPermissionResponse'
+        type: array
+      name:
+        type: string
+    type: object
+  role.RoleResponse:
+    properties:
+      createdAt:
+        type: string
+      merchantId:
+        type: string
+      name:
+        type: string
+      permissions:
+        items:
+          type: string
+        type: array
+      slug:
+        type: string
+      type:
+        type: string
+      updatedAt:
+        type: string
+      uuid:
+        type: string
+    type: object
+  role.UpdateRoleRequest:
+    properties:
+      menus:
+        items:
+          $ref: '#/definitions/role.RoleMenuRequest'
+        minItems: 1
+        type: array
+        uniqueItems: true
+      name:
+        type: string
+    required:
+    - name
+    type: object
+  snapCoreModel.TopupSimulationRequest:
+    properties:
+      totalAmount:
+        $ref: '#/definitions/github_com_paper-indonesia_backend-portal_internal_model_snapCore_topUpSimulation.Amount'
+      vaNumber:
+        type: string
+    required:
+    - vaNumber
+    type: object
+  user.ActivateUserRequest:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      pin:
+        type: string
+    required:
+    - email
+    - password
+    - pin
+    type: object
+  user.CRMUserCreateRequest:
+    properties:
+      email:
+        type: string
+      merchantId:
+        type: string
+      name:
+        type: string
+      roleSlug:
+        type: string
+    required:
+    - email
+    - merchantId
+    - name
+    - roleSlug
+    type: object
+  user.ChangePasswordRequest:
+    properties:
+      newPassword:
+        type: string
+      password:
+        type: string
+    required:
+    - newPassword
+    - password
+    type: object
+  user.ChangePasswordResponse:
+    properties:
+      updated:
+        type: boolean
+    type: object
+  user.ChangePinRequest:
+    properties:
+      newPin:
+        type: string
+      pin:
+        type: string
+    required:
+    - newPin
+    - pin
+    type: object
+  user.CheckPasswordRequest:
+    properties:
+      password:
+        type: string
+    required:
+    - password
+    type: object
+  user.CheckPinRequest:
+    properties:
+      pin:
+        type: string
+    required:
+    - pin
+    type: object
+  user.CreatePinRequest:
+    properties:
+      pin:
+        type: string
+    required:
+    - pin
+    type: object
+  user.GenerateRandomPasswordResponse:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  user.InvitationURLResp:
+    properties:
+      url:
+        type: string
+    type: object
+  user.ResetPinRequest:
+    properties:
+      pin:
+        type: string
+    required:
+    - pin
+    type: object
+  user.UpdateStatusResp:
+    properties:
+      updated:
+        type: boolean
+    type: object
+  user.User2FAResponse:
+    properties:
+      token:
+        type: string
+    type: object
+  user.UserAddRoleRequest:
+    properties:
+      email:
+        type: string
+      roleSlug:
+        type: string
+    required:
+    - email
+    - roleSlug
+    type: object
+  user.UserCreateRequest:
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+      roleSlug:
+        type: string
+    required:
+    - email
+    - name
+    - roleSlug
+    type: object
+  user.UserForgotPasswordRequest:
+    properties:
+      email:
+        type: string
+    required:
+    - email
+    type: object
+  user.UserLoggedInResponse:
+    properties:
+      accessToken:
+        type: string
+      refreshToken:
+        type: string
+      userInfo:
+        $ref: '#/definitions/user.UserResponse'
+    type: object
+  user.UserLoginRequest:
+    properties:
+      email:
+        example: test@gmail.com
+        type: string
+      isRemember:
+        example: true
+        type: boolean
+      password:
+        example: GuaPukulLo10x
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  user.UserLogoutRequest:
+    properties:
+      email:
+        type: string
+    required:
+    - email
+    type: object
+  user.UserRefreshTokenRequest:
+    properties:
+      email:
+        type: string
+      refreshToken:
+        type: string
+    required:
+    - email
+    - refreshToken
+    type: object
+  user.UserRegisterRequest:
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      passwordConfirmation:
+        type: string
+    required:
+    - email
+    - name
+    - password
+    - passwordConfirmation
+    type: object
+  user.UserResetPasswordRequest:
+    properties:
+      password:
+        minLength: 8
+        type: string
+    required:
+    - password
+    type: object
+  user.UserResponse:
+    properties:
+      blockedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      createdAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      deactivatedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      email:
+        example: test@gmail.com
+        type: string
+      isChangePassword:
+        example: 0
+        type: integer
+      isEmptyPin:
+        example: 0
+        type: integer
+      merchantId:
+        example: 123e4567-e89b-12d3-a456-426614174000
+        type: string
+      merchantName:
+        example: Merchant Example
+        type: string
+      name:
+        example: John Doe
+        type: string
+      role:
+        example: admin
+        type: string
+      status:
+        example: ACTIVE
+        type: string
+      updatedAt:
+        example: "2021-01-01T00:00:00Z"
+        type: string
+      uuid:
+        example: 123e4567-e89b-12d3-a456-426614174000
+        type: string
+    type: object
+  user.UserUnblockRequest:
+    properties:
+      emails:
+        items:
+          type: string
+        minItems: 1
+        type: array
+    type: object
+  user.UserUpdateRequest:
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+      roleSlug:
+        type: string
+    required:
+    - email
+    - name
+    - roleSlug
+    type: object
+host: localhost
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: |-
+    To support payment gateway needs, we prepare technical documents on the backend-portal.
+    Where the backend-portal is intended to serve services to OpenAPI and MerchantPortal,
+    apart from that this service is integrated with Orchestrator, Core Processor
+    (SNAP Core Processor and Credit Card Processor)
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Backend Portal API
+  version: "1.0"
+paths:
+  /api/v1/activities:
+    get:
+      consumes:
+      - application/json
+      description: List activities endpoint
+      operationId: api-activity-list
+      parameters:
+      - description: pagination current page
+        in: query
+        name: page
+        type: string
+      - description: filter startCreatedAt
+        in: query
+        name: startCreatedAt
+        type: string
+      - description: filter endCreatedAt
+        in: query
+        name: endCreatedAt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/activityModel.Activity'
+                  type: array
+                meta:
+                  $ref: '#/definitions/commonModel.Meta'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: List activities endpoint
+      tags:
+      - API - Activity
+  /api/v1/auth/forgot-password:
+    post:
+      consumes:
+      - application/json
+      description: Endpoint Forgot Password with email, this process will send an
+        OTP to the user email as an auth step before resetting the password.
+      operationId: api-user-forgot-password
+      parameters:
+      - description: JSON Body for Forgot Password
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserForgotPasswordRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.User2FAResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Forgot Password endpoint with email
+      tags:
+      - API - User
+  /api/v1/auth/login:
+    post:
+      consumes:
+      - application/json
+      description: Login endpoint with email and password will send an OTP for 2FA
+        verification if the provided credentials are valid.
+      operationId: api-user-login-otp
+      parameters:
+      - description: JSON Body for Login
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserLoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.User2FAResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Login endpoint with email and password (2FA).
+      tags:
+      - API - User
+  /api/v1/auth/otp/send:
+    post:
+      consumes:
+      - application/json
+      description: This endpoint is used to send an OTP email according to the selected
+        event.
+      operationId: api-user-otp-send
+      parameters:
+      - description: JSON Body for Send
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/otp.SendOTPReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/otp.User2FARes'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Send endpoint for send an OTP email.
+      tags:
+      - API - User
+  /api/v1/auth/otp/verify:
+    post:
+      consumes:
+      - application/json
+      description: Verify endpoint for validate OTP. This endpoint requires a one-time
+        token generated from the OTP request process.
+      operationId: api-user-otp-verify
+      parameters:
+      - description: JSON Body for Verify OTP
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/otp.VerifyOTPReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/otp.User2FARes'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Verify endpoint for validate OTP
+      tags:
+      - API - User
+  /api/v1/auth/register:
+    post:
+      consumes:
+      - application/json
+      description: Register endpoint with email and password
+      operationId: api-user-register
+      parameters:
+      - description: JSON Body for Register
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserRegisterRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UserResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Register endpoint with email and password
+      tags:
+      - API - User
+  /api/v1/auth/reset-password:
+    patch:
+      consumes:
+      - application/json
+      description: Reset Password endpoint requires authentication from the OTP verification
+        process.
+      operationId: api-user-reset-password
+      parameters:
+      - description: JSON Body for Reset Password
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserResetPasswordRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Reset Password endpoint for users who forgot their password (new password).
+      tags:
+      - API - User
+  /api/v1/auth/reset-pin:
+    patch:
+      consumes:
+      - application/json
+      description: ResetPIN endpoint is used to create a new PIN through the forgot
+        PIN process.
+      operationId: api-users-reset-pin
+      parameters:
+      - description: JSON Body for Reset PIN
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.ResetPinRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UpdateStatusResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: ResetPIN endpoint is used to create a new PIN through the forgot PIN
+        process.
+      tags:
+      - API - User
+  /api/v1/banks/:
+    get:
+      consumes:
+      - application/json
+      description: List of all banks
+      operationId: api-bank-list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/bank.BankListResponse'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: List of all banks
+      tags:
+      - API - Bank
+  /api/v1/beneficiary-accounts:
+    get:
+      consumes:
+      - application/json
+      description: Get beneficiary accounts list
+      operationId: api-beneficiary-account-get-list
+      parameters:
+      - description: pagination current page
+        in: query
+        name: page
+        type: string
+      - description: filter beneficiaryAccountNo
+        in: query
+        name: beneficiaryAccountNo
+        type: string
+      - description: filter beneficiaryAccountName
+        in: query
+        name: beneficiaryAccountName
+        type: string
+      - description: filter startCreatedAt
+        in: query
+        name: startCreatedAt
+        type: string
+      - description: filter endCreatedAt
+        in: query
+        name: endCreatedAt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/beneficiaryAccountModel.BeneficiaryAccount'
+                  type: array
+                meta:
+                  $ref: '#/definitions/commonModel.Meta'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Get beneficiary accounts list
+      tags:
+      - API - Beneficiary Account
+  /api/v1/beneficiary-accounts/inquiry:
+    post:
+      consumes:
+      - application/json
+      description: Check beneficiary account
+      operationId: api-beneficiary-account-check-account
+      parameters:
+      - description: JSON Body for Check Beneficiary Account
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/beneficiaryAccountModel.CheckAccountRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/beneficiaryAccountModel.CheckAccountResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Check beneficiary account
+      tags:
+      - API - Beneficiary Account
+  /api/v1/callbacks/:
+    post:
+      consumes:
+      - application/json
+      description: Register callback URL
+      operationId: api-callbacks-register-callback
+      parameters:
+      - description: JSON Body for Register Callback
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/callback_model.RegisterCallbackRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Register callback URL
+      tags:
+      - API - Callbacks
+  /api/v1/cards/payment-session:
+    post:
+      consumes:
+      - application/json
+      description: Create credit card payment
+      operationId: api-credit-card-create-payment
+      parameters:
+      - description: JSON Body for Create Credit Card Payment Request
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/card.CreateCardPaymentRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.OpenApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.OpenApiResponse'
+      security:
+      - Bearer: []
+      summary: Create credit card payment
+      tags:
+      - API - Credit Card
+  /api/v1/cards/payment-session/{reference_id}:
+    get:
+      consumes:
+      - application/json
+      description: Get credit card payment by uuid
+      operationId: api-creditcard-get-payment-by-uuid
+      parameters:
+      - description: UUID of the credit card payment
+        in: path
+        name: reference_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.OpenApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.OpenApiResponse'
+      security:
+      - Bearer: []
+      summary: Get credit card payment by uuid
+      tags:
+      - API - Credit Card
+  /api/v1/change-password:
+    patch:
+      consumes:
+      - application/json
+      description: Change PIN endpoint
+      operationId: api-user-change-pin
+      parameters:
+      - description: JSON Body for Change Password
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.ChangePinRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.ChangePinRequest'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Change PIN endpoint
+      tags:
+      - API - User
+  /api/v1/disbursements:
+    get:
+      consumes:
+      - application/json
+      description: Disbursement list endpoint
+      operationId: api-disbursement-list
+      parameters:
+      - description: pagination current page
+        in: query
+        name: page
+        type: string
+      - description: filter bulkId
+        in: query
+        name: bulkId
+        type: string
+      - description: filter status
+        in: query
+        name: status
+        type: string
+      - description: filter startCreatedAt
+        in: query
+        name: startCreatedAt
+        type: string
+      - description: filter endCreatedAt
+        in: query
+        name: endCreatedAt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/disbursementModel.Disbursement'
+                  type: array
+                meta:
+                  $ref: '#/definitions/commonModel.Meta'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Disbursement list endpoint
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Disbursement by ID endpoint
+      operationId: api-disbursement-by-id
+      parameters:
+      - description: Disbursement ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/disbursementModel.DisbursementWithTransactionResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Disbursement by ID endpoint
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/{id}/receipt:
+    get:
+      consumes:
+      - application/json
+      description: Disbursement Receipt by ID endpoint
+      operationId: api-disbursement-receipt-by-id
+      parameters:
+      - description: Disbursement ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/disbursementModel.Disbursement'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Disbursement Receipt by ID endpoint
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/approval-actions:
+    post:
+      consumes:
+      - application/json
+      description: Approval actions disbursement
+      operationId: api-approval-actions-disbursements
+      parameters:
+      - description: JSON Body for Approve/Reject disbursement
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/disbursementModel.ApprovalActionsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Approval actions disbursement
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/approval-dashboard:
+    get:
+      consumes:
+      - application/json
+      description: Disbursement approval dashboard endpoint
+      operationId: api-disbursement-approval-dashboard
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/disbursementDashboardModel.DisbursementApprovalDashboardResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Disbursement approval dashboard endpoint
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/bulk/list:
+    get:
+      consumes:
+      - application/json
+      description: Bulk disbursement list endpoint
+      operationId: api-bulk-disbursement-list
+      parameters:
+      - description: pagination current page
+        in: query
+        name: page
+        type: string
+      - description: filter status
+        in: query
+        name: status
+        type: string
+      - description: filter startCreatedAt
+        in: query
+        name: startCreatedAt
+        type: string
+      - description: filter endCreatedAt
+        in: query
+        name: endCreatedAt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/disbursementModel.BulkDisbursementWithAggregate'
+                  type: array
+                meta:
+                  $ref: '#/definitions/commonModel.Meta'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Bulk disbursement list endpoint
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/bulk/retry:
+    post:
+      consumes:
+      - application/json
+      description: Retry bulk disbursement
+      operationId: api-retry-bulk-disbursements
+      parameters:
+      - description: JSON Body for retry bulk disbursement
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/disbursementModel.RetryBulkRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Retry bulk disbursement
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/configs:
+    get:
+      consumes:
+      - application/json
+      description: Endpoint to get disbursement configuration details
+      operationId: api-disbursement-transaction-config
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/disbursementModel.TransactionConfigResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Endpoint to get disbursement configuration details
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/dashboard:
+    get:
+      consumes:
+      - application/json
+      description: Disbursement dashboard endpoint
+      operationId: api-disbursement-dashboard
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/disbursementDashboardModel.DisbursementDashboardResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Disbursement dashboard endpoint
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/export:
+    post:
+      consumes:
+      - application/json
+      description: Export disbursement list endpoint
+      operationId: api-export-disbursement-list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/disbursementModel.Disbursement'
+                  type: array
+                meta:
+                  $ref: '#/definitions/commonModel.Meta'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Export disbursement list endpoint
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/single/create:
+    post:
+      consumes:
+      - application/json
+      description: Create single disbursement
+      operationId: api-disbursement-create-single
+      parameters:
+      - description: JSON Body for Create Single Disbursement
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/disbursementModel.CreateSingleRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Create single disbursement
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/single/retry:
+    post:
+      consumes:
+      - application/json
+      description: Retry single disbursement
+      operationId: api-retry-single-disbursements
+      parameters:
+      - description: JSON Body for retry single disbursement
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/disbursementModel.RetrySingleRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Retry single disbursement
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/top-up:
+    post:
+      consumes:
+      - application/json
+      description: Disbursement Top-up
+      operationId: api-disbursement-top-up
+      parameters:
+      - description: JSON Body for Disbursement Topup
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/disbursementTopUpModel.DisbursementTopUpRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/disbursementTopUpModel.DisbursementTopUpResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Disbursement Top-up
+      tags:
+      - API - Disbursement
+  /api/v1/disbursements/top-up-simulation-va:
+    post:
+      consumes:
+      - application/json
+      description: Disbursement Top-up Simulation
+      operationId: api-disbursement-top-up-simulation
+      parameters:
+      - description: JSON Body for Disbursement Simulation Topup
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/snapCoreModel.TopupSimulationRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/disbursementTopUpModel.DisbursementTopUpResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - Bearer: []
+      summary: Disbursement Top-up Simulation
+      tags:
+      - API - Disbursement
+  /api/v1/generate-random-password:
+    post:
+      consumes:
+      - application/json
+      description: Generate random password
+      operationId: api-user-generate-random-password
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.GenerateRandomPasswordResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Generate random password
+      tags:
+      - API - User
+  /api/v1/logout:
+    post:
+      consumes:
+      - application/json
+      description: Refresh endpoint with email
+      operationId: api-user-refresh-token
+      parameters:
+      - description: JSON Body for Refresh Token
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserRefreshTokenRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UserLoggedInResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Refresh endpoint with email
+      tags:
+      - API - User
+  /api/v1/menus:
+    get:
+      consumes:
+      - application/json
+      description: Get all menus
+      operationId: api-menus
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Get all menus
+      tags:
+      - API - Menu
+  /api/v1/menus/role:
+    get:
+      consumes:
+      - application/json
+      description: Get menus by role
+      operationId: api-menus-by-role
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Get menus by role
+      tags:
+      - API - Menu
+  /api/v1/menus/role/:id:
+    get:
+      consumes:
+      - application/json
+      description: Get menus by role_id
+      operationId: api-menus-by-role-id
+      parameters:
+      - description: Role ID
+        in: path
+        name: roleID
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Get menus by role_id
+      tags:
+      - API - Menu
+  /api/v1/merchants/:id:
+    get:
+      consumes:
+      - application/json
+      description: Find merchant by ID
+      operationId: merchant-find-by-id
+      parameters:
+      - description: Merchant ID
+        in: path
+        name: merchantID
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.MerchantResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Find merchant by ID
+      tags:
+      - API - Merchant
+  /api/v1/merchants/create:
+    post:
+      consumes:
+      - application/json
+      description: Create merchant endpoint
+      operationId: merchant-create
+      parameters:
+      - description: JSON Body for Create Merchant
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/merchant.MerchantRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.MerchantResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Create merchant endpoint
+      tags:
+      - API - Merchant
+  /api/v1/merchants/fee:
+    get:
+      consumes:
+      - application/json
+      description: Find merchant fee by merchant id and type
+      operationId: merchant-fee-find-by-merchant-id-and-type
+      parameters:
+      - description: param for fee type
+        in: query
+        name: type
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.MerchantFeeResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Find merchant fee by merchant id and type
+      tags:
+      - API - Merchant Fee
+  /api/v1/merchants/utilities/generate-signature:
+    post:
+      consumes:
+      - application/json
+      description: Utility endpoint to generate b2b signature (X-Signature)
+      operationId: merchant-utils-gen-b2b-signature
+      parameters:
+      - description: JSON Body for Generate Open API signature
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/merchant.GenSignatureReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.GenSignatureResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Utility endpoint to generate b2b signature (X-Signature)
+      tags:
+      - API - Merchant
+  /api/v1/payment-methods/:category:
+    get:
+      consumes:
+      - application/json
+      description: List of payment methods by category
+      operationId: api-payment-method-list-by-category
+      parameters:
+      - description: Category of payment method
+        in: query
+        name: category
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/paymentModel.PaymentMethodResponse'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: List of payment methods by category
+      tags:
+      - API - Payment Method
+  /api/v1/payments/:id:
+    get:
+      consumes:
+      - application/json
+      description: Find a payment by id
+      operationId: api-payment-get-by-id
+      parameters:
+      - description: Id of payment
+        in: query
+        name: category
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/paymentModel.PaymentMethodResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Find a payment by id
+      tags:
+      - API - Payment
+  /api/v1/payments/update/:id:
+    patch:
+      consumes:
+      - application/json
+      description: Update a payment amount and expiredAt by id
+      operationId: api-payment-update-by-id
+      parameters:
+      - description: Id of payment
+        in: query
+        name: category
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/paymentModel.Payment'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Update a payment amount and expiredAt by id
+      tags:
+      - API - Payment
+  /api/v1/purposes/:
+    get:
+      consumes:
+      - application/json
+      description: List of all master purposes
+      operationId: api-purpose-list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/purpose.PurposeListResponse'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: List of all master purposes
+      tags:
+      - API - Master Purpose
+  /api/v1/roles/:id/permissions:
+    get:
+      consumes:
+      - application/json
+      description: Find permission by Role ID
+      operationId: api-permission-find-by-role-id
+      parameters:
+      - description: Role ID
+        in: path
+        name: roleID
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.MerchantResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Find permission by Role ID
+      tags:
+      - API - Permission
+  /api/v1/roles/{role_id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete role endpoint
+      operationId: api-role-delete
+      parameters:
+      - description: Role ID to delete role
+        in: path
+        name: role_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Delete role endpoint
+      tags:
+      - API - Role
+    put:
+      consumes:
+      - application/json
+      description: Update role endpoint
+      operationId: role-update
+      parameters:
+      - description: Role ID to update role
+        in: path
+        name: role_id
+        required: true
+        type: string
+      - description: JSON Body for Update Role
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/role.UpdateRoleRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/role.RoleMenuResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Update role endpoint
+      tags:
+      - API - Role
+  /api/v1/roles/assign:
+    post:
+      consumes:
+      - application/json
+      description: Add user role endpoint
+      operationId: internal-role-add-user-role
+      parameters:
+      - description: JSON Body for Assign Role
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserAddRoleRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Add user role endpoint
+      tags:
+      - Internal - Role
+  /api/v1/roles/create:
+    post:
+      consumes:
+      - application/json
+      description: Create role endpoint
+      operationId: api-role-create
+      parameters:
+      - description: JSON Body for Create Role and Permissions
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/role.CreateRoleRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/role.RoleMenuResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Create role endpoint
+      tags:
+      - API - Role
+  /api/v1/roles/list:
+    get:
+      consumes:
+      - application/json
+      description: List roles endpoint
+      operationId: api-role-list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/role.RoleResponse'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: List roles endpoint
+      tags:
+      - API - Role
+  /api/v1/settings/callbacks:
+    get:
+      consumes:
+      - application/json
+      description: To display a summary of the callback URLs
+      operationId: settings-callbacks
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: To display a summary of the callback URLs
+      tags:
+      - Settings - Callbacks
+  /api/v1/settings/callbacks/api-key:
+    get:
+      consumes:
+      - application/json
+      description: View callback API key (PIN required)
+      operationId: settings-callbacks-view-api-key
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/callback_model.CallbackAPIKeyResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: View callback API key (PIN required)
+      tags:
+      - Settings - Callbacks
+  /api/v1/settings/callbacks/urls/:master_id:
+    post:
+      consumes:
+      - application/json
+      description: Endpoint to define, edit, and test callback URLs
+      operationId: settings-manage-callback-urls
+      parameters:
+      - description: JSON Body for test and save callback url
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/callback_model.TestAndSaveCallbackURLReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/callback_model.TestAndSaveCallbackURLResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Endpoint to define, edit, and test callback URLs
+      tags:
+      - Settings - Callbacks
+  /api/v1/settings/credentials:
+    get:
+      consumes:
+      - application/json
+      description: To display client ID and client secrets summary
+      operationId: settings-credentials
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/credential.CredentialDashboardResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: To display client ID and client secrets summary
+      tags:
+      - Settings - Credentials
+  /api/v1/settings/credentials/client-secrets/{id}:
+    get:
+      consumes:
+      - application/json
+      description: To display the client secret by ID (PIN authentication required)
+      operationId: settings-credentials-view-client-secret
+      parameters:
+      - description: Credential ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/credential.ClientSecretResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: To display the client secret by ID (PIN authentication required)
+      tags:
+      - Settings - Credentials
+    post:
+      consumes:
+      - application/json
+      description: To regenerate client secret by ID (PIN authentication required)
+      operationId: settings-credentials-generate-client-secret
+      parameters:
+      - description: Credential ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/credential.ClientSecretResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: To regenerate client secret by ID (PIN authentication required)
+      tags:
+      - Settings - Credentials
+  /api/v1/tests/users/invitations/{encoded_email}:
+    get:
+      consumes:
+      - application/json
+      description: Endpoint to get invitation URL to support automated testing (QA)
+      operationId: tests-users-invitations
+      parameters:
+      - description: Encoded base64 user email
+        in: path
+        name: encoded_email
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Automated-Test-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.InvitationURLResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-Automated-Test-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Endpoint to get invitation URL to support automated testing (QA)
+      tags:
+      - API - User
+  /api/v1/transaction-histories/details/{transaction_id}:
+    get:
+      consumes:
+      - application/json
+      description: Endpoint to display transaction details in the transaction history
+        list
+      operationId: transaction-histories-detail
+      parameters:
+      - description: Transaction Id (uuid)
+        in: path
+        name: transaction_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/orchestrator_model.TransactionHistoryDetailResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Endpoint to display transaction details in the transaction history
+        list
+      tags:
+      - Transaction History - Detail
+  /api/v1/user-detail:
+    get:
+      consumes:
+      - application/json
+      description: User Detail endpoint
+      operationId: api-user-detail
+      parameters:
+      - description: User Email
+        in: path
+        name: email
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UserResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: User Detail endpoint
+      tags:
+      - API - User
+  /api/v1/users:
+    get:
+      consumes:
+      - application/json
+      description: Get user list by merchant_id
+      operationId: user-list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UserResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Get user list by merchant_id
+      tags:
+      - API - User
+  /api/v1/users/:
+    post:
+      consumes:
+      - application/json
+      description: Create user endpoint
+      operationId: user-create
+      parameters:
+      - description: Merchant ID to get user list
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: JSON Body for Create User
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserCreateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UserResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Create user endpoint
+      tags:
+      - API - User
+  /api/v1/users/{id}/resend-invitation:
+    post:
+      consumes:
+      - application/json
+      description: Resend invitation for expiry invited user
+      operationId: api-user-resend-invitation
+      parameters:
+      - description: User ID for resend invitation
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Resend invitation for expiry invited user
+      tags:
+      - API - User
+  /api/v1/users/{user_id}:
+    get:
+      consumes:
+      - application/json
+      description: Get users by ID endpoint
+      operationId: api-get-user-by-id
+      parameters:
+      - description: User ID to get user
+        in: path
+        name: user_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/user.UserResponse'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Get users by ID endpoint
+      tags:
+      - API - User
+    put:
+      consumes:
+      - application/json
+      description: Update user endpoint
+      operationId: user-update
+      parameters:
+      - description: User ID to get user
+        in: path
+        name: user_id
+        required: true
+        type: string
+      - description: JSON Body for Update User
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserUpdateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UserResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Update user endpoint
+      tags:
+      - API - User
+  /api/v1/users/{user_id}/active:
+    get:
+      consumes:
+      - application/json
+      description: Activate/Deactivate user status
+      operationId: user-deactivate-toggle
+      parameters:
+      - description: User ID to get user
+        in: path
+        name: user_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UserResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Activate/Deactivate user status
+      tags:
+      - API - User
+  /api/v1/users/2fa/token:
+    get:
+      consumes:
+      - application/json
+      description: "SessionFromLogin2FA endpoint is used to obtain access token, refresh
+        token, and user information.\t\t\t\t\t\t -"
+      operationId: api-users-2fa-token
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UserLoggedInResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: SessionFromLogin2FA endpoint is used to obtain access token, refresh
+        token, and user information.
+      tags:
+      - API - User
+  /api/v1/users/activate:
+    patch:
+      consumes:
+      - application/json
+      description: Activate user endpoint
+      operationId: user-activation
+      parameters:
+      - description: JSON Body for Activate User
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.ActivateUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UserLoggedInResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Activate user endpoint
+      tags:
+      - API - User
+  /api/v1/users/activities:
+    post:
+      consumes:
+      - application/json
+      description: Record user activity
+      operationId: api-users-activities
+      parameters:
+      - description: JSON Body for Record user activity
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/activityModel.CreateActivityReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/activityModel.CreateActivityResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Record user activity
+      tags:
+      - API - User
+  /api/v1/users/check-password:
+    patch:
+      consumes:
+      - application/json
+      description: Check Password endpoint
+      operationId: api-user-check-password
+      parameters:
+      - description: JSON Body for Check Password
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.CheckPasswordRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  type: object
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Check Password endpoint
+      tags:
+      - API - User
+  /api/v1/users/pin:
+    post:
+      consumes:
+      - application/json
+      description: Create PIN endpoint
+      operationId: user-create-pin
+      parameters:
+      - description: JSON Body for Create User
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.CreatePinRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.CreatePinRequest'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Create PIN endpoint
+      tags:
+      - API - User
+  /api/v1/users/pin/check:
+    post:
+      consumes:
+      - application/json
+      description: Check PIN endpoint
+      operationId: api-user-check-pin
+      parameters:
+      - description: JSON Body for Check Password
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.CheckPinRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  type: string
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Check PIN endpoint
+      tags:
+      - API - User
+  /api/v1/users/unblock:
+    post:
+      consumes:
+      - application/json
+      description: Unblock user because of entering wrong password and otp
+      operationId: user-unblock
+      parameters:
+      - description: JSON Body for Unblock User
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserUnblockRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  type: string
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Unblock user because of entering wrong password and otp
+      tags:
+      - API - User
+  /api/v1/users/validate-invitation:
+    post:
+      consumes:
+      - application/json
+      description: Invite new user endpoint
+      operationId: invite-new-user
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Invite new user endpoint
+      tags:
+      - API - User
+  /crm/v1/address/locations/{name}:
+    get:
+      consumes:
+      - application/json
+      description: Endpoint to obtain address data such as province, city and district
+      operationId: address-locations
+      parameters:
+      - description: Name of location such as province, city and district
+        in: path
+        name: name
+        required: true
+        type: string
+      - description: The city list inquiry through the province ID
+        in: query
+        name: provinceId
+        type: string
+      - description: The district list inquiry through the city ID
+        in: query
+        name: cityId
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/location.LocationResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Endpoint to obtain address data such as province, city and district
+      tags:
+      - API - Address Location
+  /crm/v1/balances/topup/manual:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Top up merchant balance manually (via bank transfer manually)
+      operationId: crm-balance-topup-manual
+      parameters:
+      - description: Form Body for Send
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/adjustment.ManualTopupRequest'
+      produces:
+      - multipart/form-data
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/adjustment.ManualTopupResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Top up merchant balance manually (via bank transfer manually)
+      tags:
+      - API - CRM
+  /crm/v1/balances/topup/manual/{id}/adjustment:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Balance adjustment from Top up merchant
+      operationId: crm-balance-adjustment-from-topup-manual
+      parameters:
+      - description: ID to adjust balance
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Form Body for Send
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/adjustment.BalanceAdjustmentRequest'
+      produces:
+      - multipart/form-data
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/adjustment.BalanceAdjustmentResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Balance adjustment from Top up merchant
+      tags:
+      - API - CRM
+  /crm/v1/disbursements/{id}/inquiry-transaction:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Inquiry transaction for disbursement
+      operationId: crm-inquiry-transaction-for-disbursement
+      parameters:
+      - description: ID disbursement
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Form Body for Send
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/disbursementModel.InquiryTransaction'
+      produces:
+      - multipart/form-data
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/disbursementModel.DisbursementWithTransactionResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Inquiry transaction for disbursement
+      tags:
+      - API - CRM
+  /crm/v1/disbursements/{id}/retry-transaction:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Retry transaction for disbursement
+      operationId: crm-retry-transaction-for-disbursement
+      parameters:
+      - description: ID disbursement
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Form Body for Send
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/disbursementModel.RetryTransaction'
+      produces:
+      - multipart/form-data
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Retry transaction for disbursement
+      tags:
+      - API - CRM
+  /crm/v1/merchants/{id}/bods:
+    get:
+      consumes:
+      - application/json
+      description: Endpoint for get list data Board Of Director (BOD)
+      operationId: merchant-get-list-bod
+      parameters:
+      - description: Merchant Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.ListBoardOfDirectorResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Endpoint for get list data Board Of Director (BOD)
+      tags:
+      - API - Merchant Board Of Directors
+    post:
+      consumes:
+      - multipart/form-data
+      description: Endpoint for create data Board Of Director (BOD)
+      operationId: merchant-create-bod
+      parameters:
+      - description: Merchant Id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: JSON Body for create board of director data
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/merchant.UpsertBoardOfDirectorReq'
+      produces:
+      - multipart/form-data
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.UpsertBoardOfDirectorResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Endpoint for create data Board Of Director (BOD)
+      tags:
+      - API - Merchant Board Of Directors
+  /crm/v1/merchants/{id}/bods/{bod_id}:
+    put:
+      consumes:
+      - multipart/form-data
+      description: Endpoint for update data Board Of Director (BOD)
+      operationId: merchant-update-bod
+      parameters:
+      - description: Merchant Id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Unique Id for Board Of Director (BOD)
+        in: path
+        name: bod_id
+        required: true
+        type: string
+      - description: JSON Body for update board of director data
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/merchant.UpsertBoardOfDirectorReq'
+      produces:
+      - multipart/form-data
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.UpsertBoardOfDirectorResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Endpoint for update data Board Of Director (BOD)
+      tags:
+      - API - Merchant Board Of Directors
+  /crm/v1/merchants/{id}/documents:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Endpoint for uploading merchant document
+      operationId: merchant-upload-document
+      parameters:
+      - description: merchant id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: JSON Body for Update Merchant fee
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/merchant.UploadDocumentReq'
+      produces:
+      - multipart/form-data
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  additionalProperties:
+                    type: string
+                  type: object
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Endpoint for uploading merchant document
+      tags:
+      - API - Merchant Document
+  /crm/v1/merchants/{id}/payment-methods:
+    get:
+      consumes:
+      - multipart/form-data
+      description: Get payment method by merchant ID
+      operationId: crm-get-payment-method-by-merchant-id
+      parameters:
+      - description: ID merchant
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: filter category
+        in: query
+        name: category
+        type: string
+      - description: filter type
+        in: query
+        name: type
+        type: string
+      - description: filter acquirer
+        in: query
+        name: acquirer
+        type: string
+      produces:
+      - multipart/form-data
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/paymentModel.PaymentMethodWithPivot'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Get payment method by merchant ID
+      tags:
+      - API - CRM
+  /crm/v1/merchants/{id}/payment-methods/{paymentMethodId}/activate:
+    patch:
+      consumes:
+      - multipart/form-data
+      description: Activate payment method by ID
+      operationId: crm-activate-payment-method-by-id
+      parameters:
+      - description: ID merchant
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: paymentMethodId for activate
+        in: path
+        name: paymentMethodId
+        required: true
+        type: string
+      produces:
+      - multipart/form-data
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Activate payment method by ID
+      tags:
+      - API - CRM
+  /crm/v1/merchants/{id}/payment-methods/{paymentMethodId}/deactivate:
+    patch:
+      consumes:
+      - multipart/form-data
+      description: Deactivate payment method by ID
+      operationId: crm-deactivate-payment-method-by-id
+      parameters:
+      - description: ID merchant
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: paymentMethodId for deactivate
+        in: path
+        name: paymentMethodId
+        required: true
+        type: string
+      produces:
+      - multipart/form-data
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Deactivate payment method by ID
+      tags:
+        - API - CRM
+  /crm/v1/merchants/{id}/transaction-configs:
+    patch:
+      consumes:
+        - application/json
+      description: Endpoint for setting transaction configurations such as max and min disbursement amount, balance deduction dates for fees, etc.
+      operationId: crm-merchant-transaction-configs
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+          type: string
+        - description: JSON Body for transaction configs per merchant
+          in: body
+          name: Request
+          required: true
+          schema:
+            $ref: '#/definitions/merchant.TransactionConfigs'
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.TransactionConfigResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: Endpoint for setting transaction configurations for merchants.
+      tags:
+      - CRM - Merchant
+  /crm/v1/merchants/fee:
+    post:
+      consumes:
+      - application/json
+      description: Create merchant fee endpoint
+      operationId: merchant-fee-create
+      parameters:
+      - description: JSON Body for Create Merchant fee
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/merchant.MerchantRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.MerchantFeeResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - Bearer: []
+      summary: Create merchant fee endpoint
+      tags:
+      - API - Merchant Fee
+  /crm/v1/merchants/fee/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Update merchant fee endpoint
+      operationId: merchant-fee-update
+      parameters:
+      - description: id of merchant fee
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: JSON Body for Update Merchant fee
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/merchant.MerchantRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/merchant.MerchantFeeResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - Bearer: []
+      summary: Update merchant fee endpoint
+      tags:
+      - API - Merchant Fee
+  /crm/v1/qr/registrations:
+    post:
+      consumes:
+      - application/json
+      description: This endpoint is used for QRIS registration where the merchant
+        has completed KYC/KYB in full.
+      operationId: qris-registration
+      parameters:
+      - description: JSON Body for QRIS registration
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/qris.RegistrationReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/qris.RegistrationResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: This endpoint is used for QRIS registration.
+      tags:
+      - API - QRIS Registration
+  /crm/v1/qr/registrations/documents:
+    put:
+      consumes:
+      - application/json
+      description: This endpoint is used to re-upload documents for qris registration.
+      operationId: qris-registration-reupload-documents
+      parameters:
+      - description: JSON Body for reupload document
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/qris.ReuploadDocumentReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/qris.ReuploadDocumentResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: This endpoint is used to re-upload documents for qris registration.
+      tags:
+      - API - QRIS Registration
+  /crm/v1/qr/registrations/merchants/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This endpoint is used to retrieve the qris registration list.
+      operationId: qris-registration-list
+      parameters:
+      - description: Merchant Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/qris.RegistrationListResp'
+              type: object
+        "500":
+          description: Internal Server Error
+          headers:
+            X-CRM-Key:
+              description: '{"key": "value"}'
+              type: string
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: This endpoint is used to retrieve the qris registration list.
+      tags:
+      - API - QRIS Registration
+  /crm/v1/users/:
+    post:
+      consumes:
+      - application/json
+      description: Create user endpoint
+      operationId: crm-user-create
+      parameters:
+      - description: JSON Body for Create User
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/user.CRMUserCreateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/user.UserResponse'
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - Bearer: []
+      summary: Create user endpoint
+      tags:
+      - CRM - User
+  /health-check:
+    get:
+      consumes:
+      - application/json
+      description: Show health check
+      operationId: api-health-check
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: Show health check
+      tags:
+      - Health Check
+  /internal/v1/payouts/:id/retry:
+    post:
+      consumes:
+      - application/json
+      description: Retry bulk disbursement
+      operationId: internal-retry-bulk-disbursements
+      parameters:
+      - description: id of bulk disbursement
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      security:
+      - Bearer: []
+      summary: Retry bulk disbursement
+      tags:
+      - Internal - Disbursement
+  /internal/v1/secret-key:
+    get:
+      consumes:
+      - application/json
+      description: List of all banks
+      operationId: api-get-secret-key
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - Bearer: []
+      summary: Create PKCS8 Secret Key
+      tags:
+      - API - Open Api
+    post:
+      consumes:
+      - application/json
+      description: List of all banks
+      operationId: api-create-secret-key
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.OpenApiResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.OpenApiResponse'
+      security:
+      - Bearer: []
+      summary: Create PKCS8 Secret Key
+      tags:
+      - API - Open Api
+  /internal/v1/users/list:
+    get:
+      consumes:
+      - application/json
+      description: List users endpoint
+      operationId: internal-user-list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.ApiResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/user.UserResponse'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ApiResponse'
+      summary: List users endpoint
+      tags:
+      - Internal - User
+schemes:
+- https
+securityDefinitions:
+  Bearer:
+    description: Type "Bearer" followed by a space and JWT token.
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

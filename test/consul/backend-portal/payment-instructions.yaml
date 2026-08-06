@@ -1,0 +1,248 @@
+[
+    {
+        "title": "QRIS_Bank_Neo_Commerce",
+        "instruction": "<h4>How to Pay</h4>",
+        "accordion": [
+            {
+                "title": "Scan via e-Wallet",
+                "steps": [
+                    "Open your bank or e-wallet app that supports QRIS payment on your phone.",
+                    "Scan the QR code above.",
+                    "Ensure the total amount is correct, then click '<b>Bayar</b>'.",
+                    "Once successful, the payment will be automatically verified."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "QRIS_BRI",
+        "instruction": "<h4>How to Pay</h4>",
+        "accordion": [
+            {
+                "title": "Scan via e-Wallet",
+                "steps": [
+                    "Open your bank or e-wallet app that supports QRIS payment on your phone.",
+                    "Scan the QR code above.",
+                    "Ensure the total amount is correct, then click '<b>Bayar</b>'.",
+                    "Once successful, the payment will be automatically verified."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "VA_Bank_BRI",
+        "instruction": "<h4>How to Pay via Virtual Account</h4>",
+        "accordion": [
+            {
+                "title": "Transfer via ATM",
+                "steps": [
+                    "Input <b>ATM</b> card and your <b>PIN</b>.",
+                    "Select <b>Menu Transaksi Lain</b>.",
+                    "Select <b>Menu Pembayaran</b>.",
+                    "Select <b>Menu Lain-lain</b>.",
+                    "Select <b>Menu BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1420 2010 0296 6536</b>.",
+                    "Select <b>Ya</b>.",
+                    "Pick your <b>payment receipt</b>.",
+                    "Payment done."
+                ],
+               "note":"Transfer fees are subject to your bank's terms and conditions."
+            },
+            {
+                "title": "Transfer via Mobile Banking",
+                "steps": [
+                    "Login <b>BRI Mobile</b>.",
+                    "Select <b>Mobile Banking BRI</b>.",
+                    "Select <b>Menu Pembayaran</b>.",
+                    "Select <b>Menu BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1234 5678 91011</b>.",
+                    "Input <b>Amount</b>, eg. 10.010.000.",
+                    "Click <b>Kirim</b>.",
+                    "Input <b>PIN</b> Mobile.",
+                    "Click <b>Kirim</b>.",
+                    "Payment receipt sent via message.",
+                    "Payment done."
+                ],
+              "note":"Transfer fees are subject to your bank's terms and conditions."
+            },
+            {
+                "title": "Transfer via Internet Banking",
+                "steps": [
+                    "Login <b>Internet Banking</b>.",
+                    "Select <b>Pembayaran</b>.",
+                    "Select <b>BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1234 5678 91011</b>.",
+                    "Click <b>Kirim</b>.",
+                    "Input <b>Password</b>.",
+                    "Input <b>mToken</b>.",
+                    "Click <b>Kirim</b>.",
+                    "<b>Bukti bayar</b> akan ditampilkan.",
+                    "Payment done."
+                ],
+                "note": "Transfer fees are subject to your bank's terms and conditions."
+            }
+        ]
+    },
+  {
+        "title": "VA_Permata",
+        "instruction": "<h4>How to Pay via Virtual Account</h4>",
+        "accordion": [
+            {
+                "title": "Transfer via ATM",
+                "steps": [
+                    "Input <b>ATM</b> card and your <b>PIN</b>.",
+                    "Select <b>Menu Transaksi Lain</b>.",
+                    "Select <b>Menu Pembayaran</b>.",
+                    "Select <b>Menu Lain-lain</b>.",
+                    "Select <b>Menu BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1420 2010 0296 6536</b>.",
+                    "Select <b>Ya</b>.",
+                    "Pick your <b>payment receipt</b>.",
+                    "Payment done."
+                ],
+               "note":"Transfer fees are subject to your bank's terms and conditions."
+            },
+            {
+                "title": "Transfer via Mobile Banking",
+                "steps": [
+                    "Login <b>BRI Mobile</b>.",
+                    "Select <b>Mobile Banking BRI</b>.",
+                    "Select <b>Menu Pembayaran</b>.",
+                    "Select <b>Menu BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1234 5678 91011</b>.",
+                    "Input <b>Amount</b>, eg. 10.010.000.",
+                    "Click <b>Kirim</b>.",
+                    "Input <b>PIN</b> Mobile.",
+                    "Click <b>Kirim</b>.",
+                    "Payment receipt sent via message.",
+                    "Payment done."
+                ],
+              "note":"Transfer fees are subject to your bank's terms and conditions."
+            },
+            {
+                "title": "Transfer via Internet Banking",
+                "steps": [
+                    "Login <b>Internet Banking</b>.",
+                    "Select <b>Pembayaran</b>.",
+                    "Select <b>BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1234 5678 91011</b>.",
+                    "Click <b>Kirim</b>.",
+                    "Input <b>Password</b>.",
+                    "Input <b>mToken</b>.",
+                    "Click <b>Kirim</b>.",
+                    "<b>Bukti bayar</b> akan ditampilkan.",
+                    "Payment done."
+                ],
+                "note": "Transfer fees are subject to your bank's terms and conditions."
+            }
+        ]
+    },
+  {
+        "title": "CIMB",
+        "instruction": "<h4>How to Pay via Virtual Account</h4>",
+        "accordion": [
+            {
+                "title": "Transfer via ATM",
+                "steps": [
+                    "Input <b>ATM</b> card and your <b>PIN</b>.",
+                    "Select <b>Menu Transaksi Lain</b>.",
+                    "Select <b>Menu Pembayaran</b>.",
+                    "Select <b>Menu Lain-lain</b>.",
+                    "Select <b>Menu BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1420 2010 0296 6536</b>.",
+                    "Select <b>Ya</b>.",
+                    "Pick your <b>payment receipt</b>.",
+                    "Payment done."
+                ],
+               "note":"Transfer fees are subject to your bank's terms and conditions."
+            },
+            {
+                "title": "Transfer via Mobile Banking",
+                "steps": [
+                    "Login <b>BRI Mobile</b>.",
+                    "Select <b>Mobile Banking BRI</b>.",
+                    "Select <b>Menu Pembayaran</b>.",
+                    "Select <b>Menu BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1234 5678 91011</b>.",
+                    "Input <b>Amount</b>, eg. 10.010.000.",
+                    "Click <b>Kirim</b>.",
+                    "Input <b>PIN</b> Mobile.",
+                    "Click <b>Kirim</b>.",
+                    "Payment receipt sent via message.",
+                    "Payment done."
+                ],
+              "note":"Transfer fees are subject to your bank's terms and conditions."
+            },
+            {
+                "title": "Transfer via Internet Banking",
+                "steps": [
+                    "Login <b>Internet Banking</b>.",
+                    "Select <b>Pembayaran</b>.",
+                    "Select <b>BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1234 5678 91011</b>.",
+                    "Click <b>Kirim</b>.",
+                    "Input <b>Password</b>.",
+                    "Input <b>mToken</b>.",
+                    "Click <b>Kirim</b>.",
+                    "<b>Bukti bayar</b> akan ditampilkan.",
+                    "Payment done."
+                ],
+                "note": "Transfer fees are subject to your bank's terms and conditions."
+            }
+        ]
+    },
+  {
+        "title": "BNC_VA",
+        "instruction": "<h4>How to Pay via Virtual Account</h4>",
+        "accordion": [
+            {
+                "title": "Transfer via ATM",
+                "steps": [
+                    "Input <b>ATM</b> card and your <b>PIN</b>.",
+                    "Select <b>Menu Transaksi Lain</b>.",
+                    "Select <b>Menu Pembayaran</b>.",
+                    "Select <b>Menu Lain-lain</b>.",
+                    "Select <b>Menu BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1420 2010 0296 6536</b>.",
+                    "Select <b>Ya</b>.",
+                    "Pick your <b>payment receipt</b>.",
+                    "Payment done."
+                ],
+               "note":"Transfer fees are subject to your bank's terms and conditions."
+            },
+            {
+                "title": "Transfer via Mobile Banking",
+                "steps": [
+                    "Login <b>BRI Mobile</b>.",
+                    "Select <b>Mobile Banking BRI</b>.",
+                    "Select <b>Menu Pembayaran</b>.",
+                    "Select <b>Menu BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1234 5678 91011</b>.",
+                    "Input <b>Amount</b>, eg. 10.010.000.",
+                    "Click <b>Kirim</b>.",
+                    "Input <b>PIN</b> Mobile.",
+                    "Click <b>Kirim</b>.",
+                    "Payment receipt sent via message.",
+                    "Payment done."
+                ],
+              "note":"Transfer fees are subject to your bank's terms and conditions."
+            },
+            {
+                "title": "Transfer via Internet Banking",
+                "steps": [
+                    "Login <b>Internet Banking</b>.",
+                    "Select <b>Pembayaran</b>.",
+                    "Select <b>BRIVA</b>.",
+                    "Input <b>Virtual Account Number</b>, eg. <b>1234 5678 91011</b>.",
+                    "Click <b>Kirim</b>.",
+                    "Input <b>Password</b>.",
+                    "Input <b>mToken</b>.",
+                    "Click <b>Kirim</b>.",
+                    "<b>Bukti bayar</b> akan ditampilkan.",
+                    "Payment done."
+                ],
+                "note": "Transfer fees are subject to your bank's terms and conditions."
+            }
+        ]
+    }
+]

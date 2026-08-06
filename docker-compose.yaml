@@ -1,0 +1,81 @@
+services:
+  mysql:
+    image: mysql:8.0.31
+    environment:
+      MYSQL_ROOT_PASSWORD: myrootpassword
+      MYSQL_DATABASE: backend_portal
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:6-alpine3.16
+    environment:
+      REDIS_ARGS: "--requirepass 1550"
+    labels:
+      - dev.orbstack.http-port=8001
+    ports:
+      - "6380:6379"
+
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    labels:
+      - dev.orbstack.http-port=15673
+    ports:
+      - "5673:5672"  # AMQP protocol port
+      - "15673:15672"  # Management UI port
+    environment:
+      RABBITMQ_DEFAULT_USER: myusername
+      RABBITMQ_DEFAULT_PASS: mypassword
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.62.0
+    ports:
+      - "16686:16686" # Jaeger UI
+      - "14269:14269" # Health Check & Metric
+    restart: always
+    networks:
+      - backend-net
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    ports:
+      - "13133:13133" # health_check extension
+      - "4317:4317"   # OTLP grpc receiver
+      - "4318:4318"   # OTLP http receiver
+    volumes:
+      - ./observability/otel-config.yaml:/observability/otel-config.yaml:ro
+    command:
+      - --config=/observability/otel-config.yaml
+    restart: always
+    depends_on:
+      - jaeger
+    networks:
+      - backend-net
+
+  grafana:
+    image: grafana/grafana:7.1.5
+    ports:
+      - "3050:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./observability/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - backend-net
+
+volumes:
+  mysql_data:
+  grafana_data:
+  prometheus_data:
+
+networks:
+  backend-net:
+    name: backend-portal-net

@@ -1,0 +1,21 @@
+{
+    "name": "merchant_callback_write_log",
+    "description": "Task for writing merchant callback logs",
+    "inputKeys": [
+        "callbackId", "eventName", "isSnap", "payload", "response", "retryCount"
+    ],
+    "outputKeys": [
+        "callbackLogId"
+    ],
+    "retryCount": 3,
+    "retryLogic": "EXPONENTIAL_BACKOFF",
+    "retryDelaySeconds": 6,
+    "timeoutPolicy": "TIME_OUT_WF",
+    "timeoutSeconds": 3600,
+    "responseTimeoutSeconds": 600,
+    "pollTimeoutSeconds": 0,
+    "rateLimitFrequencyInSeconds": 1,
+    "rateLimitPerFrequency": 30,
+    "concurrentExecLimit": 30,
+    "ownerEmail": "backend-portal@service.local"
+}

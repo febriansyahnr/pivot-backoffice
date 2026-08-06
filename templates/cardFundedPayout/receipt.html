@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Funded Payout Receipt</title>
+    <style>
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 720px;
+            background-color: #ffffff;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .watermark-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background-image: url('{{.ImageBackground}}');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .header,
+        .details-section,
+        .footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 40px 30px;
+        }
+
+        .img-header {
+            height: 48px;
+            margin-bottom: 30px;
+        }
+
+        .status {
+            color: #007EF2;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+        }
+
+        .amount {
+            color: #0D1F35;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+        }
+
+        .date {
+            color: #6B7B8F;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .details-section {
+            padding: 20px 40px;
+            flex-grow: 1;
+        }
+
+        .section-title {
+            color: #0D1F35;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #E2E8F0;
+            margin: 0 0 16px 0;
+        }
+
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        .detail-table td {
+            padding: 12px 0;
+        }
+
+        .detail-label {
+            color: #6B7B8F;
+            text-align: left;
+        }
+
+        .detail-value {
+            color: #0D1F35;
+            text-align: right;
+            word-break: break-word;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #6B7B8F;
+            font-size: 16px;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer {
+            background-color: #007EF2;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .footer p:last-child {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="watermark-bg"></div>
+        <div class="header">
+            <img class="img-header" src="{{.ImageHeader}}" alt="Logo" />
+            <p class="status">Payout Success</p>
+            <p class="amount">{{.TotalAmount}}</p>
+            <p class="date">{{.CreatedAt}}</p>
+        </div>
+
+        <div class="details-section">
+            <p class="section-title">Transaction Details</p>
+            <hr>
+            <table class="detail-table">
+                <tr>
+                    <td class="detail-label">Created At</td>
+                    <td class="detail-value">{{.CreatedAt}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Reference ID</td>
+                    <td class="detail-value">{{.ReferenceID}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Payout ID</td>
+                    <td class="detail-value">{{.PayoutID}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Amount</td>
+                    <td class="detail-value">{{.Amount}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Fee</td>
+                    <td class="detail-value">{{.Fee}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Total Amount</td>
+                    <td class="detail-value">{{.TotalAmount}}</td>
+                </tr>
+            </table>
+
+            <p class="section-title" style="margin-top: 30px;">Recipient Details</p>
+            <hr>
+            <table class="detail-table">
+                <tr>
+                    <td class="detail-label">Vendor Name</td>
+                    <td class="detail-value">{{.VendorName}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Reference ID</td>
+                    <td class="detail-value">{{.ReferenceID}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Remarks</td>
+                    <td class="detail-value">{{.Remarks}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Bank Name</td>
+                    <td class="detail-value">{{.BankName}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Account Number</td>
+                    <td class="detail-value">{{.AccountNo}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Account Name</td>
+                    <td class="detail-value">{{.AccountName}}</td>
+                </tr>
+            </table>
+
+            <p class="footer-note">This receipt is a legitimate proof of transaction</p>
+        </div>
+
+        <div class="footer">
+            <p>Need Help? Contact Us</p>
+            <p>Email: helpdesk@pivot-payment.com</p>
+        </div>
+    </div>
+</body>
+
+</html>

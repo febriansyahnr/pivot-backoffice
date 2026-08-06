@@ -1,0 +1,16 @@
+package dashboard
+
+import "github.com/paper-indonesia/pivot-backoffice/views/components/pageheader"
+
+
+templ Dashboard(tab string) {
+	@pageheader.HeaderWithTab("Dashboard", tab)
+	<section id="dashboard-tab-content" class="space-y-4 mt-4">
+		if tab == "payout" {
+			@SearchPayout()
+		}
+		if tab == "payment" {
+			@SearchPayment()
+		}
+	</section>
+}

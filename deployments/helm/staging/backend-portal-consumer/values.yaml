@@ -1,0 +1,193 @@
+# Default values for paper-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# WARNING: The helm chart are maintained by paper-devops and only include configurations listed on this values.yaml. Please refer to the current
+# configurations since any addition to this configuration might caused an error from the chart.
+
+replicaCount: 1
+
+image: ### DO NOT CHANGE. Values will be managed by the Pipeline ###
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+env:
+  mode: "serveConsumer"
+
+ports: ### Adjust Exposed Container Port ###
+  - containerPort: 3001
+    name: http
+    protocol: TCP
+
+service: ### DO NOT CHANGE! Used by paper-chart ###
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+
+readinessProbe: ### DO NOT CHANGE! Used by paper-chart ###
+  httpGet:
+    path: /health-check
+    port: http
+  initialDelaySeconds: 6
+  periodSeconds: 10
+  failureThreshold: 5
+  timeoutSeconds: 10
+
+livenessProbe: ### DO NOT CHANGE! Used by paper-chart ###
+  httpGet:
+    path: /health-check
+    port: http
+  initialDelaySeconds: 6
+  periodSeconds: 10
+  failureThreshold: 5
+  timeoutSeconds: 10
+
+serviceAccount:
+  name: sa-secretmanager
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: ### Resource Configuration. Can be modified as needed. ###
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 1000m
+  #   memory: 1024Mi
+  requests:
+     memory: 100Mi
+
+autoscaling: ### Autoscaling Configuration. Can be modified as needed. ###
+  enabled: false
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 90
+  targetMemoryUtilizationPercentage: 90
+
+nodeSelector: 
+  iam.gke.io/gke-metadata-server-enabled: "true"
+
+tolerations: []
+
+affinity: {}
+
+
+fluentbit: ### Currently not used but do not remove ###
+  enabled: false
+  containerName: {}
+  securityContext: {}
+  image: 
+    repository: {}
+    tag: {}
+  env: {}
+  ports: {}
+  livenessProbe: {}
+  readinessProbe: {}
+  resources: {}
+  volumeMounts: {}
+#   - name: fluentbit
+#     mountPath: 
+#    - name: config
+#      mountPath: /fluent-bit/etc/fluent-bit.conf
+#      subPath: fluent-bit.conf
+#    - name: config
+#      mountPath: /fluent-bit/etc/custom_parsers.conf
+#      subPath: custom_parsers.conf
+#    - name: log
+#      mountPath: /usr/share/nginx/html/paperinvoicer/core/storage/logs
+  configmap:
+    name: {}
+    config: {}
+#     custom_parsers.conf: |
+#     fluent-bit.conf: |
+
+volumes: 
+  - name: mysecret
+    csi:
+      driver: secrets-store.csi.k8s.io
+      readOnly: true
+      volumeAttributes:
+        secretProviderClass: "app-secrets"
+  - name: sa-kms
+    secret:
+      secretName: sa-kms
+  - name: sa-gcs
+    secret:
+      secretName: sa-gcs
+  - name: mysql-pg-staging-tls
+    secret:
+      secretName: mysql-pg-staging-tls  
+  - name: backend-portal-partner-key
+    secret:
+      secretName: backend-portal-partner-key
+  - name: jwt-rsa-key
+    secret:
+      secretName: jwt-rsa-key
+
+volumeMounts: 
+  - mountPath: "/var/secrets"
+    name: mysecret
+  - name: sa-kms
+    mountPath: /app/sa-kms.json
+    subPath: sa-kms.json
+    readOnly: true
+  - name: sa-gcs
+    mountPath: /app/sa-gcs.json
+    subPath: sa-gcs.json
+    readOnly: true
+  - name: mysql-pg-staging-tls
+    mountPath: /app/mysql-cert
+    subPath: .
+    readOnly: true
+  - name: backend-portal-partner-key
+    mountPath: /app/partner-key
+    subPath: .
+    readOnly: true
+  - name: jwt-rsa-key
+    mountPath: /app/jwt-rsa-key
+    subPath: .
+    readOnly: true
+secretProviderClass: ### DO NOT CHANGE. Values will be managed by the Pipeline ###
+  name: app-secrets
+  spec:
+    provider: gcp
+    parameters:
+      secrets: |
+        - resourceName: "RESOURCE_NAME_CONFIG"
+          path: ".config.yaml"
+        - resourceName: "RESOURCE_NAME_SECRET"
+          path: ".secret.yaml"

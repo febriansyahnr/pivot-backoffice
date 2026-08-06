@@ -1,0 +1,713 @@
+[
+  {
+    "name": "Team Members",
+    "slug": "team-members",
+    "icon": "-",
+    "path": "/setting/team-members",
+    "type": "navbar",
+    "permissions": [
+      {
+        "slug": "team-members.view",
+        "name": "View Team Members",
+        "group": "Members",
+        "description": "View Members",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "team-members.create",
+        "name": "Create Team Members",
+        "group": "Members",
+        "description": "Create Members",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "team-members.edit",
+        "name": "Edit Team Members",
+        "group": "Members",
+        "description": "Edit Member\nDeactivate/Reactivate Member",
+        "roles": ["ADMIN"]
+      }
+    ]
+  },
+  {
+    "name": "Roles and Permissions",
+    "slug": "roles-and-permissions",
+    "icon": "-",
+    "path": "/setting/roles",
+    "type": "navbar",
+    "permissions": [
+      {
+        "slug": "roles-and-permissions.view",
+        "name": "View Roles and Permissions",
+        "group": "Roles",
+        "description": "View Roles\nView Role Detail and Permissions",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "roles-and-permissions.create",
+        "name": "Create Roles and Permissions",
+        "group": "Roles",
+        "description": "Add Custom Role",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "roles-and-permissions.edit",
+        "name": "Edit Roles and Permissions",
+        "group": "Roles",
+        "description": "Edit Custom Role",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "roles-and-permissions.delete",
+        "name": "Delete Roles and Permissions",
+        "group": "Roles",
+        "description": "Delete Custom Role",
+        "roles": ["ADMIN"]
+      }
+    ]
+  },
+  {
+    "name": "Notification Settings",
+    "slug": "notification-settings",
+    "icon": "-",
+    "path": "/setting/notification",
+    "type": "navbar",
+    "permissions": [
+      {
+        "slug": "notification-settings.view",
+        "name": "View Notification Settings",
+        "group": "Notification Settings",
+        "description": "View All Notification Settings Config",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "notification-settings.edit",
+        "name": "Edit Notification Settings",
+        "group": "Notification Settings",
+        "description": "Edit Notification Settings Config",
+        "roles": ["ADMIN"]
+      }
+    ]
+  },
+  {
+    "name": "Activity Logs",
+    "slug": "activity-logs",
+    "icon": "-",
+    "path": "/activity-log",
+    "type": "navbar",
+    "permissions": [
+      {
+        "slug": "activity-logs.view",
+        "name": "View Activity Logs",
+        "group": "Activity Logs",
+        "description": "View and Filter Activity Logs",
+        "roles": ["ADMIN"]
+      }
+    ]
+  },
+  {
+    "name": "Developer Setting",
+    "slug": "developer-setting",
+    "icon": "-",
+    "path": "/setting/developer-setting/credentials",
+    "type": "navbar",
+    "permissions": [
+      {
+        "slug": "developer-setting.view",
+        "name": "View Developer Setting",
+        "group": "Developer Setting",
+        "description": "View Developer Setting",
+        "roles": ["ADMIN", "DEVELOPER"]
+      },
+      {
+        "slug": "developer-setting.create",
+        "name": "Create Developer Setting",
+        "group": "Developer Setting",
+        "description": "Create Developer Setting",
+        "roles": ["ADMIN", "DEVELOPER"]
+      },
+      {
+        "slug": "developer-setting.edit",
+        "name": "Edit Developer Setting",
+        "group": "Developer Setting",
+        "description": "Edit Developer Setting",
+        "roles": ["ADMIN", "DEVELOPER"]
+      },
+      {
+        "slug": "developer-setting.delete",
+        "name": "Delete Developer Setting",
+        "group": "Developer Setting",
+        "description": "Delete Developer Setting",
+        "roles": ["ADMIN", "DEVELOPER"]
+      }
+    ]
+  },
+  {
+    "name": "Deposit",
+    "slug": "deposit-setting",
+    "icon": "-",
+    "path": "/setting/deposit",
+    "type": "navbar",
+    "permissions": [
+      {
+        "slug": "deposit-setting.view",
+        "name": "View Deposit Setting",
+        "group": "Deposit Setting",
+        "description": "View Deposit Setting",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "deposit-setting.edit",
+        "name": "Edit Deposit Setting",
+        "group": "Deposit Setting",
+        "description": "Edit Deposit Setting",
+        "roles": ["ADMIN"]
+      }
+    ]
+  },
+  {
+    "name": "Home",
+    "slug": "home",
+    "icon": "home.svg",
+    "path": "/home",
+    "type": "sidebar",
+    "permissions": []
+  },
+  {
+    "name": "Balance History",
+    "slug": "transaction-history",
+    "icon": "credit-card-icon-clock.svg",
+    "path": "/transaction-history",
+    "type": "sidebar",
+    "permissions": [
+      {
+        "slug": "transaction-history.view",
+        "name": "View Transaction History",
+        "group": "Transaction History",
+        "description": "View All Transaction Dashboard\nView and Filter Transaction History\nDownload Transaction History",
+        "roles": [
+          "ADMIN",
+          "MAKER",
+          "APPROVER",
+          "OPERATION",
+          "CROSSBORDER_OPERATOR"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Local Payouts",
+    "slug": "disbursement",
+    "icon": "send.svg",
+    "path": "/disbursement",
+    "type": "sidebar",
+    "permissions": [
+      {
+        "slug": "disbursement.view",
+        "name": "View disbursement",
+        "group": "Disbursement",
+        "description": "View disbursement",
+        "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+      },
+      {
+        "slug": "disbursement.top-up.view",
+        "name": "View top up disbursement",
+        "group": "Top Up Disbursement",
+        "description": "View top up disbursement",
+        "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+      },
+      {
+        "slug": "disbursement.top-up.create",
+        "name": "Create top up disbursement",
+        "group": "Top Up Disbursement",
+        "description": "Create top up disbursement",
+        "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+      }
+    ],
+    "children": [
+      {
+        "name": "Payout History",
+        "slug": "disbursement.disbursement-history",
+        "icon": "pi-list",
+        "path": "/disbursement/disbursement-history",
+        "permissions": [
+          {
+            "slug": "disbursement.disbursement-history.view",
+            "name": "View disbursement history",
+            "group": "Disbursement History",
+            "description": "View and Filter Disbursement History\nView Disbursement Detail\nDownload Disbursement Receipt\nDownload Disbursement History",
+            "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+          }
+        ]
+      },
+      {
+        "name": "Create Payout",
+        "slug": "disbursement.disbursement-create",
+        "icon": "pi-plus-circle",
+        "path": "/disbursement/create-transaction",
+        "permissions": [
+          {
+            "slug": "disbursement.disbursement-create.view",
+            "name": "View disbursement create transaction",
+            "group": "Create Disbursement",
+            "description": "View Bulk Transaction History (Batch List)\nView Batch Detail",
+            "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+          },
+          {
+            "slug": "disbursement.disbursement-create.create",
+            "name": "Create disbursement create transaction",
+            "group": "Create Disbursement",
+            "description": "Create Single and Bulk Transaction",
+            "roles": ["ADMIN", "MAKER"]
+          }
+        ]
+      },
+      {
+        "name": "Need Action",
+        "slug": "disbursement.disbursement-approval",
+        "icon": "-",
+        "path": "/disbursement/approval",
+        "permissions": [
+          {
+            "slug": "disbursement.disbursement-approval.view",
+            "name": "View disbursement approval",
+            "group": "Disbursement Approval",
+            "description": "View Approval Dashboard\nView Waiting Single and Bulk Transactions List\nView Pending Single and Bulk Transactions List",
+            "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+          },
+          {
+            "slug": "disbursement.disbursement-approval.create",
+            "name": "Create disbursement approval",
+            "group": "Disbursement Approval",
+            "description": "Approve or Reject Single and Bulk Transactions\nRetry Single and Bulk Transactions",
+            "roles": ["APPROVER"]
+          }
+        ]
+      },
+      {
+        "name": "Beneficiary",
+        "slug": "disbursement.disbursement-beneficiary-list",
+        "icon": "-",
+        "path": "/disbursement/beneficiary-list",
+        "permissions": [
+          {
+            "slug": "disbursement.disbursement-beneficiary-list.view",
+            "name": "View disbursement beneficiary list",
+            "group": "Beneficiary List",
+            "description": "View disbursement beneficiary list",
+            "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wallet",
+    "slug": "wallet",
+    "icon": "wallet-sidebar.svg",
+    "path": "/wallet",
+    "type": "sidebar",
+    "permissions": [
+      {
+        "group": "Wallet Merchant",
+        "slug": "wallet.merchant.balance.view",
+        "name": "Merchant Balance",
+        "description": "View balance and top up instructions",
+        "roles": ["ADMIN"]
+      },
+      {
+        "group": "Wallet Merchant",
+        "slug": "wallet.merchant.balance.create",
+        "name": "Withdraw Balance",
+        "description": "Withdraw wallet balance",
+        "roles": ["ADMIN"]
+      },
+      {
+        "group": "Wallet Merchant",
+        "slug": "wallet.merchant.transaction-histories.view",
+        "name": "Merchant Transaction History",
+        "description": "View and filter merchant transaction history (list, details and download report)",
+        "roles": ["ADMIN"]
+      },
+      {
+        "group": "Wallet Customers",
+        "slug": "wallet.customers.insights.view",
+        "name": "Customers Insights",
+        "description": "View customers insights",
+        "roles": ["ADMIN"]
+      },
+      {
+        "group": "Wallet Customers",
+        "slug": "wallet.customers.view",
+        "name": "Customers",
+        "description": "View customers",
+        "roles": ["ADMIN"]
+      },
+      {
+        "group": "Wallet Customers",
+        "slug": "wallet.customers.verification.view",
+        "name": "Customers Verification",
+        "description": "View customers verification",
+        "roles": ["ADMIN"]
+      },
+      {
+        "group": "Wallet Customers",
+        "slug": "wallet.customers.transactions.view",
+        "name": "Customers Transaction",
+        "description": "View customers transaction",
+        "roles": ["ADMIN"]
+      }
+    ],
+    "children": [
+      {
+        "name": "Customers",
+        "slug": "wallet.customers.view",
+        "icon": "",
+        "path": "/wallet/customer-dashboard",
+        "permissions": []
+      }
+    ]
+  },
+  {
+    "name": "International Payouts",
+    "slug": "international-payout",
+    "icon": "xb.svg",
+    "path": "/xb/payout/history",
+    "type": "sidebar",
+    "permissions": [
+      {
+        "slug": "international-payout.view",
+        "name": "View International Payout",
+        "group": "International Payout",
+        "description": "",
+        "roles": [
+          "CROSSBORDER_OPERATOR",
+          "OPERATION",
+          "APPROVER",
+          "MAKER",
+          "ADMIN"
+        ]
+      },
+      {
+        "slug": "international-payout.create",
+        "name": "Create International Payout",
+        "group": "International Payout",
+        "description": "",
+        "roles": ["ADMIN", "MAKER", "CROSSBORDER_OPERATOR"]
+      },
+      {
+        "slug": "disbursement.top-up.view",
+        "name": "View top up disbursement",
+        "group": "Top Up Disbursement",
+        "description": "View top up disbursement",
+        "roles": ["CROSSBORDER_OPERATOR", "ADMIN"]
+      },
+      {
+        "slug": "disbursement.top-up.create",
+        "name": "Create top up disbursement",
+        "group": "Top Up Disbursement",
+        "description": "Create top up disbursement",
+        "roles": ["CROSSBORDER_OPERATOR", "ADMIN"]
+      }
+    ]
+  },
+  {
+    "name": "Card Funded Payout",
+    "slug": "card-funded-payout",
+    "icon": "card-funded-payout.svg",
+    "path": "/card-funded-payout",
+    "type": "sidebar",
+    "permissions": [
+      {
+        "slug": "card-funded-payout.view",
+        "name": "View Card Funded Payout",
+        "group": "Card Funded Payout",
+        "description": "View Card Funded Payout",
+        "roles": ["ADMIN", "MAKER", "APPROVER"]
+      },
+      {
+        "slug": "card-funded-payout.create",
+        "name": "Create Card Funded Payout",
+        "group": "Card Funded Payout",
+        "description": "Create Card Funded Payout",
+        "roles": ["ADMIN", "MAKER"]
+      }
+    ],
+    "children": [
+      {
+        "name": "Saved Cards",
+        "slug": "card-funded-payout.saved-cards",
+        "icon": "",
+        "path": "/card-funded-payout/saved-cards",
+        "permissions": [
+          {
+            "slug": "card-funded-payout.saved-cards.view",
+            "name": "View Card Funded Payout Saved Cards",
+            "group": "Card Funded Payout Saved Cards",
+            "description": "View Card Funded Payout Saved Cards",
+            "roles": ["ADMIN", "MAKER", "APPROVER"]
+          },
+          {
+            "slug": "card-funded-payout.saved-cards.create",
+            "name": "Create Card Funded Payout Saved Cards",
+            "group": "Card Funded Payout Saved Cards",
+            "description": "Create Card Funded Payout Saved Cards",
+            "roles": ["APPROVER"]
+          }
+        ]
+      },
+      {
+        "name": "Vendor List",
+        "slug": "card-funded-payout.vendor",
+        "icon": "",
+        "path": "/card-funded-payout/vendor",
+        "permissions": [
+          {
+            "slug": "card-funded-payout.vendor.view",
+            "name": "View Card Funded Payout Vendor",
+            "group": "Card Funded Payout Vendor",
+            "description": "View Card Funded Payout Vendor",
+            "roles": ["ADMIN", "MAKER", "APPROVER"]
+          }
+        ]
+      },
+      {
+        "name": "Need Action",
+        "slug": "card-funded-payout.need-action",
+        "icon": "",
+        "path": "/card-funded-payout/need-action",
+        "permissions": [
+          {
+            "slug": "card-funded-payout.need-action.view",
+            "name": "View Card Funded Payout Need Action",
+            "group": "Card Funded Payout Need Action",
+            "description": "View Card Funded Payout Need Action",
+            "roles": ["APPROVER"]
+          },
+          {
+            "slug": "card-funded-payout.need-action.create",
+            "name": "Create Card Funded Payout Need Action",
+            "group": "Card Funded Payout Need Action",
+            "description": "Create Card Funded Payout Need Action",
+            "roles": ["APPROVER"]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "name": "Accept Payments",
+    "slug": "payment",
+    "icon": "credit-card-icon.svg",
+    "path": "/payment",
+    "type": "sidebar",
+    "permissions": [
+      {
+        "slug": "payment.withdrawal.view",
+        "name": "View Withdrawal History",
+        "group": "Withdrawal",
+        "description": "View Withdrawal History",
+        "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+      },
+      {
+        "slug": "payment.withdrawal.create",
+        "name": "Withdraw Payment Balance",
+        "group": "Withdrawal",
+        "description": "Withdraw Payment Balance",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "payment.histories.view",
+        "name": "View payment histories",
+        "group": "Payment",
+        "description": "View payment history",
+        "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION", "VCC_OPERATOR"]
+      },
+      {
+        "slug": "payment.cases-management.view",
+        "name": "View cases management",
+        "group": "Cases Management",
+        "description": "View cases management",
+        "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+      },
+      {
+        "slug": "payment.transfer.view",
+        "name": "View transfer histories",
+        "group": "Transfer",
+        "description": "View payment transfer history",
+        "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+      },
+      {
+        "slug": "payment.charge.view",
+        "name": "View charge histories",
+        "group": "Charge",
+        "description": "View payment charge history",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "payment.channel.view",
+        "name": "View channels activation",
+        "group": "Channel Activation",
+        "description": "View Payment Channel Activation",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "payment.channel.edit",
+        "name": "Edit channels activation",
+        "group": "Channel Activation",
+        "description": "Edit Payment Channel Activation",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "payment.link.create",
+        "name": "Create Payment Link",
+        "group": "Payment",
+        "description": "Create Payment Link",
+        "roles": ["ADMIN", "MAKER"]
+      },
+      {
+        "slug": "payment.refund.create",
+        "name": "Initiate payment refund",
+        "group": "Refund",
+        "description": "Initiate payment refund from dashboard",
+        "roles": ["ADMIN", "MAKER", "APPROVER", "OPERATION"]
+      }
+    ],
+    "children": [
+      {
+        "name": "Dashboard",
+        "slug": "payment.dashboard",
+        "icon": "",
+        "path": "/payment"
+      },
+      {
+        "name": "Static Payment",
+        "slug": "payment.static-payment",
+        "icon": "",
+        "path": "/static-payment"
+      },
+      {
+        "name": "Cases Management",
+        "slug": "payment.cases-management",
+        "icon": "",
+        "path": "/cases-management"
+      },
+      {
+        "name": "VCC Terminal",
+        "slug": "vcc-terminal",
+        "icon": "",
+        "path": "/vcc-terminal",
+        "permissions": [
+          {
+            "slug": "vcc-terminal.balance.view",
+            "name": "View VCC Balance",
+            "group": "VCC Dashboard",
+            "description": "View VCC Balance",
+            "roles": ["ADMIN", "OPERATION", "VCC_OPERATOR"]
+          },
+          {
+            "slug": "vcc-terminal.balance.withdraw",
+            "name": "Withdraw VCC Balance",
+            "group": "VCC Dashboard",
+            "description": "Withdraw VCC Balance",
+            "roles": ["ADMIN"]
+          },
+          {
+            "slug": "vcc-terminal.charge-history.view",
+            "name": "View VCC Charge History",
+            "group": "VCC Dashboard",
+            "description": "View VCC Charge History",
+            "roles": ["ADMIN", "OPERATION", "VCC_OPERATOR"]
+          },
+          {
+            "slug": "vcc-terminal.charge-history.download",
+            "name": "Download VCC Charge History",
+            "group": "VCC Dashboard",
+            "description": "Download VCC Charge History",
+            "roles": ["ADMIN", "OPERATION", "VCC_OPERATOR"]
+          },
+          {
+            "slug": "vcc-terminal.create",
+            "name": "Create New Charge",
+            "group": "Create Charge",
+            "description": "Create New Charge",
+            "roles": ["ADMIN", "VCC_OPERATOR"]
+          },
+          {
+            "slug": "vcc-terminal.charge-detail.view",
+            "name": "View VCC Charge Detail",
+            "group": "Charge Detail",
+            "description": "View VCC Charge Detail",
+            "roles": ["ADMIN", "OPERATION", "VCC_OPERATOR"]
+          },
+          {
+            "slug": "vcc-terminal.charge-detail.download",
+            "name": "Download Charge Receipt",
+            "group": "Charge Detail",
+            "description": "Download Charge Receipt",
+            "roles": ["ADMIN", "OPERATION", "VCC_OPERATOR"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Account & Balance Management",
+    "slug": "platform",
+    "icon": "platform.svg",
+    "path": "/platform",
+    "type": "sidebar",
+    "permissions": [
+      {
+        "slug": "platform.view",
+        "name": "View Platform",
+        "group": "Platform",
+        "description": "",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "platform.create",
+        "name": "Create Platform",
+        "group": "Platform",
+        "description": "",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "platform.edit",
+        "name": "Edit Platform",
+        "group": "Platform",
+        "description": "",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "platform.merchant.create",
+        "name": "Create Sub Merchant",
+        "group": "Platform",
+        "description": "Create Sub Merchant",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "platform.merchant.edit",
+        "name": "Edit Sub Merchant",
+        "group": "Platform",
+        "description": "Edit Sub Merchant",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "platform.merchant.deactivate",
+        "name": "Deactivate Sub Merchant",
+        "group": "Platform",
+        "description": "Activate/Deactivate Sub Merchant",
+        "roles": ["ADMIN"]
+      },
+      {
+        "slug": "platform.merchant.daily-limit.view",
+        "name": "View Platform Daily Limit",
+        "group": "Platform",
+        "description": "View Platform Daily Limit",
+        "roles": ["ADMIN"]
+      }
+    ]
+  }
+]

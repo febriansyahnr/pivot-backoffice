@@ -1,0 +1,391 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Merchant RCN Balance Inquiry API",
+    "description": "API for retrieving Real Card Number (RCN) balance details for corporate cards.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.example.com/v1",
+      "description": "Production Server"
+    }
+  ],
+  "paths": {
+    "/internal/v1/merchants/rcns/{rcn_id}": {
+      "get": {
+        "summary": "Retrieve Merchant RCN Balance Detail",
+        "description": "Fetches balance details of a merchant's corporate card.",
+        "operationId": "getMerchantRcnBalance",
+        "parameters": [
+          {
+            "name": "rcn_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Merchant ID",
+            "in": "header",
+            "name": "X-MERCHANT-Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "SUCCESS"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "partnerReferenceNo": {
+                          "type": "string",
+                          "example": "MFINQCC07062700390"
+                        },
+                        "additionalInfo": {
+                          "type": "object",
+                          "properties": {
+                            "pagingFlag": {
+                              "type": "string",
+                              "example": "N"
+                            },
+                            "pagingKey": {
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "referenceNo": {
+                              "type": "string",
+                              "example": "17zxmu8ihp9v"
+                            },
+                            "companyAccountInformation": {
+                              "type": "object",
+                              "properties": {
+                                "accountName": {
+                                  "type": "string",
+                                  "example": "DI** **M"
+                                },
+                                "globalLimit": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "99999999999.99"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "globalLimitCash": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "99999999999.99"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "currentBalance": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "-23981682.99"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "currentBalanceCash": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "-23981682.99"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "availableLimit": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "-23981682.99"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "availableLimitCash": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "-23981682.99"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "accountInformation": {
+                              "type": "object",
+                              "properties": {
+                                "retailCurrBalance": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "23981682.99"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "cashCurrBalance": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "23981682.99"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "disputeBalance": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "23981682.99"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "payDueDate": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "23981682.99"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "creditLimit": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "15000000.00"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "cashLimit": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "15000000.00"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "osBalance": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "15000000.00"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "cashLimitBalance": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "15000000.00"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                },
+                                "creditLimitBalance": {
+                                  "type": "object",
+                                  "properties": {
+                                    "value": {
+                                      "type": "string",
+                                      "example": "15000000.00"
+                                    },
+                                    "currency": {
+                                      "type": "string",
+                                      "example": "IDR"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "cardInformation": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "bankCardNo": {
+                                    "type": "string",
+                                    "example": "55********3"
+                                  },
+                                  "annualFeeDate": {
+                                    "type": "string",
+                                    "example": "20250220"
+                                  },
+                                  "fullName": {
+                                    "type": "string",
+                                    "example": "DI** **M"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "error_type": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successful"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "INVALID_REQUEST"
+                    },
+                    "data": {
+                      "type": "object",
+                      "example": {}
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Invalid merchantId"
+                    },
+                    "error_type": {
+                      "type": "string",
+                      "example": "VALIDATION_ERROR"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Merchant ID is required"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "SERVER_ERROR"
+                    },
+                    "data": {
+                      "type": "object",
+                      "example": {}
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Unexpected system failure"
+                    },
+                    "error_type": {
+                      "type": "string",
+                      "example": "INTERNAL_ERROR"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "An unexpected error occurred"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

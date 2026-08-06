@@ -1,0 +1,81 @@
+version: "2"
+
+linters:
+  enable:
+    - revive
+    - gosec
+    - staticcheck
+    - errcheck
+    - gocyclo
+    - govet
+    - unused
+    - ineffassign
+    - bodyclose
+    - prealloc
+    - misspell
+    - gocritic
+    - modernize
+    - dupl
+    - spancheck
+    - sqlclosecheck
+    - testpackage
+    - unqueryvet
+    - usestdlibvars
+  exclusions:
+    rules:
+      - path: _test\.go
+        linters:
+          - gocyclo
+          - errcheck
+          - dupl
+          - gosec
+          - revive
+      - path-except: _test\.go
+        linters:
+          - forbidigo
+      - path: constant/payment/method.go
+        linters:
+          - revive
+  settings:
+    revive:
+      enable-default-rules: true
+      rules:
+        - name: package-comments
+          disabled: true
+        - name: exported
+          disabled: true
+        - name: redefines-builtin-id
+          disabled: true
+        - name: early-return
+          disabled: false
+    testpackage:
+      skip-regexp: "(export|internal)_test\\.go"
+      allow-packages:
+        - main
+
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+    - golines
+  settings:
+    gci:
+      sections:
+        - standard # Standard section: captures all standard packages.
+        - localmodule # Local module section: contains all local packages.
+        - dot # Dot section: contains all dot imports.
+        - default # Default section: contains all imports that could not be matched to another section type.
+        # - alias # Alias section: contains all alias imports.
+        # - prefix(github.com/org/project) # Custom section: groups all imports with the specified Prefix.
+      custom-order: true
+    golines:
+      max-len: 200
+      reformat-tags: false
+
+run:
+  modules-download-mode: readonly
+
+severity:
+  default: error

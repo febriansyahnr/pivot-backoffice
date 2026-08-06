@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms &amp; Conditions Acceptance</title>
+    <style>
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 32px;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        .doc-header {
+            display: table;
+            width: 100%;
+            border-bottom: 2px solid #0059b3;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+        .doc-header .cell { display: table-cell; vertical-align: middle; }
+
+        .logo-cell { width: 60%; }
+        .logo-mark {
+            display: table;
+        }
+        .logo-icon {
+            display: table-cell;
+            vertical-align: middle;
+            width: 34px;
+        }
+        .logo-icon svg { display: block; }
+
+        .meta-cell { width: 40%; text-align: right; }
+        .doc-title {
+            font-size: 24px;
+            color: #0059b3;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .doc-merchant {
+            font-size: 18px;
+            color: #2640a6;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .doc-version-pill {
+            display: inline-block;
+            font-size: 7.6pt;
+            color: var(--navy-2);
+            background: var(--blue-soft);
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            padding: 3px 9px;
+            letter-spacing: 0.02em;
+        }
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #555;
+            margin: 24px 0 8px;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 4px;
+        }
+
+        .tnc-content {
+            font-size: 13px;
+            line-height: 1.55;
+            color: #1a1a1a;
+        }
+
+        .tnc-content h1{
+            font-size: 24px;
+            margin-top: 18px;
+            color: #0059b3;
+        }
+        
+        .tnc-content h2{
+            font-size: 18px;
+            margin-top: 16px;
+            color: #0059b3;
+        }
+        
+        .tnc-content h3{
+            font-size: 16px;
+            margin-top: 14px;
+            color: #0059b3;
+        }
+
+        .signature-block {
+            margin-top: 36px;
+            padding: 16px;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            background-color: #fafafa;
+            font-size: 12px;
+        }
+
+        .signature-block h2 {
+            margin: 0 0 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #0059b3;
+        }
+
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 2px 0;
+        }
+
+        .signature-row .label {
+            color: #555;
+            min-width: 140px;
+        }
+
+        .signature-row .value {
+            color: #1a1a1a;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 10px;
+            color: #888;
+            border-top: 1px solid #e5e5e5;
+            padding-top: 8px;
+        }
+
+        @page {
+            margin: 24px 20mm;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="doc-header">
+        <div class="cell logo-cell">
+        <img class="img-header" src="{{ .PivotLogo }}" height="48px" alt="Logo" />
+        </div>
+        <div class="cell meta-cell">
+        <div class="doc-title">Syarat &amp; Ketentuan</div>
+        <div class="doc-merchant"> <strong>{{ .MerchantName }}</strong> </div>
+        <span class="doc-version-pill">Versi {{ .Version }} &middot; {{ .SignedAt }} </span>
+        </div>
+    </div>
+
+    <div class="tnc-content">
+        {{ .TNCContent }}
+    </div>
+
+    <div class="signature-block">
+        <h2>Acceptance &amp; Signature</h2>
+        <div class="signature-row"><span class="label">Signed by</span><span class="value">{{ .SignedByName }} ({{ .SignedByEmail }})</span></div>
+        <div class="signature-row"><span class="label">Signed at</span><span class="value">{{ .SignedAt }}</span></div>
+        <div class="signature-row"><span class="label">IP address</span><span class="value">{{ .IPAddress }}</span></div>
+        <div class="signature-row"><span class="label">User agent</span><span class="value">{{ .UserAgent }}</span></div>
+        <p style="margin-top: 12px; font-style: italic; color: #555;">
+            By accepting these Terms &amp; Conditions, the merchant agrees to be bound by the terms stated herein. 
+        </p>
+    </div>
+
+    <div class="footer">
+        © 2026 Pivot (PT Harsya Remitindo). &middot; This is a computer-generated document.
+    </div>
+</body>
+
+</html>

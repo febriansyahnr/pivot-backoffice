@@ -1,0 +1,548 @@
+health-check-ff:
+  variations:
+    A: false
+    B: true
+  targeting: # If you want to target a subset of your users in particular
+    - query: key eq "flagging-health-check"
+      percentage:
+        A: 0
+        B: 100
+  defaultRule: # When no targeting match we use the defaultRule
+    variation: A
+  metadata:
+    issue_link: https://github.com/thomaspoignant/go-feature-flag/issues/XXX
+    description: this is my first feature flag
+backend-portal-otp-bypass:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check Env
+      query: environment in ["test", "staging", "local"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-otp-bypass-whitelist:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check Email
+      query: email in ["dhira.wigata@harsya.com"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-account-otp-bypass:
+  variations:
+    "ON": true
+    "OFF": false
+  targeting:
+    - name: Check Email QA
+      query: 'email sw "qa." and email ew "@gmail.com"'
+      variation: "ON"
+  defaultRule:
+    variation: "OFF"
+backend-portal-disbursement-total-worker-pool:
+  variations:
+    "10": 10
+    "25": 25
+    "50": 50
+  targeting:
+    - name: Rule 1
+      query: key eq "production"
+      variation: "50"
+    - name: Rule 1
+      query: key eq "staging"
+      variation: "25"
+  defaultRule:
+    variation: "10"
+backend-portal-xb-payout-enabled:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check Env
+      query: environment in ["test", "staging", "local"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-beneficiaryAccount-accountNo-bypass-whitelist:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check Account No
+      query: account_no in ["111501015932505", "111501016046501"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-processor-routing:
+  variations:
+    defaultVar:
+      - processorName: SNAP_CORE_PROCESSOR
+        priority: 1
+        isActive: true
+    processorList:
+      - processorName: SNAP_CORE_PROCESSOR
+        priority: 1
+        isActive: true
+      - processorName: FLIP_PG_PROCESSOR
+        priority: 2
+        isActive: true
+  targeting:
+    - name: Check Env
+      query: key eq "local"
+      variation: processorList
+  defaultRule:
+    variation: defaultVar
+backend-portal-merchant-idempotency-key-validation-exclude:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: check merchant
+      query: key in ["merchant_uuid_1", "merchant_uuid_2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-force-auto-withdrawal-process:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Whitelist merchant to test forced withdrawal
+      query: merchant_id in ["uuid1", "uuid2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+trx-merchant-whitelist:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check Merchant
+      query: merchant_id in ["922e39ab-7565-49f6-b84f-fb56122821ae"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+trx-random-whitelist:
+  variations:
+    "10": 10
+    "25": 25
+    "50": 50
+    "75": 75
+    "100": 100
+  targeting:
+    - name: Rule staging
+      query: key eq "staging"
+      variation: "25"
+    - name: Rule production
+      query: key eq "production"
+      variation: "10"
+  defaultRule:
+    variation: "10"
+backend-portal-bank-transfer-create-pending-trx-if-not-exists:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check environment service
+      query: environment in ["local", "staging"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-front-end-app-version:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check environment service
+      query: environment in ["local", "staging"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-merchant-rate-limit-middleware:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check environment service
+      query: environment in ["local", "staging"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-merchant-default-rate-limit-middleware:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check environment service
+      query: environment in ["local", "staging"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-do-not-apply-payout-cut-off-time:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check whitelisted merchant id
+      query: merchant_id in ["merchant-id-1", "merchant-id-2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-merchant-allowed-beneficiary-payout-custom-rule:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: allowed merchant
+      query: merchant_id in ["merchant_uuid_1", "merchant_uuid_2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-merchant-allowed-beneficiary-payout-default-rule:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: allowed environment
+      query: environment in ["local", "staging"]
+      variation: ON
+    - name: Check whitelisted merchant id
+      query: merchant_id in ["merchant-id-1", "merchant-id-2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-disbursement-overbooking-bankcode-list-via-flip:
+  variations:
+    default:
+      - bankCodes: []
+    merchant-example:
+      - bankCodes: ["014"]
+  targeting:
+    - name: Merchant Example
+      query: merchant_id eq "example-uuid"
+      variation: merchant-example
+  defaultRule:
+    variation: default
+backend-portal-fds-config:
+  variations:
+    default:
+      scoreThreshold: 80
+      timeout: 5000
+      binLength: 6
+      sendMidInfo: false
+  targeting:
+    - name: Check environment service
+      query: environment eq "staging"
+      variation: default
+  defaultRule:
+    variation: default
+backend-portal-fraud-net-config:
+  variations:
+    default:
+      baseUrl: "https://30647.api-sandbox.fraud.net"
+    wiremock:
+      baseUrl: "https://wiremock.stag-v2.paper.id/fraud-net"
+  targeting:
+    - name: Check environment service
+      query: environment eq "staging"
+      variation: default
+  defaultRule:
+    variation: default
+backend-portal-advance-ai-config:
+  variations:
+    default:
+      baseUrl: "https://prod-id-api.advance.ai"
+      journeyid: "1045"
+  targeting:
+    - name: Check environment service
+      query: environment eq "staging"
+      variation: default
+  defaultRule:
+    variation: default
+backend-portal-payment-migration-v1-to-v2-enabled:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: allowed environment
+      query: environment in ["local", "staging"]
+      variation: ON
+    - name: Check whitelisted merchant id
+      query: merchant_id in ["merchant-id-1", "merchant-id-2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-merchant-excluded-send-capture-history:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: allowed environment
+      query: environment in ["local", "staging"]
+      variation: OFF
+    - name: Check whitelisted merchant id
+      query: merchant_id in ["merchant-id-1", "merchant-id-2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-card-encryption-whitelisted-merchant:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: allowed environemnt
+      query: environment in ["local", "staging"]
+      variation: ON
+    - name: Check whitelisted merchant id
+      query: merchant_id in ["merchant-id-1", "merchant-id-2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-unified-payment-client-reference-special-chars-whitelisted-merchant:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check whitelisted merchant id
+      query: merchant_id in ["merchant-id-1", "merchant-id-2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-platform-whitelist-old-response-format:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Whitelisted merchant id
+      query: merchant_id in ["aec6636d-7a02-4d93-a4c5-006b9c235068"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-dukcapil-config:
+  variations:
+    default:
+      fieldThresholds:
+        NAME: 100
+        GENDER: 100
+        DOB: 100
+        POB: 100
+        JOB: 100
+        ADDRESS: 95
+        RT: 95
+        RW: 95
+        VILLAGE: 95
+        DISTRICT: 95
+        REGENCY: 95
+        PROVINCE: 95
+    staging:
+      fieldThresholds:
+        NAME: 90
+        GENDER: 90
+        DOB: 90
+        POB: 90
+        JOB: 90
+        ADDRESS: 80
+        RT: 80
+        RW: 80
+        VILLAGE: 80
+        DISTRICT: 80
+        REGENCY: 80
+        PROVINCE: 80
+  targeting:
+    - name: Check environment service
+      query: environment eq "staging"
+      variation: staging
+  defaultRule:
+    variation: default
+backend-portal-qr-generate-separate-db:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: allowed merchant
+      query: merchant_id in ["merchant-id-1", "merchant-id-2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-snap-multiple-payment-delegation:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Check Environment
+      query: environment in ["local", "staging"]
+      variation: ON
+    - name: Check whitelisted merchant id
+      query: merchant_id in ["922e39ab-7565-49f6-b84f-fb56122821ae", "merchant-uuid-2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+  metadata:
+    description: Feature flag to control delegation of SNAP static payments (QR/VA) to Unified Payment V2 service
+backend-portal-merchant-allowed-exclude-beneficiary-payout-rules:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: allowed merchant
+      query: merchant_id in ["merchant_uuid_1", "merchant_uuid_2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-payment-ui-auth-capture-banner-message:
+  variations:
+    default: "Your card limit is securely reserved and will only be charged once your payment is successful"
+    custom: "Custom message for testing purposes"
+  targeting:
+    - name: Check Environment
+      query: environment in ["local", "staging", "production"]
+      variation: default
+  defaultRule:
+    variation: default
+  metadata:
+    description: Banner message displayed on payment UI for Auth & Capture credit card transactions (status WAITING_FOR_CAPTURE)
+backend-portal-account-inquiry-merchant-name-use-rune-check:
+  variations:
+    "ON": true
+    "OFF": false
+  targeting:
+    - name: allowed merchant
+      query: 'merchant_id in ["922e39ab-7565-49f6-b84f-fb56122821ae"]'
+      variation: "ON"
+  defaultRule:
+    variation: "OFF"
+backend-portal-enable-merchant-callback-via-workflow:
+  variations:
+    enabled: true
+    disabled: false
+  targeting:
+    - name: allowed environment
+      query: 'environment in ["local", "staging"]'
+      variation: enabled
+  defaultRule:
+    variation: disabled
+backend-portal-merchant-excluded-send-surname:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: allowed environment
+      query: environment in ["local", "staging"]
+      variation: OFF
+    - name: Check whitelisted merchant id
+      query: merchant_id in ["merchant-id-1", "merchant-id-2"]
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-ewallet-payment-simulation-flow:
+  variations:
+    "ON": true
+    "OFF": false
+  targeting:
+    - name: excluded merchant
+      query: 'merchant_id in ["922e39ab-7565-49f6-b84f-fb56122821ae"]'
+      variation: "OFF"
+  defaultRule:
+    variation: "ON"
+backend-portal-account-inquiry-display-virtual-account-flag-for-whitelisted-merchant:
+  variations:
+    "ON": true
+    "OFF": false
+  targeting:
+    - name: allowed merchant
+      query: >-
+        merchant_id in ["93cc50b8-f8e6-4771-a808-bf397c0be568"]
+      variation: "ON"
+  defaultRule:
+    variation: "OFF"
+backend-portal-single-payout-callback-whitelisted-merchant:
+  variations:
+    "ON": true
+    "OFF": false
+  targeting:
+    - name: allowed merchant
+      query: >-
+        merchant_id in ["93cc50b8-f8e6-4771-a808-bf397c0be568"]
+      variation: "ON"
+  defaultRule:
+    variation: "OFF"
+backend-portal-payment-auto-inquiry:
+  variations:
+    default:
+      cooldownSeconds: 30
+    staging:
+      cooldownSeconds: 30
+  targeting:
+    - name: Check environment service
+      query: environment eq "staging"
+      variation: staging
+  defaultRule:
+    variation: default
+backend-portal-payout-fds-result-allowed:
+  variations:
+    allowed: true
+    disallowed: false
+  targeting:
+    - name: risk assessment result
+      query: 'result in ["REVIEW", "APPROVE", "REJECT", "ERROR"]'
+      variation: allowed
+  defaultRule:
+    variation: disallowed
+backend-portal-payout-external-fds-enabled:
+  variations:
+    enabled: true
+    disabled: false
+  targeting:
+    - name: external fds is enabled in this environment
+      query: 'environment in ["local", "staging"]'
+      variation: enabled
+  defaultRule:
+    variation: disabled
+backend-portal-cybersource-test-amount-whitelist:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Merchant X with allowed amount
+      query: 'merchant_id in ["922e39ab-7565-49f6-b84f-fb56122821ae"] AND amount in [40,50,1000,6001,6002,6003,5003,6004,4000,6005,3005,8001,8002,8003,8004,8005,8006,8007,8008,8009,9000,9000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,5126,5127,3051,3052,3053,3054,3055,3056,3057,3058,3059,3060,3061,3062,3063,3064,3065,3066,3067,2001,2002,2003,2004,2005,5128,5129,4001,4002,4003,4004,4005,4006,4007,4010,4011,4012,4013,4014,4015,4019,4021,4025,4028,4039,4041,4043,4051,4052,4053,4054,4055,4057,4059,4061,4062,4063,4064,4065,4075,4076,4079,4080,4081,4082,4085,4086,4089,4091,4092,4093,4094,4096,4100,4101,4102,4103,4104,4105,4106,4107,4108,4109,4110,4111,4112,4113,4114,4115,4116,4117,4118,4119,4120,4121,4122,4123,4124,4125,3001,5008,500,5040,3002,3003,3004,5001,5002,5004,5005,5006,5007,5009,5010,5011,5012,5013,5014,5015,5016,5017,5018,5019,5020,5021,5022,5023,5024,5025,5026,5027,5028,5029,5030,5031,5032,5033,5034,5035,5036,5037,5038,5039,5041,5042,5050,5051,5052,5053,5054,5055,5056,5057,5058,5059,5060,5061,5062,5063,5064,5065,5066,5067,5068,5069,5070,5071,5072,5073,5074,5075,5076,5077,5078,5079,5080,5081,5082,5083,5084,5085,5086,5087,5088,5089,5090,5091,5100,5101,5102,5103,6000,5104,5105,5106,5107,5108,5109,5110,5111,5112,5113,5114,99999,5115,5116,5117,5118,5119,999999,5120,5121,5122,5123,5124,5125,5130,999999999,7001,7002,7003,7004,7005,7006,7007,7008,7009,7010,7011,7012,7013,7014,7015,7016,7017,7018,7019,7020,7021,7022,7023,7024,7025,7026,7027,7028,7029,7030,7031,7032,7033,7034,7035,7036,7037,7038,7039,7040,7041,7042,7043,7044,7045,7046,7047,7048,7049,7050,7051,7052,7053,7054,7055,7056,7057,7058,7059,7060,7061,7062,7063,7064,7065,7066,7067,7068,7069,7070,7072,7073,7074,7075,7076,7077,7078,7079,7080,7081,7082,7083,7084,7085,7086,7087,7088,7089,7090,7091,7092,7093,7094,7095,7096,7097,7098,7099,7100,7101,7102,7103,7104,7105,7106,7107,7108,7109,7110,7111,7112,7113,7114,7115,7116,7117,7118,7119,7120,7121,7122,7123,7124,7125,7126,7127,7128,7129,7130,7131,7132,7133,7134,7135,7136,7137,7138,7139,7140,7141,7142,7143,7144,7145]'
+      variation: ON
+  defaultRule:
+    variation: OFF
+  metadata:
+    description: Whitelist specific amounts for card payments per merchant (bypasses min/max validation) - only works in staging environment
+backend-portal-enable-balance-history-via-data-reporting:
+  variations:
+    enabled: true
+    disabled: false
+  targeting:
+    - name: Merchants with this feature enabled
+      query: merchant_id in ["merchant-001"]
+      variation: enabled
+  defaultRule:
+    variation: disabled
+backend-portal-card-funded-payout-manual-processing-accounts:
+  variations:
+    ON: true
+    OFF: false
+  targeting:
+    - name: Bank Account 1
+      query: bank_code eq "002" and account_number eq "999966660001"
+      variation: ON
+    - name: Bank Account 2
+      query: bank_code eq "002" and account_number eq "999966660002"
+      variation: ON
+  defaultRule:
+    variation: OFF
+backend-portal-restrict-payout-to-internal-virtual-accounts:
+  variations:
+    allowed: true
+    disallowed: false
+  targeting:
+    - name: BRI VA
+      query: bank_code eq "002" and (account_number sw "14956" or account_number sw "54321")
+      variation: disallowed
+  defaultRule:
+    variation: allowed

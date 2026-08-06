@@ -1,0 +1,49 @@
+# nix
+.devenv
+.direnv
+
+# ide
+.DS_STORE
+.idea
+.direnv
+__debug*
+.vscode/*
+
+# config
+.config.yaml
+.secret.yaml
+
+# test
+*.html
+
+# ignore html except pdf template
+!templates/*/*.html
+
+# dir
+tmp/
+
+# vendor
+/vendor
+
+# sonar locally
+.scannerwork
+
+# downloader config
+downloader_config.json
+.vscode/launch.json
+
+# Automatically generated reports
+lint-report.json
+origin-coverage.out
+coverage.out
+coverage.html
+lint_output.txt
+lint_summary_output.txt
+
+# Binary
+custom-gcl
+
+.claude/*.local.json
+openspec
+node_modules/
+*_templ.go

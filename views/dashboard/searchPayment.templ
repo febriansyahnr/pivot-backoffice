@@ -1,0 +1,42 @@
+package dashboard
+
+import (
+	"github.com/paper-indonesia/pivot-backoffice/views/components/card"
+	"github.com/paper-indonesia/pivot-backoffice/views/components/form"
+	"github.com/paper-indonesia/pivot-backoffice/views/components/button"
+	"github.com/paper-indonesia/pivot-backoffice/views"
+)
+
+templ SearchPayment() {
+	@card.Card("filter", "") {
+		<div class="px-4 py-5 sm:px-6">
+			@form.Form(form.FormProps{
+				ID: "search-payment-form",
+			}) {
+				@form.FormSection("Payment", "Find Payment by ID or Reference ID") {
+					@form.TextInput(form.TextInputProps{
+						Name:  "paymentID",
+						Label: "Payment ID",
+					})
+				}
+			}
+		</div>
+		<div class="px-4 py-5 sm:px-6 flex justify-end">
+			@button.Button(button.ButtonProps{
+				Text: "Submit",
+				HXOption: views.HXOption{
+					Method:  "GET",
+					URL:     "/dashboard/search-payment",
+					Trigger: "click",
+					Target:  "#dashboard-content",
+					Swap:    views.SwapOuterHTML,
+					Include: "#search-payment-form",
+				},
+			}) {
+				Submit
+			}
+		</div>
+	}
+	<template id="dashboard-content"></template>
+
+}

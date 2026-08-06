@@ -1,0 +1,35 @@
+# Ignore Test Directories & Files
+*_test.go
+mocks/
+test/
+
+# Ignore Example Files
+.example.config.yaml
+.example.feature-flag.yaml
+.example.secret.yaml
+
+# Ignore Git Directories & Files
+.git
+.github
+.gitconfig
+.gitignore
+githooks/
+
+# Ignore Docker Files
+.dockerignore
+Dockerfile
+docker-compose.yaml
+
+# Ignore Others
+.air.toml
+.golangci.yml
+.pr_agent.toml
+CODEOWNERS
+downloader_config.json.example
+flake.lock
+flake.nix
+*.md
+observability/
+scanner-config/
+deployments/
+migration/

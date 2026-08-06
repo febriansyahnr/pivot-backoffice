@@ -1,0 +1,10 @@
+linters-settings:
+  custom:
+    nilaway:
+      type: "module"
+      description: Static analysis tool to detect potential nil panics in Go code.
+      settings:
+        pretty-print: "true"
+        include-pkgs: "github.com/paper-indonesia/pivot-backoffice"
+        exclude-file-docstrings: "-- +goose Up"
+        exclude-pkgs: "github.com/paper-indonesia/pivot-backoffice/mocks"

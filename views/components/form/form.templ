@@ -1,0 +1,16 @@
+package form
+
+import "github.com/paper-indonesia/pivot-backoffice/views"
+
+type FormProps struct {
+	views.HXOption
+	ID string
+}
+
+templ Form(props FormProps) {
+	<form {props.HXOption.ToAttributes()...} id={props.ID}>
+		<div class="space-y-12">
+            { children... }
+		</div>
+	</form>
+}

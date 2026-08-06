@@ -1,0 +1,5 @@
+backend-portal-bulk-validate-workers:
+    variations:
+      default: 50
+    defaultRule:
+      variation: default

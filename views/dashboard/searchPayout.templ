@@ -1,0 +1,78 @@
+package dashboard
+
+import (
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	"github.com/paper-indonesia/pivot-backoffice/views"
+	"github.com/paper-indonesia/pivot-backoffice/views/components/button"
+	"github.com/paper-indonesia/pivot-backoffice/views/components/card"
+	"github.com/paper-indonesia/pivot-backoffice/views/components/datalist"
+	"github.com/paper-indonesia/pivot-backoffice/views/components/form"
+)
+
+templ SearchPayout() {
+	@card.Card("filter", "") {
+		<div class="px-4 py-5 sm:px-6">
+			@form.Form(form.FormProps{ID: "search-payout-form"}) {
+				@form.FormSection("Payout", "Find Payout by ID or Reference ID") {
+					@form.TextInput(form.TextInputProps{
+						Name:  "payoutID",
+						Label: "Payout ID",
+					})
+				}
+			}
+		</div>
+		<div class="px-4 py-5 sm:px-6 flex justify-end">
+			@button.Button(button.ButtonProps{
+				Text: "Submit",
+				HXOption: views.HXOption{
+					Method:  "POST",
+					URL:     "/dashboard/search-payout",
+					Trigger: "click",
+					Target:  "#dashboard-content",
+					Swap:    views.SwapOuterHTML,
+					Include: "#search-payout-form",
+				},
+			}) {
+				Submit
+			}
+		</div>
+	}
+	<template id="dashboard-content"></template>
+}
+
+type PayoutDetailProps struct {
+	Title        string
+	Disbursement *disbursementModel.DisbursementWithTransaction
+}
+
+templ PayoutDetail(props PayoutDetailProps) {
+	<section id="dashboard-content">
+		@card.Card("", props.Title) {
+			if props.Disbursement != nil {
+				@datalist.DescriptionList() {
+					@datalist.DescriptionListItem("Transaction Status", *props.Disbursement.TransactionStatus)
+					if props.Disbursement.TransactionReasonType != nil {
+						@datalist.DescriptionListItem("Transaction Reason Type", *props.Disbursement.TransactionReasonType)
+					}
+					if props.Disbursement.TransactionReasonDescription != nil {
+						@datalist.DescriptionListItem("Transaction Reason Description", *props.Disbursement.TransactionReasonDescription)
+					}
+					if props.Disbursement.TransactionProcessorReference != nil {
+						@datalist.DescriptionListItem("Transaction Processor Reference", *props.Disbursement.TransactionProcessorReference)
+					}
+					if props.Disbursement.TransactionProcessorReferenceID != nil {
+						@datalist.DescriptionListItem("Transaction Processor Reference ID", *props.Disbursement.TransactionProcessorReferenceID)
+					}
+				}
+				@datalist.DescriptionList() {
+					@datalist.DescriptionListItem("Reference ID", props.Disbursement.ReferenceID)
+					@datalist.DescriptionListItem("Currency", props.Disbursement.Currency)
+					@datalist.DescriptionListItem("Amount", props.Disbursement.Amount.String())
+					@datalist.DescriptionListItem("Fee", props.Disbursement.Fee.String())
+					@datalist.DescriptionListItem("Total Amount", props.Disbursement.TotalAmount.String())
+					@datalist.DescriptionListItem("Status", props.Disbursement.Status)
+				}
+			}
+		}
+	</section>
+}

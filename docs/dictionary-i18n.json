@@ -1,0 +1,102 @@
+{
+  "library": [
+    {
+      "key": "api.error.message.invalid-password",
+      "translation": {
+        "en": "Password is incorrect",
+        "id": "Kata sandi salah"
+      }
+    },
+    {
+      "key": "api.error.message.user-not-found",
+      "translation": {
+        "en": "User not found",
+        "id": "Pengguna tidak ditemukan"
+      }
+    },
+    {
+      "key": "api.error.message.email-already-registered",
+      "translation": {
+        "en": "%s already registered",
+        "id": "%s sudah terdaftar"
+      }
+    },
+    {
+      "key": "api.error.message.invalid-validation",
+      "translation": {
+        "en": "Invalid validation",
+        "id": "Terdapat kesalahan validasi"
+      }
+    },
+    {
+      "key": "api.error.message.disbursement.min.amount",
+      "translation": {
+        "en": "Min. amount %s",
+        "id": "Minimal nominal %s"
+      }
+    },
+    {
+      "key": "general.error.message.internal",
+      "translation": {
+        "en": "An internal error was encountered. Please Try again later",
+        "id": "Terjadi kesalahan internal. Silakan coba lagi nanti"
+      }
+    },
+    {
+      "key": "general.error.message.validation.required",
+      "translation": {
+        "en": "%s is required",
+        "id": "%s wajib diisi"
+      }
+    },
+    {
+      "key": "general.error.message.validation.oneof",
+      "translation": {
+        "en": "%s value must be oneof %s",
+        "id": "%s nilai harus salah satu dari %s"
+      }
+    },
+    {
+      "key": "general.error.message.validation.iso_8601_datetime",
+      "translation": {
+        "en": "%s date format should be %s",
+        "id": "%s format tanggal harus %s"
+      }
+    },
+    {
+      "key": "general.error.message.validation.luhn",
+      "translation": {
+        "en": "%s value must be a valid card number",
+        "id": "%s nilai harus berupa nomor kartu yang valid"
+      }
+    },
+    {
+      "key": "general.error.message.validation.numeric",
+      "translation": {
+        "en": "%s value must be numeric",
+        "id": "%s nilai harus berupa angka"
+      }
+    },
+    {
+      "key": "general.error.message.validation.length",
+      "translation": {
+        "en": "%s value length does not match the required number",
+        "id": "%s panjang nilai tidak sesuai dengan jumlah yang diharuskan"
+      }
+    },
+    {
+      "key": "general.error.message.validation.email",
+      "translation": {
+        "en": "%s is not valid email",
+        "id": "%s bukan email yang valid"
+      }
+    },
+    {
+      "key": "general.error.message.validation.min.slice",
+      "translation": {
+        "en": "%s must be at least %s data",
+        "id": "%s minimal %s data"
+      }
+    }
+  ]
+}

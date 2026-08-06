@@ -1,0 +1,21 @@
+package form
+
+type TextInputProps struct {
+	Name   string
+	Label  string
+	Prefix string
+}
+
+templ TextInput(props TextInputProps) {
+	<div class="sm:col-span-3">
+		<label for={ props.Name } class="block text-sm/6 font-medium text-white">{ props.Label }</label>
+		<div class="mt-2">
+			<div class="flex items-center rounded-md bg-white/5 pl-3 outline-1 -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-500">
+				if props.Prefix != "" {
+					<div class="shrink-0 text-base text-gray-400 select-none sm:text-sm/6">{ props.Prefix }</div>
+				}
+				<input id={ props.Name } type="text" name={ props.Name } placeholder={ props.Name } class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"/>
+			</div>
+		</div>
+	</div>
+}

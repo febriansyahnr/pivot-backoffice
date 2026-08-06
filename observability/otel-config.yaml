@@ -1,0 +1,51 @@
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: "0.0.0.0:4318"
+
+exporters:
+  prometheus:
+    endpoint: "0.0.0.0:8889"
+    const_labels: { }
+
+  otlp/jaeger:
+    endpoint: jaeger:4317
+    tls:
+      insecure: true
+
+  otlp/newrelic:
+    endpoint: "https://otlp.nr-data.net:4318"
+    headers:
+      api-key: ""
+
+processors:
+  batch:
+  memory_limiter:
+    check_interval: 1s
+    limit_percentage: 65
+    spike_limit_percentage: 50
+
+extensions:
+  health_check:
+  pprof:
+  zpages:
+
+service:
+  extensions: [ pprof, zpages, health_check ]
+  pipelines:
+    traces:
+      receivers: [ otlp ]
+      processors:
+        - batch
+      exporters:
+        - otlp/jaeger
+        - otlp/newrelic
+    metrics:
+      receivers: [ otlp ]
+      processors:
+        - memory_limiter
+        - batch
+      exporters:
+        - prometheus
+        - otlp/newrelic

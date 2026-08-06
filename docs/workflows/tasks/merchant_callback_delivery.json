@@ -1,0 +1,21 @@
+{
+    "name": "merchant_callback_delivery",
+    "description": "Task for sending callback to merchant",
+    "inputKeys": [
+        "name", "eventName", "merchantId", "callbackId", "callbackUrl", "payload", "isSnap"
+    ],
+    "outputKeys": [
+        "statusCode", "responseBody", "additionalInfo"
+    ],
+    "retryCount": 0,
+    "retryLogic": "FIXED",
+    "retryDelaySeconds": 0,
+    "timeoutPolicy": "TIME_OUT_WF",
+    "timeoutSeconds": 3600,
+    "responseTimeoutSeconds": 600,
+    "pollTimeoutSeconds": 0,
+    "rateLimitFrequencyInSeconds": 1,
+    "rateLimitPerFrequency": 30,
+    "concurrentExecLimit": 30,
+    "ownerEmail": "backend-portal@service.local"
+}

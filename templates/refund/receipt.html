@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Receipt</title>
+    <style>
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 720px;
+            background-color: #ffffff;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .watermark-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background-image: url('{{.ImageBackground}}');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .header,
+        .details-section,
+        .footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 40px 30px;
+        }
+
+        .img-header {
+            height: 48px;
+            margin-bottom: 30px;
+        }
+
+        .status {
+            color: #007EF2;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+        }
+
+        .amount {
+            color: #0D1F35;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+        }
+
+        .date {
+            color: #6B7B8F;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .details-section {
+            padding: 20px 40px;
+            flex-grow: 1;
+        }
+
+        .section-title {
+            color: #0D1F35;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #E2E8F0;
+            margin: 0 0 16px 0;
+        }
+
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        .detail-table td {
+            padding: 12px 0;
+        }
+
+        .detail-label {
+            color: #6B7B8F;
+            text-align: left;
+        }
+
+        .detail-value {
+            color: #0D1F35;
+            text-align: right;
+            word-break: break-word;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #6B7B8F;
+            font-size: 16px;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer {
+            background-color: #007EF2;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .footer p:last-child {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="watermark-bg"></div>
+        <div class="header">
+            <img class="img-header" src="{{.ImageHeader}}" alt="Logo" />
+            <p class="status">Refund Success</p>
+            <p class="amount">{{.Amount}}</p>
+            <p class="date">{{.CompletedAt}}</p>
+        </div>
+
+        <div class="details-section">
+            <p class="section-title">Refund Details</p>
+            <hr>
+            <table class="detail-table">
+                <tr>
+                    <td class="detail-label">Refund Ref. ID</td>
+                    <td class="detail-value">{{.RefundReferenceID}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Payment Ref. ID</td>
+                    <td class="detail-value">{{.PaymentReferenceID}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Refund Reason</td>
+                    <td class="detail-value">{{.RefundReason}}</td>
+                </tr>
+                <tr>
+                    <td class="detail-label">Refund Destination</td>
+                    <td class="detail-value">{{.RefundDestination}}</td>
+                </tr>
+                {{if .RRN}}
+                <tr>
+                    <td class="detail-label">RRN</td>
+                    <td class="detail-value">{{.RRN}}</td>
+                </tr>
+                {{end}}
+            </table>
+
+            <p class="footer-note">This receipt is a legitimate proof of transaction</p>
+        </div>
+
+        <div class="footer">
+            <p>Need Help? Contact Us</p>
+            <p>Email: helpdesk@pivot-payment.com</p>
+        </div>
+    </div>
+</body>
+
+</html>

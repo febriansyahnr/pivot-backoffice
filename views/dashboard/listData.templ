@@ -1,0 +1,9 @@
+package dashboard
+
+import "github.com/paper-indonesia/pivot-backoffice/views/components/card"
+
+templ ListData(title string) {
+    @card.Card("dashboard-content", "Payout Details") {
+        <p class="text-gray-50">Payout ID: { title }</p>
+    }
+}

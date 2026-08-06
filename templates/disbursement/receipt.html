@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=10">
+    <title>Disbursement Receipt</title>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            padding: 0 40px 40px 0;
+        }
+        .img-header {
+            height: 40px;
+        }
+        .header-section {
+            margin: 20px;
+            padding: 20px;
+            text-align: left;
+        }
+        .content-section {
+            margin: 20px;
+
+            /* Container */
+            box-sizing: border-box;
+
+            /* Auto layout */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+
+            width: 100%;
+
+            /* Artboard/Border */
+            border: 1px solid #E4E4E4;
+            border-radius: 4px;
+
+            /* Inside auto layout */
+            flex: none;
+            order: 1;
+            align-self: stretch;
+            flex-grow: 0;
+        }
+        h3 {
+            font-size: 18px;
+            color: #2F5DE4;
+            text-align: right;
+            margin-right: -20px;
+        }
+        table {
+            width: 100%;
+        }
+        .section-title {
+            color: #2C2C2C;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+        .content-title {
+            color: #7A7A7A;
+            font-size: 12px;
+            margin: 0 0 4px 0;
+        }
+        .content-value {
+            color: #2C2C2C;
+            font-size: 13px;
+            margin: 0 0 20px 0;
+        }
+        .content-value.amount {
+            color: #2C2C2C;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        table tr td {
+            width: 50%;
+        }
+        hr {
+            width: 100%;
+            border-top: 0.5px solid #E4E4E4;
+            margin: 0 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td class="header-section"><img class="img-header" src="{{.ImageHeader}}" /></td>
+        <td>
+            <h3>Disbursement Receipt</h3>
+        </td>
+    </tr>
+</table>
+<div class="content-section">
+    <p class="section-title">Transaction Details</p>
+    <table>
+        <tr>
+            <td>
+                <p class="content-title">Completed At</p>
+                <p class="content-value">{{.CompletedAt}}</p>
+            </td>
+            <td>
+                <p class="content-title">Reference ID</p>
+                <p class="content-value">{{.ReferenceID}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="content-title">Remarks</p>
+                <p class="content-value">{{.Remark}}</p>
+            </td>
+            <td>
+                <p class="content-title">Merchant Name</p>
+                <p class="content-value">{{.MerchantName}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="content-title">Sender Name</p>
+                <p class="content-value">{{.SenderName}}</p>
+            </td>
+            <td>
+                <p class="content-title">Status</p>
+                <p class="content-value">{{.Status}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="content-title">Amount</p>
+                <p class="content-value amount">{{.Amount}}</p>
+            </td>
+        </tr>
+    </table>
+    <hr>
+
+    <p class="section-title">Recipient Details</p>
+    <table>
+        <tr>
+            <td>
+                <p class="content-title">Transaction ID</p>
+                <p class="content-value">{{.DisbursementID}}</p>
+            </td>
+            <td>
+                <p class="content-title">Bank Reference</p>
+                <p class="content-value">{{.BankReferenceNo}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="content-title">Bank Name</p>
+                <p class="content-value">{{.BeneficiaryBankName}}</p>
+            </td>
+            <td>
+                <p class="content-title">Account Number</p>
+                <p class="content-value">{{.BeneficiaryAccountNo}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="content-title">Account Holder Name</p>
+                <p class="content-value">{{.BeneficiaryAccountName}}</p>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

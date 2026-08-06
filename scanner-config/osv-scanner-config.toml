@@ -1,0 +1,4 @@
+[[PackageOverrides]]
+name = "github.com/docker/docker"
+ignore = true
+reason = "The vulnerability has not been fixed yet."

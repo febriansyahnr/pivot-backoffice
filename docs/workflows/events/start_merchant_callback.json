@@ -1,0 +1,29 @@
+{
+    "name": "start_merchant_callback",
+    "event": "amqp_queue:q.backend-portal.workflow.callback.process",
+    "actions": [
+        {
+            "action": "start_workflow",
+            "start_workflow": {
+                "name": "merchant_callbacks",
+                "input": {
+                    "payload": "${payload}",
+                    "callbackDeliveryTaskName": "merchant_callback_delivery",
+                    "retryDelays": [
+                        "30secs",
+                        "1mins",
+                        "2mins",
+                        "10mins",
+                        "30mins",
+                        "1hrs",
+                        "3hrs",
+                        "6hrs",
+                        "12hrs"
+                    ]
+                }
+            },
+            "expandInlineJSON": true
+        }
+    ],
+    "active": true
+}
