@@ -109,6 +109,9 @@ gen-pkg-mock:
 gen-mocks: gen-mock-repo gen-mock-service gen-mock-controller gen-pkg-mock
 
 # Run the application
+.PHONY: run-web
+run-web:
+	go run main.go serveWeb --config .config.yaml --secret .secret.yaml
 .PHONY: run
 run-http:
 	go run main.go serveHttp --config .config.yaml --secret .secret.yaml
