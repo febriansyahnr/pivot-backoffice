@@ -40,7 +40,8 @@ var servewebcmd = &cobra.Command{
 		defer app.Closer()
 
 		disbursementSvc := disbursementService.New(
-			cfg, app.GetLogger(), app.GetMerchantRepository(), app.GetDisbursementRepository(), app.GetSnapCoreRepository(), app.GetBankAccountRepository(),
+			cfg, app.GetLogger(), app.GetMerchantRepository(), app.GetDisbursementRepository(),
+			app.GetSnapCoreRepository(), app.GetBankAccountRepository(),
 			disbursementService.WithStatusHistoriesRepository(app.GetStatusHistoriesRepository()),
 		)
 		defer disbursementSvc.WPRelease()
@@ -49,7 +50,10 @@ var servewebcmd = &cobra.Command{
 			dashboardhandler.WithDisbursementService(disbursementSvc),
 		)
 
-		web := webhandler.NewWebServer("0.0.0.0:8080", app, dasboardHandler)
+		handlers := []webhandler.Handler{
+			dasboardHandler,
+		}
+		web := webhandler.NewWebServer("0.0.0.0:8080", app, handlers...)
 
 		ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
 		defer cancel()
