@@ -8,11 +8,11 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	chiMiddleware "github.com/go-chi/chi/v5/middleware"
+	"github.com/paper-indonesia/pdk/v2/chiExt"
+	"github.com/paper-indonesia/pdk/v2/chiExt/middleware"
 	webmiddleware "github.com/paper-indonesia/pivot-backoffice/handler/web/middleware"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/application"
 	"github.com/paper-indonesia/pivot-backoffice/views"
-	"github.com/paper-indonesia/pdk/v2/chiExt"
-	"github.com/paper-indonesia/pdk/v2/chiExt/middleware"
 )
 
 type Handler interface {
@@ -48,11 +48,11 @@ func NewWebServer(addr string, app *application.Application, handler ...Handler)
 
 	return &WebServer{
 		server: &http.Server{
-			Addr:    addr,
-			Handler: chiMiddleware.Recoverer(chiMiddleware.Logger(compressor.Handler(muxer))),
+			Addr:        addr,
+			ReadTimeout: 5 * time.Second,
+			Handler:     chiMiddleware.Recoverer(chiMiddleware.Logger(compressor.Handler(muxer))),
 		},
 	}
-
 }
 
 func (w *WebServer) ListenAndServe() error {
