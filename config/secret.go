@@ -1,6 +1,7 @@
 package config
 
 type Secret struct {
+	AISecret                      AISecret                      `mapstructure:"AI_SECRET"`
 	MySQLSecret                   Databases                     `mapstructure:"DATABASE"`
 	RedisSecret                   RedisSecret                   `mapstructure:"REDIS"`
 	RabbitMQSecret                RabbitMQSecret                `mapstructure:"RABBITMQ"`
@@ -22,6 +23,12 @@ type Secret struct {
 	Vault                         VaultSecret                   `mapstructure:"VAULT"`
 	Conductor                     ConductorSecret               `mapstructure:"CONDUCTOR"`
 	Payment                       PaymentSecret                 `mapstructure:"PAYMENT"`
+}
+
+type AISecret struct {
+	AnthropicAPIKey string `mapstructure:"ANTHROPIC_API_KEY"`
+	OpenAIKey       string `mapstructure:"OPENAI_KEY"`
+	ZaiKey          string `mapstructure:"ZAI_KEY"`
 }
 
 type Databases struct {

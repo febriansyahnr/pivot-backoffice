@@ -8,6 +8,7 @@ AI_CONFIG:
   PROVIDER: 'anthropic'
   LLMS:
     - NAME: "anthropic"
+      BASE_URL: "https://api.anthropic.com"
       DEFAULT:
         MODEL: "claude-sonnet-4-6"
         MAX_TOKEN: 4096

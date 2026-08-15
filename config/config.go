@@ -14,6 +14,7 @@ type Config struct {
 	ServerHost       string     `mapstructure:"SERVER_HOST"`
 	ServerPort       string     `mapstructure:"SERVER_PORT"`
 
+	AIConfig                      AIConfig                       `mapstructure:"AI_CONFIG"`
 	MySQLConfig                   MySQLConfig                    `mapstructure:"DATABASE"`
 	RedisConfig                   RedisConfig                    `mapstructure:"REDIS"`
 	RabbitMQConfig                RabbitMQConfig[string]         `mapstructure:"RABBITMQ"`
