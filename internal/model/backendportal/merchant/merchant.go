@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/messages/merchant"
+	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/proto/messages/merchant"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/validatorExt"
 

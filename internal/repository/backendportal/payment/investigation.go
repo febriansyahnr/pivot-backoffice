@@ -10,8 +10,8 @@ import (
 	"time"
 
 	constant "github.com/paper-indonesia/pivot-backoffice/constant/payment"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 
 	"github.com/jmoiron/sqlx"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"

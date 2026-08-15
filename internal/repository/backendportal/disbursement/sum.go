@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *DisbursementRepository) SumAmountByIDs(ctx context.Context, ids []string) (*disbursementModel.SumAmountResponse, error) {

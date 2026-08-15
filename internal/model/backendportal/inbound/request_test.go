@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/inbound"
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/unifiedPayment"
+	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/inbound"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/unifiedPayment"
 
 	"github.com/stretchr/testify/assert"
 )

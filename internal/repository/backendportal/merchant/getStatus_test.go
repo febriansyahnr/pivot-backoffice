@@ -7,11 +7,11 @@ import (
 	"testing"
 
 	"github.com/google/uuid"
+	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/merchant"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
-	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/stretchr/testify/mock"
 )
 

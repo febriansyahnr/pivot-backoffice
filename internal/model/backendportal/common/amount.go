@@ -3,7 +3,7 @@ package commonModel
 import (
 	"encoding/json"
 
-	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/common"
+	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/proto/common"
 	"github.com/shopspring/decimal"
 )
 

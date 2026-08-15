@@ -8,9 +8,9 @@ import (
 	"strings"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	fdsCommonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/fdsProcessor/fdsCommon"
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/unifiedPayment"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	fdsCommonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fdsProcessor/fdsCommon"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/unifiedPayment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 

@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/disbursement"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/fee"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/location"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/location"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 

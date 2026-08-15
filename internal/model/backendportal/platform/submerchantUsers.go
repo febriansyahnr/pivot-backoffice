@@ -3,7 +3,7 @@ package platform
 import (
 	"time"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/user"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/user"
 )
 
 type GetSubMerchantUsersRequest struct {

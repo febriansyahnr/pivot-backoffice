@@ -3,9 +3,9 @@ package vendor
 import (
 	"context"
 
-	vendorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/vendor"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	vendorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/vendor"
 )
 
 func (r *VendorRepository) Update(ctx context.Context, vendor *vendorModel.Vendor) error {

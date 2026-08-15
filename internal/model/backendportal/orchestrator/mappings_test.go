@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/orchestrator"
 
 	"github.com/stretchr/testify/assert"
 )

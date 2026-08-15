@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/reconciliation"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/reconciliation"
 )
 
 func (r *AccountTransactionRepository) UpdateBulkReconStatus(ctx context.Context, params *reconciliation.BulkUpatedStatus) error {

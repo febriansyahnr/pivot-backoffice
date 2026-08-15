@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *PaymentRepository) CreatePayment(ctx context.Context, paymentDTO *paymentModel.PaymentDTO) error {

@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
 	pdkConstant "github.com/paper-indonesia/pdk/v2/constant"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 )
 
 // GetPendingTransactionsBetweenTimeForInquiryTransaction retrieves pending disbursement transactions within a specified time range

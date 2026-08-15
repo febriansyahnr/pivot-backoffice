@@ -7,9 +7,9 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/virtualAccount"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/virtualAccount"
 )
 
 func (r *snapCoreRepository) UpdateVirtualAccount(

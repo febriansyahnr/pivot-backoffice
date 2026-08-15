@@ -6,12 +6,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
+	pdkLog "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	ratelimiter "github.com/paper-indonesia/pivot-backoffice/internal/model/rateLimiter"
+	ratelimiter "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/rateLimiter"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/rateLimiter"
 	mysqlMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
-	pdkLog "github.com/paper-indonesia/pdk/v2/logger"
 )
 
 func TestCreate(t *testing.T) {

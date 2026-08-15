@@ -7,7 +7,7 @@ import (
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	constant "github.com/paper-indonesia/pivot-backoffice/constant/payment"
-	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/paymentMethod"
+	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/paymentMethod"
 
 	"github.com/jmoiron/sqlx/types"
 	"github.com/stretchr/testify/assert"

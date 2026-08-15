@@ -7,10 +7,10 @@ import (
 	"math"
 	"strings"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"golang.org/x/sync/errgroup"
 )
 

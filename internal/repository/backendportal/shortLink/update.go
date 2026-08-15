@@ -3,9 +3,9 @@ package shortLinkRepository
 import (
 	"context"
 
-	shortLinkModel "github.com/paper-indonesia/pivot-backoffice/internal/model/shortLink"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	shortLinkModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/shortLink"
 )
 
 func (s *shortLinkRepo) Update(ctx context.Context, shortLink *shortLinkModel.ShortLink) error {

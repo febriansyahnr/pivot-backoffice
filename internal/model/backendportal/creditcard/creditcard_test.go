@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcard"
-	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/proto/messages/callback"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcard"
+	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/proto/messages/callback"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -227,10 +227,10 @@ func TestUpdateCreditcardMetaDataMarshalError(t *testing.T) {
 	metadata := map[string]any{
 		"authenticationMethod": "test",
 	}
-	
+
 	// Create a circular reference
 	metadata["circular"] = &metadata
-	
+
 	err := UpdateCreditcardMetaData(&metadata, &CardDataRequest{}, nil, nil, "test")
 	assert.Error(t, err, "Expected an error due to circular reference")
 }
@@ -441,7 +441,7 @@ func TestUpdateCreditcardMetaDataMarshalUnmarshalErrors(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			metadata := tt.setupMetadata()
 			originalMetadata := make(map[string]any)
-			
+
 			// Create a deep copy of original metadata for comparison
 			for k, v := range metadata {
 				originalMetadata[k] = v
@@ -456,22 +456,22 @@ func TestUpdateCreditcardMetaDataMarshalUnmarshalErrors(t *testing.T) {
 				}
 			} else {
 				assert.NoError(t, err, "Expected no error for test case: %s", tt.name)
-				
+
 				// Verify that metadata was updated properly
 				assert.NotNil(t, metadata, "Metadata should not be nil after update")
-				
+
 				// Verify specific updates based on input parameters
 				if tt.processorStatus != "" {
 					// The processorStatus should be updated in the metadata
 					// Since we're updating a map[string]any, we need to check if the field exists
 					assert.Contains(t, metadata, "processorStatus")
 				}
-				
+
 				if tt.cardData != nil {
 					// The cardData should be updated in the metadata
 					assert.Contains(t, metadata, "cardData")
 				}
-				
+
 				// Verify that the marshal/unmarshal process maintains data integrity
 				// This ensures lines 112-120 work correctly
 				assert.IsType(t, map[string]any{}, metadata, "Metadata should remain as map[string]any")
@@ -488,22 +488,22 @@ func TestUpdateCreditcardMetaDataSpecificErrorPaths(t *testing.T) {
 		metadata := map[string]any{
 			"authenticationMethod": "test",
 		}
-		
+
 		// Create a complex circular reference scenario
 		cardData := &CardDataRequest{
 			CardType: "CREDIT",
 		}
-		
+
 		// First, let's update the metadata to make it valid
 		err := UpdateCreditcardMetaData(&metadata, cardData, nil, nil, "test")
 		assert.NoError(t, err, "Initial update should succeed")
-		
+
 		// Now create a circular reference in the metadata that will cause marshal to fail
 		// when trying to marshal the updated CreditcardMetadata structure
 		circularRef := make(map[string]any)
 		circularRef["self"] = circularRef
 		metadata["circularField"] = circularRef
-		
+
 		// This should cause the final marshal operation to fail
 		err = UpdateCreditcardMetaData(&metadata, cardData, nil, nil, "updated")
 		assert.Error(t, err, "Expected marshal error due to circular reference")
@@ -515,11 +515,11 @@ func TestUpdateCreditcardMetaDataSpecificErrorPaths(t *testing.T) {
 		metadata := map[string]any{
 			"authenticationMethod": "test",
 		}
-		
+
 		// Update with valid data - this should work
 		err := UpdateCreditcardMetaData(&metadata, &CardDataRequest{CardType: "DEBIT"}, nil, nil, "success")
 		assert.NoError(t, err, "Update should succeed with valid data")
-		
+
 		// Verify the metadata was updated correctly
 		assert.Contains(t, metadata, "cardData")
 		assert.Contains(t, metadata, "processorStatus")
@@ -530,7 +530,7 @@ func TestUpdateCreditcardMetaDataSpecificErrorPaths(t *testing.T) {
 		metadata := map[string]any{
 			"authenticationMethod": "LARGE_DATA_TEST",
 		}
-		
+
 		// Create large card data
 		cardData := &CardDataRequest{
 			First8Digit: "12345678",
@@ -543,15 +543,15 @@ func TestUpdateCreditcardMetaDataSpecificErrorPaths(t *testing.T) {
 			ExpiryMonth: "12",
 			ExpiryYear:  "99",
 		}
-		
+
 		// Add large metadata structure
 		for i := 0; i < 1000; i++ {
 			metadata[fmt.Sprintf("field_%d", i)] = fmt.Sprintf("value_%d_with_some_longer_content_to_increase_size", i)
 		}
-		
+
 		err := UpdateCreditcardMetaData(&metadata, cardData, nil, nil, "LARGE_DATA_PROCESSED")
 		assert.NoError(t, err, "Should handle large data structures correctly")
-		
+
 		// Verify the data integrity after marshal/unmarshal
 		assert.Contains(t, metadata, "cardData")
 		assert.Contains(t, metadata, "processorStatus")
@@ -577,16 +577,16 @@ func TestUpdateCreditcardMetaDataSpecificErrorPaths(t *testing.T) {
 				},
 			},
 		}
-		
+
 		cardData := &CardDataRequest{
 			CardType:    "COMPLEX",
 			CardBrand:   "NESTED_TEST",
 			Fingerprint: "nested_structure_test_fingerprint",
 		}
-		
+
 		err := UpdateCreditcardMetaData(&metadata, cardData, nil, nil, "NESTED_COMPLETE")
 		assert.NoError(t, err, "Should handle complex nested structures")
-		
+
 		// Verify nested structure is preserved
 		assert.Contains(t, metadata, "nestedLevel1")
 		nestedLevel1, ok := metadata["nestedLevel1"].(map[string]interface{})
@@ -604,16 +604,16 @@ func TestUpdateCreditcardMetaDataUnmarshalErrorEdgeCase(t *testing.T) {
 			"authenticationMethod": "STRESS_TEST",
 			"complexNumber":        complex(1, 2), // Complex numbers can cause issues in JSON
 		}
-		
+
 		// Try to create a scenario that might cause unmarshal issues
 		cardData := &CardDataRequest{
 			CardType:    "STRESS",
 			Fingerprint: "stress_test_fingerprint",
 		}
-		
+
 		// This should handle even complex data gracefully
 		err := UpdateCreditcardMetaData(&metadata, cardData, nil, nil, "STRESS_COMPLETE")
-		
+
 		// Note: Even this test might not trigger the unmarshal error since Go's JSON
 		// handling to map[string]any is extremely robust. The 90.9% coverage might be
 		// the practical maximum for this function without artificially corrupting
@@ -634,22 +634,22 @@ func TestUpdateCreditcardMetaDataUnmarshalErrorEdgeCase(t *testing.T) {
 		metadata := map[string]any{
 			"authenticationMethod": "MEMORY_TEST",
 		}
-		
+
 		// Create an extremely large nested structure
 		largeData := make(map[string]interface{})
 		for i := 0; i < 10000; i++ {
 			largeData[fmt.Sprintf("key_%d", i)] = fmt.Sprintf("value_%d_very_long_string_that_consumes_significant_memory_and_might_cause_allocation_issues_%d", i, i)
 		}
 		metadata["largeData"] = largeData
-		
+
 		cardData := &CardDataRequest{
 			CardType:    "MEMORY_STRESS",
 			Fingerprint: "memory_test_fingerprint",
 		}
-		
+
 		err := UpdateCreditcardMetaData(&metadata, cardData, nil, nil, "MEMORY_TEST_COMPLETE")
 		assert.NoError(t, err, "Large memory allocation should be handled gracefully")
-		
+
 		// Verify the operation completed successfully
 		if err == nil {
 			assert.Contains(t, metadata, "cardData")

@@ -7,10 +7,10 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 
-	"github.com/paper-indonesia/pivot-backoffice/config"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/qr"
-	httpMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/httpRequestExt"
 	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/config"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/qr"
+	httpMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/httpRequestExt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

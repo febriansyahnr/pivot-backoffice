@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	ledger_model "github.com/paper-indonesia/pivot-backoffice/internal/model/ledger"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	ledger_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/ledger"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 
 	"github.com/jmoiron/sqlx/types"
 )

@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/payment"
 	mySqlExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 

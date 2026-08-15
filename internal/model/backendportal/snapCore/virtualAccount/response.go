@@ -5,11 +5,11 @@ import (
 
 	"github.com/jmoiron/sqlx/types"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	common "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 	snapVa "github.com/paper-indonesia/pdk/go/snap/structs/va"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	common "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 )
 
 type CreateVirtualAccountResponse struct {

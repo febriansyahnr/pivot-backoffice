@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/recurringContract"
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/unifiedPayment"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/recurringContract"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/unifiedPayment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	"github.com/stretchr/testify/assert"

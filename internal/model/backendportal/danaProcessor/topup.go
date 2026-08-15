@@ -1,6 +1,6 @@
 package danaProcessorModel
 
-import commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+import commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
 type TopupResponse struct {
 	ResponseCode       string             `json:"responseCode"`

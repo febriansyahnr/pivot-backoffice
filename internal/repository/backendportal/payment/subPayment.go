@@ -7,11 +7,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *PaymentRepository) GetAutoSplitSubPayments(ctx context.Context, request *paymentModel.GetSubPaymentsRequest) ([]*paymentModel.Payment, error) {

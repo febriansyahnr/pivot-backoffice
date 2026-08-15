@@ -3,8 +3,8 @@ package flipProcessorModel
 import (
 	"testing"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/routingProcessor/bankTransfer"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/routingProcessor/bankTransfer"
 	"github.com/stretchr/testify/assert"
 )
 

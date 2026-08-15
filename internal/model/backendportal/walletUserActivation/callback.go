@@ -3,7 +3,7 @@ package walletUserActivation
 import (
 	"time"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/proto/common"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/common"
 )
 
 type UserActivationCallbackRequest struct {

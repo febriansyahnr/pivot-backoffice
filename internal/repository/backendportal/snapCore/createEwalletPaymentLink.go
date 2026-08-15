@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/ewallet"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/ewallet"
 	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 
 	"github.com/paper-indonesia/pdk/v2/logger"

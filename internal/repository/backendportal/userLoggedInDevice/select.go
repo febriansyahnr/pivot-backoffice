@@ -5,9 +5,9 @@ import (
 	"database/sql"
 	"errors"
 
-	userLoggedInDeviceModel "github.com/paper-indonesia/pivot-backoffice/internal/model/userLoggedInDevice"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	userLoggedInDeviceModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/userLoggedInDevice"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *UserLoggedInDeviceRepository) GetAllByUserID(ctx context.Context, userID string) ([]*userLoggedInDeviceModel.UserLoggedInDevice, error) {

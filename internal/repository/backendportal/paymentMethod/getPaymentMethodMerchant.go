@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
-	"github.com/paper-indonesia/pdk/v2/logger"
 )
 
 func (r *PaymentMethodRepository) GetListPaymentMethodMerchant(

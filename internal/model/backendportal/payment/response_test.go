@@ -9,12 +9,12 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	constantPayment "github.com/paper-indonesia/pivot-backoffice/constant/payment"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	customerModel "github.com/paper-indonesia/pivot-backoffice/internal/model/customer"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
-	snapCoreModelQr "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/qr"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/virtualAccount"
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/unifiedPayment"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
+	customerModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/customer"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/payment"
+	snapCoreModelQr "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/snapCore/qr"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/snapCore/virtualAccount"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/unifiedPayment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	"strings"

@@ -10,12 +10,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
+	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 	paymentRepository "github.com/paper-indonesia/pivot-backoffice/internal/repository/payment"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
-	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 )
 
 func TestFilterStaticVaList(t *testing.T) {
@@ -759,25 +759,25 @@ func TestGetStaticVaTransactions(t *testing.T) {
 					transactions := args.Get(1).(*[]paymentModel.StaticVaTransactionItem)
 					*transactions = []paymentModel.StaticVaTransactionItem{
 						{
-							UUID:            "transaction-1",
-							ReferenceID:     "payment-123",
-							AmountValue:     "",
-							AmountCurrency:  "",
-							Status:          "SUCCESS",
+							UUID:           "transaction-1",
+							ReferenceID:    "payment-123",
+							AmountValue:    "",
+							AmountCurrency: "",
+							Status:         "SUCCESS",
 						},
 						{
-							UUID:            "transaction-2",
-							ReferenceID:     "payment-123",
-							AmountValue:     "10000",
-							AmountCurrency:  "",
-							Status:          "SUCCESS",
+							UUID:           "transaction-2",
+							ReferenceID:    "payment-123",
+							AmountValue:    "10000",
+							AmountCurrency: "",
+							Status:         "SUCCESS",
 						},
 						{
-							UUID:            "transaction-3",
-							ReferenceID:     "payment-123",
-							AmountValue:     "",
-							AmountCurrency:  "USD",
-							Status:          "SUCCESS",
+							UUID:           "transaction-3",
+							ReferenceID:    "payment-123",
+							AmountValue:    "",
+							AmountCurrency: "USD",
+							Status:         "SUCCESS",
 						},
 					}
 				}).Return(nil)

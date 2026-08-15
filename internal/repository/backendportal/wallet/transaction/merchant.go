@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	walletTransactionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/wallet/transaction"
+	walletTransactionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/wallet/transaction"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"golang.org/x/sync/errgroup"

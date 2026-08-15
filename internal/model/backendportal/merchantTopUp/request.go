@@ -3,7 +3,7 @@ package merchantTopUp
 import (
 	"time"
 
-	common "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	common "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
 )
 
 type CreateMerchantTopUpRequest struct {

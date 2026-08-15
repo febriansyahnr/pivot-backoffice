@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *DisbursementRepository) Insert(ctx context.Context, request *disbursementModel.Disbursement) error {

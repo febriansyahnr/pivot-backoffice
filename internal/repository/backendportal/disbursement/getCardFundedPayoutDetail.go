@@ -6,8 +6,8 @@ import (
 	"errors"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	cardFundedPayoutModel "github.com/paper-indonesia/pivot-backoffice/internal/model/cardFundedPayout"
-	statusHistoriesModel "github.com/paper-indonesia/pivot-backoffice/internal/model/statusHistory"
+	cardFundedPayoutModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cardFundedPayout"
+	statusHistoriesModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/statusHistory"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 )

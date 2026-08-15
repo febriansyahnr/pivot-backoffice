@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/withdrawal"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/withdrawal"
 
 	"github.com/stretchr/testify/assert"
 )

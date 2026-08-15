@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/fdsProcessor/fdsCommon"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/fee"
-	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
+	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fdsProcessor/fdsCommon"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
+	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"

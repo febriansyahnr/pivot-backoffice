@@ -3,10 +3,10 @@ package userLoggedInDeviceRepository
 import (
 	"context"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	userLoggedInDeviceModel "github.com/paper-indonesia/pivot-backoffice/internal/model/userLoggedInDevice"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	userLoggedInDeviceModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/userLoggedInDevice"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *UserLoggedInDeviceRepository) Create(ctx context.Context, data *userLoggedInDeviceModel.UserLoggedInDevice) error {

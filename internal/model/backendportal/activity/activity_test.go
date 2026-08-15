@@ -2,14 +2,15 @@ package activityModel_test
 
 import (
 	"encoding/json"
+	"testing"
+
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	activityModel "github.com/paper-indonesia/pivot-backoffice/internal/model/activity"
+	activityModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/activity"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
-	"testing"
 )
 
 var userID = uuid.NewString()

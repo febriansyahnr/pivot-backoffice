@@ -3,8 +3,9 @@ package paymentCapture
 import (
 	"context"
 	"database/sql"
-	paymentCaptureModel "github.com/paper-indonesia/pivot-backoffice/internal/model/paymentCapture"
+
 	"github.com/paper-indonesia/pdk/v2/logger"
+	paymentCaptureModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paymentCapture"
 )
 
 func (r *paymentCaptureRepository) GetByID(ctx context.Context, id string) (*paymentCaptureModel.PaymentCapture, error) {

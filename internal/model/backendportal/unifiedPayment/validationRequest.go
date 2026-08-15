@@ -1,7 +1,7 @@
 package unifiedPaymentModel
 
 import (
-	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/paymentMethod"
+	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paymentMethod"
 )
 
 type ValidateCardRequest struct {

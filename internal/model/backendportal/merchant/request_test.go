@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/merchant"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	"github.com/google/uuid"

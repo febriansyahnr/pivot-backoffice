@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 
-	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
+	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
 
 	"github.com/google/uuid"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"

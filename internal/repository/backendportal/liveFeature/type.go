@@ -3,12 +3,12 @@ package liveFeature
 import (
 	"context"
 
-	"github.com/paper-indonesia/pivot-backoffice/config"
-	liveFeature "github.com/paper-indonesia/pivot-backoffice/internal/model/liveFeature"
-	"github.com/paper-indonesia/pivot-backoffice/internal/repository"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/goff/retriever"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/config"
+	liveFeature "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/liveFeature"
+	"github.com/paper-indonesia/pivot-backoffice/internal/repository"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"go.opentelemetry.io/otel"
 )
 
@@ -25,12 +25,12 @@ type ConsulRetriever interface {
 type ConsulRetrieverFactoryFunc func(consulAddr, key, token string) (ConsulRetriever, error)
 
 type LiveFeatureRepository struct {
-	config                    *config.Config
-	secret                    *config.Secret
-	db                        mySqlExt.IMySqlExt
-	logger                    logger.ILogger
-	currentVersion            liveFeature.AppVersion // Add currentVersion field
-	consulRetrieverFactory    ConsulRetrieverFactoryFunc
+	config                 *config.Config
+	secret                 *config.Secret
+	db                     mySqlExt.IMySqlExt
+	logger                 logger.ILogger
+	currentVersion         liveFeature.AppVersion // Add currentVersion field
+	consulRetrieverFactory ConsulRetrieverFactoryFunc
 }
 
 // defaultConsulRetrieverFactory wraps pdkRetriever.NewConsulRetriever
@@ -44,7 +44,7 @@ func New(db mySqlExt.IMySqlExt, logger logger.ILogger) repository.ILiveFeatureRe
 		db:                     db,
 		logger:                 logger,
 		currentVersion:         liveFeature.AppVersion{Versions: make(map[string]string)}, // Initialize currentVersion
-		consulRetrieverFactory: defaultConsulRetrieverFactory, // Default to real implementation
+		consulRetrieverFactory: defaultConsulRetrieverFactory,                             // Default to real implementation
 	}
 }
 

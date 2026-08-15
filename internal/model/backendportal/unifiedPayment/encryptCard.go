@@ -1,7 +1,7 @@
 package unifiedPaymentModel
 
 import (
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcardCoreProcessor"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcardCoreProcessor"
 )
 
 type EncryptCardRequest struct {

@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/ewallet"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/ewallet"
 	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
-	"github.com/paper-indonesia/pdk/v2/logger"
 )
 
 func (r *snapCoreRepository) RefundEWallet(ctx context.Context, request *ewallet.EWalletRefundRequest) (*ewallet.EWalletRefundResponse, error) {

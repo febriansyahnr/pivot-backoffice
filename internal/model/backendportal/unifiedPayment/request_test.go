@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	creditcardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcard"
-	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/paymentMethod"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	creditcardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcard"
+	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paymentMethod"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"

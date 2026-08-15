@@ -3,9 +3,9 @@ package paymentRepository
 import (
 	"context"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 )
 
 func (r *PaymentRepository) CountActiveStaticPayment(ctx context.Context, merchantID, paymentMethodID string) (int, error) {

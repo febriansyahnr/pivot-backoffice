@@ -6,7 +6,7 @@ import (
 	"errors"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 	pkgErrs "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 

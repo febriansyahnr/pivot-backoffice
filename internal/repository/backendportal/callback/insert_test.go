@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
-	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
+	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"

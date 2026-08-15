@@ -8,11 +8,11 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 
-	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/routingProcessor/accountInquiry"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/bankAccount"
-	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/routingProcessor/accountInquiry"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/bankAccount"
+	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 )
 
 func (r *snapCoreRepository) GetBankAccountInquiry(

@@ -4,9 +4,9 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	countryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/country"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	countryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/country"
 )
 
 func (r *countryRepository) GetAll(ctx context.Context, filter *countryModel.SearchFilterRequest) ([]*countryModel.Country, error) {

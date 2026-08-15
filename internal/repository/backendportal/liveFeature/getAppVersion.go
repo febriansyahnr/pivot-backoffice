@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	liveFeature "github.com/paper-indonesia/pivot-backoffice/internal/model/liveFeature"
+	liveFeature "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/liveFeature"
 )
 
 func (r *LiveFeatureRepository) RetrieveAppVersion(ctx context.Context) (liveFeature.AppVersion, error) {

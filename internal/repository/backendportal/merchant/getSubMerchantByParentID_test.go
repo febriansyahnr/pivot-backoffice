@@ -7,11 +7,11 @@ import (
 	"testing"
 	"time"
 
+	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
-	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

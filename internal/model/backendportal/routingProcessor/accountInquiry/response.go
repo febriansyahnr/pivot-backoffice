@@ -1,6 +1,6 @@
 package routingProcessorModel
 
-import snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/bankAccount"
+import snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/bankAccount"
 
 type InquiryAccountResponseData struct {
 	ResponseCode           string `json:"responseCode" example:"200xx200"`

@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/otp"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/otp"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -27,11 +27,11 @@ func TestMarshalUnmarshalBinary(t *testing.T) {
 	// Marshal the source OTPCache
 	data, err := src.MarshalBinary()
 	assert.Nil(t, err)
-	
+
 	// Unmarshal into the destination OTPCache
 	err = dst.UnmarshalBinary(data)
 	assert.Nil(t, err)
-	
+
 	// Verify they match
 	assert.Equal(t, len(src.OTPList), len(dst.OTPList))
 	assert.Equal(t, src.OTPList[0].OTP, dst.OTPList[0].OTP)
@@ -147,16 +147,16 @@ func TestGetLatestOTP(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := tt.otpCache.GetLatestOTP()
-			
+
 			if tt.want == nil {
 				assert.Nil(t, got)
 				return
 			}
-			
+
 			// Only compare the OTP and Verify since ExpiredAt will have different timestamps
 			assert.Equal(t, tt.want.OTP, got.OTP)
 			assert.Equal(t, tt.want.Verify, got.Verify)
-			
+
 			// Just check if ExpiredAt is within a reasonable time range
 			if tt.name == "Single OTP in List" {
 				assert.WithinDuration(t, time.Now().Add(time.Hour), got.ExpiredAt, 2*time.Second)
@@ -177,11 +177,11 @@ func TestSuspendUser(t *testing.T) {
 	// Marshal the source SuspendUser
 	data, err := src.MarshalBinary()
 	assert.Nil(t, err)
-	
+
 	// Unmarshal into the destination SuspendUser
 	err = dst.UnmarshalBinary(data)
 	assert.Nil(t, err)
-	
+
 	// Verify fields match
 	assert.Equal(t, src.Status, dst.Status)
 	assert.WithinDuration(t, src.RetryAfter, dst.RetryAfter, time.Second)

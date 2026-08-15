@@ -7,7 +7,7 @@ import (
 
 	"github.com/google/uuid"
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/outbound"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/outbound"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

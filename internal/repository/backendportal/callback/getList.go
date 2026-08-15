@@ -8,10 +8,10 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *CallbackRepository) GetList(ctx context.Context, filter *callbackModel.GetListCallbackFilterRequest, page, perPage int64) (*commonModel.PaginationResponse, error) {

@@ -6,11 +6,11 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/fee"
-	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
-	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
+	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
+	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx/types"

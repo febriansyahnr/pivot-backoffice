@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"time"
 
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
-	snapCoreModelBT "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/bankTransfer"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/fee"
+	snapCoreModelBT "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/snapCore/bankTransfer"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 )

@@ -6,10 +6,10 @@ import (
 	"errors"
 	"testing"
 
-	countryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/country"
+	"github.com/paper-indonesia/pdk/v2/logger"
+	countryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/country"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
-	"github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

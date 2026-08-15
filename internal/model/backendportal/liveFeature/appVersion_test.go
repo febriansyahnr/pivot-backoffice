@@ -3,7 +3,7 @@ package liveFeature_test
 import (
 	"testing"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/liveFeature"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/liveFeature"
 	"github.com/stretchr/testify/assert"
 )
 

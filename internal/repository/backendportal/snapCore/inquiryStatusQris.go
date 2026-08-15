@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	snapCoreQRModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/qr"
+	snapCoreQRModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/qr"
 	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 

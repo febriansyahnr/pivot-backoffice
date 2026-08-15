@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 
 	"github.com/jmoiron/sqlx/types"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"

@@ -5,8 +5,8 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/unifiedPayment"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/payment"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/unifiedPayment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/validatorExt"
 
 	"github.com/shopspring/decimal"

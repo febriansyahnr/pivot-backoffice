@@ -6,7 +6,7 @@ import (
 	"errors"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/bankAccount"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/bankAccount"
 )
 
 func (r *bankAccountRepository) GetBankAccountValidation(ctx context.Context, merchantId, bankCode, accountNo string) (result *bankAccount.BankAccountResponse, err error) {

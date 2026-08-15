@@ -8,10 +8,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 )
 
 // GetTodayPaymentStatusInsight return pointer of paymentModel.PaymentInsightItem (total payment and total amount)

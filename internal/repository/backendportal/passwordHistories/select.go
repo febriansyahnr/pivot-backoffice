@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/passwordHistories"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/passwordHistories"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *PasswordHistoriesRepository) FindByUserID(

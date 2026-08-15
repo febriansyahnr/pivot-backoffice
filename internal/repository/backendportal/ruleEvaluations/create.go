@@ -3,9 +3,9 @@ package ruleevaluationsrepository
 import (
 	"context"
 
-	ruleevaluationsmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/ruleEvaluations"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	ruleevaluationsmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/ruleEvaluations"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *RuleEvaluationsRepository) Create(ctx context.Context, eval *ruleevaluationsmodel.RuleEvaluations) error {

@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 
-	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"

@@ -3,9 +3,9 @@ package orchestrator_model
 import (
 	"time"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/fee"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/fee"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/merchant"
 	"github.com/shopspring/decimal"
 )
 

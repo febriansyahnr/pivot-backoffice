@@ -3,7 +3,7 @@ package payoutManualProcessingAccount_test
 import (
 	"testing"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/payoutManualProcessingAccount"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payoutManualProcessingAccount"
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"

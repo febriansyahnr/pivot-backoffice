@@ -3,9 +3,9 @@ package routingProcessorModel_test
 import (
 	"testing"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/routingProcessor/bankTransfer"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/bankTransfer"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/routingProcessor/bankTransfer"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/bankTransfer"
 
 	"github.com/stretchr/testify/assert"
 )

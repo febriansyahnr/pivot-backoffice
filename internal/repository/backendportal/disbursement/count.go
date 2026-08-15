@@ -3,10 +3,10 @@ package disbursementRepository
 import (
 	"context"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	disbursementDashboardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursementDashboard"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	disbursementDashboardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursementDashboard"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *DisbursementRepository) CountByIDsAndMerchantID(ctx context.Context, ids []string, merchantID string) (count int) {

@@ -6,7 +6,7 @@ import (
 	"errors"
 	"time"
 
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 
 	pdkConstant "github.com/paper-indonesia/pdk/v2/constant"
 )

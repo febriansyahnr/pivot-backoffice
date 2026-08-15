@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	shortLinkModel "github.com/paper-indonesia/pivot-backoffice/internal/model/shortLink"
-	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
+	shortLinkModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/shortLink"
+	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

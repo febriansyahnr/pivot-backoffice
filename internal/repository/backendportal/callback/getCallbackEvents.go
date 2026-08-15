@@ -3,9 +3,9 @@ package callbackRepository
 import (
 	"context"
 
-	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
 )
 
 const TableCallbackEvents = "callback_events"

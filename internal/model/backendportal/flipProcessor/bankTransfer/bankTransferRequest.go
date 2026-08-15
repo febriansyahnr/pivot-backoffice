@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/routingProcessor/bankTransfer"
+	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/routingProcessor/bankTransfer"
 )
 
 type SpecialMoneyTransferRequest struct {

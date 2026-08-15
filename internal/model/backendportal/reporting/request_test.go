@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	cdcModel "github.com/paper-indonesia/pivot-backoffice/internal/model/cdc"
-	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
+	cdcModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cdc"
+	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	"github.com/shopspring/decimal"

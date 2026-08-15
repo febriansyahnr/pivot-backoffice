@@ -3,7 +3,7 @@ package snapCoreModel
 import (
 	"time"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 )
 
 type GenerateQrMpmResponse struct {

@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/reconciliation"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/reconciliation"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 )
@@ -140,7 +140,7 @@ func TestPaymentTotalAmountResult_Add(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			result := tt.initial
 			result.Add(tt.reference, tt.amount)
-			
+
 			actual := result.GetTotalAmount(tt.reference)
 			assert.True(t, tt.expected.Equal(actual), "Expected %s, got %s", tt.expected, actual)
 		})

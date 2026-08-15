@@ -3,7 +3,7 @@ package paymentModel
 import (
 	"time"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
 )
 
 type StaticVaFilterRequest struct {

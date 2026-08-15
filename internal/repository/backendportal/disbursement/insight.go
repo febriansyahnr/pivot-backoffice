@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"slices"
 
-	model "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"

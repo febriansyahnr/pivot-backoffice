@@ -7,7 +7,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
+	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/orchestrator"
 	"github.com/stretchr/testify/assert"
 )
 

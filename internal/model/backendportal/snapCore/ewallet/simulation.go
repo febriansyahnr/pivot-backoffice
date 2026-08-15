@@ -1,8 +1,8 @@
 package ewallet
 
 import (
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore"
 )
 
 type EWalletPaymentSimulationRequest struct {

@@ -5,10 +5,10 @@ import (
 	"database/sql"
 	"errors"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *DisbursementRepository) FindByReference(ctx context.Context, referenceID string) (*disbursementModel.DisbursementWithTransaction, error) {

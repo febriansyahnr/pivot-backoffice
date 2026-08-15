@@ -9,11 +9,11 @@ import (
 	"github.com/google/uuid"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	ledger_model "github.com/paper-indonesia/pivot-backoffice/internal/model/ledger"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	ledger_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/ledger"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 type GetLedgerDBRecords struct {

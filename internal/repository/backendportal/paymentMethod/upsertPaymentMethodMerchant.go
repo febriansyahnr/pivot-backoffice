@@ -5,9 +5,9 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *PaymentMethodRepository) UpsertPaymentMethodMerchantByIdAndMerchant(ctx context.Context, paymentMethodMerchant *paymentModel.PaymentMethodWithPivot) error {

@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	accountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/account"
-	cdcModel "github.com/paper-indonesia/pivot-backoffice/internal/model/cdc"
+	accountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/account"
+	cdcModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cdc"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	"github.com/shopspring/decimal"

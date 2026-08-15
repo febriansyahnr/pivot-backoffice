@@ -6,9 +6,9 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *MerchantRepository) GetMerchantFeeByRequest(ctx context.Context, request *merchant.GetMerchantFeeRequest) (*merchant.MerchantFee, error) {

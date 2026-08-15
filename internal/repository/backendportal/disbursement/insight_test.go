@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	model "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/disbursement"
 	mocks "github.com/paper-indonesia/pivot-backoffice/mocks/pdk/logger"
 	mySqlExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"

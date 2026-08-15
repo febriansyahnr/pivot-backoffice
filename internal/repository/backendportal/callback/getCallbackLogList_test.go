@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/callback"
 	pdkLogMock "github.com/paper-indonesia/pivot-backoffice/mocks/pdk/logger"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"

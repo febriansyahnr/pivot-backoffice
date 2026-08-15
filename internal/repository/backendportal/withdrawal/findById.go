@@ -5,8 +5,8 @@ import (
 	"database/sql"
 	"errors"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/withdrawal"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/withdrawal"
 )
 
 // FindById retrieves a withdrawal record by ID and merchant ID without joining account_transactions.

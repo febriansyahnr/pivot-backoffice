@@ -3,7 +3,7 @@ package flipProcessorModel_test
 import (
 	"testing"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/flipProcessor/common"
+	flipProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/flipProcessor/common"
 	"github.com/stretchr/testify/assert"
 )
 

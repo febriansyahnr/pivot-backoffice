@@ -7,7 +7,7 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/disbursement"
 	mySqlExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"

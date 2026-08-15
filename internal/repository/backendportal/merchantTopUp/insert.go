@@ -3,7 +3,7 @@ package merchantTopUp
 import (
 	"context"
 
-	model "github.com/paper-indonesia/pivot-backoffice/internal/model/merchantTopUp"
+	model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchantTopUp"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"

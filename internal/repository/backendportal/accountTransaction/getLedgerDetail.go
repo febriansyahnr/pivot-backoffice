@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 
-	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
+	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 

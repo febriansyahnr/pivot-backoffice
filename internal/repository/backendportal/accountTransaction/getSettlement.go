@@ -3,9 +3,9 @@ package accounttransaction_repository
 import (
 	"context"
 
-	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 )
 
 func (r *AccountTransactionRepository) GetPastDueSettlementTransactions(ctx context.Context, request *orchestrator_model.GetPastDueSettlementTransactionsRequest) ([]*orchestrator_model.AccountTransaction, error) {

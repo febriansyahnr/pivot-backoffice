@@ -3,9 +3,9 @@ package paymentMethodRepository
 import (
 	"context"
 
-	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/paymentMethod"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paymentMethod"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *PaymentMethodRepository) CreatePaymentMethod(ctx context.Context, payload *paymentMethodModel.CreatePaymentMethodRequest) error {

@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	industryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/industry"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	industryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/industry"
 )
 
 // Update updates an existing industry in the database

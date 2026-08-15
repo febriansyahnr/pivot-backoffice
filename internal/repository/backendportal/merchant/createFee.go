@@ -3,10 +3,10 @@ package merchant
 import (
 	"context"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *MerchantRepository) CreateMerchantFee(ctx context.Context, merchantFee *merchant.MerchantFee) error {

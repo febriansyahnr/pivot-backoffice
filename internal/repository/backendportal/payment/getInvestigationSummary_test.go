@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
-	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
+	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

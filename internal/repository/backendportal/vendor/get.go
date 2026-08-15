@@ -6,9 +6,9 @@ import (
 	"errors"
 	"fmt"
 
-	vendorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/vendor"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	vendorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/vendor"
 )
 
 func (r *VendorRepository) GetByID(ctx context.Context, id string) (*vendorModel.Vendor, error) {

@@ -7,8 +7,8 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	snapPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/payment"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	snapPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/payment"
 	httpMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/httpRequestExt"
 
 	"github.com/paper-indonesia/pdk/v2/logger"

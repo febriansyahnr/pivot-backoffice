@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/fee"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
 	pdkLoggerMock "github.com/paper-indonesia/pivot-backoffice/mocks/pdk/logger"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 

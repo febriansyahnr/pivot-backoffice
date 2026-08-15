@@ -1,7 +1,7 @@
 package sokratech
 
 import (
-	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/fdsProcessor/fdsCommon"
+	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fdsProcessor/fdsCommon"
 )
 
 // Create an alias for structs imported from the fdscommon package.

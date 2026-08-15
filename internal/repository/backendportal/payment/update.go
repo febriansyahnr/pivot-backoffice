@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 
 	"github.com/google/uuid"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"

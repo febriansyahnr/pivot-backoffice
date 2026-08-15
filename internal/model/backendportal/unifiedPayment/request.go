@@ -9,11 +9,11 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	creditcardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcard"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/fee"
-	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/paymentMethod"
-	splitRoutingPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/splitRoutingPayment"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	creditcardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcard"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
+	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paymentMethod"
+	splitRoutingPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/splitRoutingPayment"
 	pkgErr "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 

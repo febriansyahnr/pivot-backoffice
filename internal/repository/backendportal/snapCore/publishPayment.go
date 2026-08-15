@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	snapPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/payment"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/validation"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	snapPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/payment"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/validation"
 )
 
 func (r *snapCoreRepository) PublishPayment(ctx context.Context, request snapPaymentModel.PublishRequest) error {

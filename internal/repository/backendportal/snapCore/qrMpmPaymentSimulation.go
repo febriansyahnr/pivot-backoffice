@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	snapQrisModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/qris"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/validation"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	snapQrisModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/qris"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/validation"
 )
 
 func (r *snapCoreRepository) QrMpmPaymentSimulation(ctx context.Context, data *snapQrisModel.QrMpmPaymentSimulationRequest) error {

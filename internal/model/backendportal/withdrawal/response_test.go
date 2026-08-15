@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/withdrawal"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/withdrawal"
 
 	"github.com/jmoiron/sqlx/types"
 	"github.com/stretchr/testify/assert"

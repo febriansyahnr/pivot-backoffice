@@ -3,10 +3,10 @@ package disbursementRepository
 import (
 	"context"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	cardFundedPayoutModel "github.com/paper-indonesia/pivot-backoffice/internal/model/cardFundedPayout"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	cardFundedPayoutModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cardFundedPayout"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 // GetCardFundedPayoutInsights returns the total amount and total transaction count

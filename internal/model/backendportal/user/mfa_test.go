@@ -3,7 +3,7 @@ package user_test
 import (
 	"testing"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/user"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/user"
 
 	"github.com/skip2/go-qrcode"
 	"github.com/stretchr/testify/assert"

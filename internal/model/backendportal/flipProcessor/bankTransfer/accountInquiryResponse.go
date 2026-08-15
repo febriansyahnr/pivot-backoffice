@@ -1,10 +1,10 @@
 package flipProcessorModel
 
 import (
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	flipProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/flipProcessor/common"
-	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/routingProcessor/accountInquiry"
 	"github.com/paper-indonesia/pdk/go/snap"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	flipProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/flipProcessor/common"
+	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/routingProcessor/accountInquiry"
 )
 
 type AccountInquiryResponse struct {

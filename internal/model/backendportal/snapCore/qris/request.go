@@ -1,6 +1,6 @@
 package snapCoreModel
 
-import commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+import commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
 type UploadDocumentReq struct {
 	Acquirer       string `form:"acquirer"`

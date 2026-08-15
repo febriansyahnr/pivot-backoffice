@@ -7,12 +7,12 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/bankTransfer"
-	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
-	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	pdkLog "github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/bankTransfer"
+	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
+	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 )
 
 // CheckAllowedToRetry checks if a transaction can be retried

@@ -9,7 +9,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx/types"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	creditcardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcard"
+	creditcardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcard"
 	"github.com/stretchr/testify/assert"
 )
 

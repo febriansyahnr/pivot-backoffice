@@ -7,14 +7,14 @@ import (
 	"testing"
 
 	"github.com/google/uuid"
+	loggerMock "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/qris"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/qris"
 	httpExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/httpRequestExt"
 	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
-	loggerMock "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

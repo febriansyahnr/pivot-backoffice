@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/withdrawal"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/withdrawal"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"golang.org/x/sync/errgroup"

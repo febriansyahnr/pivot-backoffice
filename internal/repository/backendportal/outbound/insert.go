@@ -3,7 +3,7 @@ package outbound
 import (
 	"context"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/outbound"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/outbound"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 

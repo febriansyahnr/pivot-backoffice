@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/activity"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/activity"
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"

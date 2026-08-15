@@ -3,8 +3,8 @@ package snapCoreModel
 import (
 	"time"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	common "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	common "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore"
 )
 
 type RegUploadResp struct {

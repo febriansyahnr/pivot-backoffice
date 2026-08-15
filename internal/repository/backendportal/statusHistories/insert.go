@@ -2,7 +2,8 @@ package statusHistoriesRepository
 
 import (
 	"context"
-	statusHistoriesModel "github.com/paper-indonesia/pivot-backoffice/internal/model/statusHistory"
+
+	statusHistoriesModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/statusHistory"
 
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )

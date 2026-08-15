@@ -5,11 +5,11 @@ import (
 	"database/sql"
 	"testing"
 
+	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/disbursement"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
-	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

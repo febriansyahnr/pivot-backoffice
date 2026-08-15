@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/reconciliation"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/reconciliation"
 )
 
 func (r *AccountTransactionRepository) GetTransactionForRecon(ctx context.Context, params *reconciliation.ReconTransactionQuery) (*reconciliation.ReconTransactionModel, error) {

@@ -2,8 +2,9 @@ package bankAccountRepository
 
 import (
 	"context"
+
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/bankAccount"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/bankAccount"
 )
 
 func (r *bankAccountRepository) Update(ctx context.Context, bk *bankAccount.BankAccount) (err error) {

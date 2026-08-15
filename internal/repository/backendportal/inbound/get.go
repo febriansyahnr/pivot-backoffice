@@ -11,9 +11,9 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/inbound"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/inbound"
 )
 
 const (

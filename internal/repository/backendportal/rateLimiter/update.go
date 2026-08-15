@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	ratelimiter "github.com/paper-indonesia/pivot-backoffice/internal/model/rateLimiter"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	ratelimiter "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/rateLimiter"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *RateLimiterRepository) Update(ctx context.Context, configuration *ratelimiter.RateLimitConfiguration) error {

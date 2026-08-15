@@ -12,11 +12,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/qris"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/validation"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/qris"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/validation"
 )
 
 var (

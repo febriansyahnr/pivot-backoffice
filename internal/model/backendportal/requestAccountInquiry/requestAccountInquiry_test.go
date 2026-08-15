@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/fee"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/bankAccount"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/bankAccount"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 	"github.com/stretchr/testify/assert"
 )

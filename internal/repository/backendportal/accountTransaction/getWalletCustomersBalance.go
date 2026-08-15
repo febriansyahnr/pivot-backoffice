@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/jmoiron/sqlx"
-	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 	"golang.org/x/sync/errgroup"
 )
 

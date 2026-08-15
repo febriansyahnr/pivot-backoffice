@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/flipProcessor/bankTransfer"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/routingProcessor/accountInquiry"
+	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/routingProcessor/accountInquiry"
+	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/routingProcessor/accountInquiry"
 	"github.com/stretchr/testify/assert"
 )
 

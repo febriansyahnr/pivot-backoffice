@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 
-	credModel "github.com/paper-indonesia/pivot-backoffice/internal/model/credential"
+	credModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/credential"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 

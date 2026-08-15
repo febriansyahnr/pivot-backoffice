@@ -9,8 +9,8 @@ import (
 	"net/url"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	generalSnapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/bankTransfer"
+	generalSnapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/bankTransfer"
 	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 

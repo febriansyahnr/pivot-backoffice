@@ -8,11 +8,11 @@ import (
 	"testing"
 	"time"
 
+	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
+	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
-	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"

@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 	pdkLogMock "github.com/paper-indonesia/pivot-backoffice/mocks/pdk/logger"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"

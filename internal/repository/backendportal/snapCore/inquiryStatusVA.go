@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	snapCoreVAModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/virtualAccount"
+	snapCoreVAModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/virtualAccount"
 	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 

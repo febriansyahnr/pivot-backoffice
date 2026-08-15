@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 
-	model "github.com/paper-indonesia/pivot-backoffice/internal/model/cardFundedPayout"
+	model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cardFundedPayout"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 )

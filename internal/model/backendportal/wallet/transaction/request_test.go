@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/wallet/transaction"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/wallet/transaction"
 
 	"github.com/stretchr/testify/assert"
 )

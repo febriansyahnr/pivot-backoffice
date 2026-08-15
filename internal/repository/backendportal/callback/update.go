@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *CallbackRepository) UpdateCallbackLog(ctx context.Context, callbackLog *callbackModel.CallbackLog) error {

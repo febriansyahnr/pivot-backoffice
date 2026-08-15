@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 
-	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
+	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"

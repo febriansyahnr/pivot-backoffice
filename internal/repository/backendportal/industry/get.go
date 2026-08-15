@@ -6,8 +6,8 @@ import (
 	"errors"
 	"fmt"
 
-	industryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/industry"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	industryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/industry"
 )
 
 // GetAllIndustries retrieves all industries from the database

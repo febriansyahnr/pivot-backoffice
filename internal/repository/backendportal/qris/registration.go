@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/qris"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/qris"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 
 	"github.com/jmoiron/sqlx/types"

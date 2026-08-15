@@ -7,9 +7,9 @@ import (
 	"strings"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	cardFundedPayoutModel "github.com/paper-indonesia/pivot-backoffice/internal/model/cardFundedPayout"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	cardFundedPayoutModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cardFundedPayout"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"

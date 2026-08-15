@@ -1,7 +1,7 @@
 package card
 
 import (
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcardCoreProcessor"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcardCoreProcessor"
 )
 
 type EncryptedCardAuthenticationRequest struct {

@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/merchant"
 	loggerMock "github.com/paper-indonesia/pivot-backoffice/mocks/pdk/logger"
 	mysqlExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"

@@ -9,10 +9,10 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/qr"
-	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/qr"
+	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 )
 
 func (r *snapCoreRepository) GenerateQrMpm(ctx context.Context, request snapCoreModel.GenerateQrMpmRequest) (*snapCoreModel.GenerateQrMpmResponseData, error) {

@@ -6,12 +6,12 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/virtualAccount"
-	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
-	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/virtualAccount"
+	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
+	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 )
 
 func (r *snapCoreRepository) DeleteVirtualAccount(ctx context.Context, request *snapCoreModel.DeleteVirtualAccountRequest) (*snapCoreModel.DeleteVirtualAccountResponseData, error) {

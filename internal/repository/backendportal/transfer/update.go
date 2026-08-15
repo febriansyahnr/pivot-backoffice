@@ -3,9 +3,9 @@ package transferRepository
 import (
 	"context"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/transfer"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/transfer"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *transferRepository) Update(ctx context.Context, transfer *transfer.Transfer) error {

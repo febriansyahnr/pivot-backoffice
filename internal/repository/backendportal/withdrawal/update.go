@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/withdrawal"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/withdrawal"
 
 	"github.com/jmoiron/sqlx/types"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"

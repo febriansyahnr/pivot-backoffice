@@ -7,7 +7,7 @@ import (
 	"time"
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/location"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/location"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/location"
 	mySqlExt "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 

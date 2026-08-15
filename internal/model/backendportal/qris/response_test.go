@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/qris"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/qris"
 
 	"github.com/jmoiron/sqlx/types"
 	"github.com/stretchr/testify/assert"

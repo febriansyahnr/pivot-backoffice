@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/bankAccount"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/bankAccount"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
 	"github.com/jmoiron/sqlx/types"
 )

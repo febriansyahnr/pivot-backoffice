@@ -8,11 +8,11 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx/types"
+	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	beneficiaryAccountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/beneficiaryAccount"
+	beneficiaryAccountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/beneficiaryAccount"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
-	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
@@ -252,7 +252,7 @@ func TestBeneficiaryAccountRepository_GetList(t *testing.T) {
 
 func TestBeneficiaryAccountRepository_GetListOfDerived(t *testing.T) {
 	derivedMerchantID := uuid.NewString()
-	
+
 	testCase := []struct {
 		name      string
 		ctx       context.Context
@@ -270,8 +270,8 @@ func TestBeneficiaryAccountRepository_GetListOfDerived(t *testing.T) {
 					mock.AnythingOfType("*[]*beneficiaryAccountModel.BeneficiaryAccount"),
 					mock.MatchedBy(func(query string) bool {
 						// Verify query contains JOIN with disbursements and GROUP BY
-						return strings.Contains(query, "JOIN disbursements d") && 
-							   strings.Contains(query, "GROUP BY ba.uuid")
+						return strings.Contains(query, "JOIN disbursements d") &&
+							strings.Contains(query, "GROUP BY ba.uuid")
 					}),
 				).Return(nil)
 
@@ -297,8 +297,8 @@ func TestBeneficiaryAccountRepository_GetListOfDerived(t *testing.T) {
 					mock.AnythingOfType(constant.MockTypeValueContextReference),
 					mock.AnythingOfType("*[]*beneficiaryAccountModel.BeneficiaryAccount"),
 					mock.MatchedBy(func(query string) bool {
-						return strings.Contains(query, "JOIN disbursements d") && 
-							   strings.Contains(query, "GROUP BY ba.uuid")
+						return strings.Contains(query, "JOIN disbursements d") &&
+							strings.Contains(query, "GROUP BY ba.uuid")
 					}),
 				).Return(nil)
 
@@ -323,14 +323,14 @@ func TestBeneficiaryAccountRepository_GetListOfDerived(t *testing.T) {
 					mock.AnythingOfType(constant.MockTypeValueContextReference),
 					mock.AnythingOfType("*[]*beneficiaryAccountModel.BeneficiaryAccount"),
 					mock.MatchedBy(func(query string) bool {
-						return strings.Contains(query, "JOIN disbursements d") && 
-							   strings.Contains(query, "ba.merchant_id = ?") &&
-							   strings.Contains(query, "d.merchant_id = ?")
+						return strings.Contains(query, "JOIN disbursements d") &&
+							strings.Contains(query, "ba.merchant_id = ?") &&
+							strings.Contains(query, "d.merchant_id = ?")
 					}),
-					derivedMerchantID, // First occurrence for ba.merchant_id
-					derivedMerchantID, // Second occurrence for d.merchant_id
-					mock.AnythingOfType("string"), // beneficiary_account_no
-					mock.AnythingOfType("string"), // beneficiary_account_name
+					derivedMerchantID,                                   // First occurrence for ba.merchant_id
+					derivedMerchantID,                                   // Second occurrence for d.merchant_id
+					mock.AnythingOfType("string"),                       // beneficiary_account_no
+					mock.AnythingOfType("string"),                       // beneficiary_account_name
 					mock.AnythingOfType(constant.MockTypeTimeReference), // start created_at
 					mock.AnythingOfType(constant.MockTypeTimeReference), // end created_at
 				).Return(nil)
@@ -341,13 +341,13 @@ func TestBeneficiaryAccountRepository_GetListOfDerived(t *testing.T) {
 					mock.AnythingOfType(constant.MockTypeInt64Reference),
 					mock.MatchedBy(func(query string) bool {
 						return strings.Contains(query, "JOIN disbursements d") &&
-							   strings.Contains(query, "ba.merchant_id = ?") &&
-							   strings.Contains(query, "d.merchant_id = ?")
+							strings.Contains(query, "ba.merchant_id = ?") &&
+							strings.Contains(query, "d.merchant_id = ?")
 					}),
-					derivedMerchantID, // First occurrence for ba.merchant_id
-					derivedMerchantID, // Second occurrence for d.merchant_id
-					mock.AnythingOfType("string"), // beneficiary_account_no
-					mock.AnythingOfType("string"), // beneficiary_account_name
+					derivedMerchantID,                                   // First occurrence for ba.merchant_id
+					derivedMerchantID,                                   // Second occurrence for d.merchant_id
+					mock.AnythingOfType("string"),                       // beneficiary_account_no
+					mock.AnythingOfType("string"),                       // beneficiary_account_name
 					mock.AnythingOfType(constant.MockTypeTimeReference), // start created_at
 					mock.AnythingOfType(constant.MockTypeTimeReference), // end created_at
 				).Return(errors.New("no rows data"))
@@ -370,8 +370,8 @@ func TestBeneficiaryAccountRepository_GetListOfDerived(t *testing.T) {
 					mock.AnythingOfType(constant.MockTypeValueContextReference),
 					mock.AnythingOfType("*[]*beneficiaryAccountModel.BeneficiaryAccount"),
 					mock.MatchedBy(func(query string) bool {
-						return strings.Contains(query, "JOIN disbursements d") && 
-							   strings.Contains(query, "ba.metadata->>'$.isXb' = 'true'")
+						return strings.Contains(query, "JOIN disbursements d") &&
+							strings.Contains(query, "ba.metadata->>'$.isXb' = 'true'")
 					}),
 					derivedMerchantID,
 					derivedMerchantID,
@@ -387,7 +387,7 @@ func TestBeneficiaryAccountRepository_GetListOfDerived(t *testing.T) {
 					mock.AnythingOfType(constant.MockTypeInt64Reference),
 					mock.MatchedBy(func(query string) bool {
 						return strings.Contains(query, "JOIN disbursements d") &&
-							   strings.Contains(query, "ba.metadata->>'$.isXb' = 'true'")
+							strings.Contains(query, "ba.metadata->>'$.isXb' = 'true'")
 					}),
 					derivedMerchantID,
 					derivedMerchantID,

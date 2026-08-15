@@ -7,7 +7,7 @@ import (
 	"errors"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"

@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/country"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/country"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -256,7 +256,7 @@ func TestCountry_ToResponse(t *testing.T) {
 func TestCountry_ToResponse_NilPointer(t *testing.T) {
 	// Test edge case where country pointer might be nil
 	var country *Country = nil
-	
+
 	// This should panic as expected in Go when calling method on nil pointer
 	assert.Panics(t, func() {
 		country.ToResponse()
@@ -267,7 +267,7 @@ func TestCountry_ToResponse_FieldMapping(t *testing.T) {
 	// Test to ensure all fields are correctly mapped and DeletedAt is excluded
 	baseTime := time.Date(2023, 6, 15, 12, 0, 0, 0, time.UTC)
 	deletedTime := time.Date(2023, 7, 15, 12, 0, 0, 0, time.UTC)
-	
+
 	country := &Country{
 		Code:      "TEST",
 		Name:      "Test Country",

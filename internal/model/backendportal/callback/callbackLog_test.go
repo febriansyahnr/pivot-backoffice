@@ -2,12 +2,13 @@ package callback_model_test
 
 import (
 	"encoding/json"
+	"testing"
+
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
+	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/callback"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 const ExpectedNoErr = "Expected no error, got %v"

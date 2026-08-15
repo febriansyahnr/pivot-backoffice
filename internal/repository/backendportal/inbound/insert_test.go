@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/mock"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/inbound"
+	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/inbound"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/inbound"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 )

@@ -8,11 +8,11 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/qr"
-	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
-	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/qr"
+	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
+	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 )
 
 func (r *snapCoreRepository) QueryQrMpmDynamic(ctx context.Context, uuid string) (*snapCoreModel.QueryQrMpmDynamicResponseData, error) {

@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/user"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/user"
 	"github.com/stretchr/testify/assert"
 )
 

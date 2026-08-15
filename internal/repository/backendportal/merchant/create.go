@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *MerchantRepository) Create(ctx context.Context, merchant *merchantModel.Merchant) error {

@@ -9,10 +9,10 @@ import (
 	"golang.org/x/sync/errgroup"
 
 	"github.com/jmoiron/sqlx"
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/transfer"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/transfer"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *transferRepository) GetList(ctx context.Context, req *transfer.GetTransferListRequest, page, perPage int64) ([]*transfer.Transfer, int64, error) {

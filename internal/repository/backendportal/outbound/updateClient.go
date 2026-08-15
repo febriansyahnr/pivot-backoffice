@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/outbound"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/outbound"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 

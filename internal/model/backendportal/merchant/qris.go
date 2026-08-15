@@ -1,7 +1,7 @@
 package merchant
 
 import (
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/qris"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/qris"
 
 	"github.com/jmoiron/sqlx/types"
 )

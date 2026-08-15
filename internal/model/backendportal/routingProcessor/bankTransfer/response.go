@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"time"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/bankTransfer"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/bankTransfer"
 )
 
 type BankTransferResponseData struct {
@@ -28,7 +28,7 @@ type BankTransferResponseData struct {
 	Metadata                map[string]any     `json:"metadata,omitempty"`
 	TransactionDate         time.Time          `json:"transactionDate,omitempty"`
 	LatestTransactionStatus string             `json:"latestTransactionStatus,omitempty"`
-	AdditionalInfo         map[string]any     `json:"additionalInfo,omitempty"`
+	AdditionalInfo          map[string]any     `json:"additionalInfo,omitempty"`
 	// Internal Used
 	Transaction *orchestrator_model.AccountTransactionWithUseCase `json:"-"`
 }

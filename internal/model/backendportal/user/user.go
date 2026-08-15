@@ -9,7 +9,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	jwt "github.com/golang-jwt/jwt/v5"

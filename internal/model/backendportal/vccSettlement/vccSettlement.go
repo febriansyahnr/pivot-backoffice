@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"time"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 )
 
 type VccSettlement struct {

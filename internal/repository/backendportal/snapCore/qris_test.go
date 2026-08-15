@@ -6,12 +6,12 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	loggerMock "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/qris"
+	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/qris"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/snapCore"
 	httpReqMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/httpRequestExt"
-	loggerMock "github.com/paper-indonesia/pdk/v2/logger"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -54,12 +54,12 @@ func TestQrUploadDocument(t *testing.T) {
 	logger, _ := loggerMock.NewZapLogger(loggerMock.Config{})
 
 	tests := []struct {
-		name             string
-		baseURL          string
-		data             *snapCoreModel.UploadDocumentReq
-		wantErr          string
-		wantResult       *snapCoreModel.UploadDocumentResp
-		setupTestHooks   func(repo interface{
+		name           string
+		baseURL        string
+		data           *snapCoreModel.UploadDocumentReq
+		wantErr        string
+		wantResult     *snapCoreModel.UploadDocumentResp
+		setupTestHooks func(repo interface {
 			SetTestMultipartCreateFileHook(func() error)
 			SetTestMultipartCopyHook(func() error)
 			SetTestMultipartCreateFieldHook(func(string) error)
@@ -113,7 +113,7 @@ func TestQrUploadDocument(t *testing.T) {
 				DocumentNumber: "doc-123456",
 			},
 			wantErr: "create form file",
-			setupTestHooks: func(repo interface{
+			setupTestHooks: func(repo interface {
 				SetTestMultipartCreateFileHook(func() error)
 				SetTestMultipartCopyHook(func() error)
 				SetTestMultipartCreateFieldHook(func(string) error)
@@ -137,7 +137,7 @@ func TestQrUploadDocument(t *testing.T) {
 				DocumentNumber: "doc-123456",
 			},
 			wantErr: "copy raw file",
-			setupTestHooks: func(repo interface{
+			setupTestHooks: func(repo interface {
 				SetTestMultipartCreateFileHook(func() error)
 				SetTestMultipartCopyHook(func() error)
 				SetTestMultipartCreateFieldHook(func(string) error)
@@ -161,7 +161,7 @@ func TestQrUploadDocument(t *testing.T) {
 				DocumentNumber: "doc-123456",
 			},
 			wantErr: "create form field (text)",
-			setupTestHooks: func(repo interface{
+			setupTestHooks: func(repo interface {
 				SetTestMultipartCreateFileHook(func() error)
 				SetTestMultipartCopyHook(func() error)
 				SetTestMultipartCreateFieldHook(func(string) error)
@@ -185,7 +185,7 @@ func TestQrUploadDocument(t *testing.T) {
 				DocumentNumber: "doc-123456",
 			},
 			wantErr: "write form value (text)",
-			setupTestHooks: func(repo interface{
+			setupTestHooks: func(repo interface {
 				SetTestMultipartCreateFileHook(func() error)
 				SetTestMultipartCopyHook(func() error)
 				SetTestMultipartCreateFieldHook(func(string) error)
@@ -209,7 +209,7 @@ func TestQrUploadDocument(t *testing.T) {
 				DocumentNumber: "doc-123456",
 			},
 			wantErr: "close multipart",
-			setupTestHooks: func(repo interface{
+			setupTestHooks: func(repo interface {
 				SetTestMultipartCreateFileHook(func() error)
 				SetTestMultipartCopyHook(func() error)
 				SetTestMultipartCreateFieldHook(func(string) error)
@@ -233,7 +233,7 @@ func TestQrUploadDocument(t *testing.T) {
 				DocumentNumber: "doc-123456",
 			},
 			wantErr: "create request",
-			setupTestHooks: func(repo interface{
+			setupTestHooks: func(repo interface {
 				SetTestMultipartCreateFileHook(func() error)
 				SetTestMultipartCopyHook(func() error)
 				SetTestMultipartCreateFieldHook(func(string) error)
@@ -257,7 +257,7 @@ func TestQrUploadDocument(t *testing.T) {
 				DocumentNumber: "doc-123456",
 			},
 			wantErr: "read all response body",
-			setupTestHooks: func(repo interface{
+			setupTestHooks: func(repo interface {
 				SetTestMultipartCreateFileHook(func() error)
 				SetTestMultipartCopyHook(func() error)
 				SetTestMultipartCreateFieldHook(func(string) error)

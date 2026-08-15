@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/credential"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/credential"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/credential"
 	mysqlMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 

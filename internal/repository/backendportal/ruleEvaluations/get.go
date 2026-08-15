@@ -5,9 +5,9 @@ import (
 	"database/sql"
 	"errors"
 
-	ruleevaluationsmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/ruleEvaluations"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	ruleevaluationsmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/ruleEvaluations"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 
 func (r *RuleEvaluationsRepository) GetByID(ctx context.Context, id string) (ruleEval *ruleevaluationsmodel.RuleEvaluations, err error) {

@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/outbound"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/outbound"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

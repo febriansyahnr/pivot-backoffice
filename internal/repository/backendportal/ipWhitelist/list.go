@@ -6,9 +6,9 @@ import (
 	"errors"
 	"strings"
 
-	ipwhitelistModel "github.com/paper-indonesia/pivot-backoffice/internal/model/ipWhitelist"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	ipwhitelistModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/ipWhitelist"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"golang.org/x/sync/errgroup"
 )
 

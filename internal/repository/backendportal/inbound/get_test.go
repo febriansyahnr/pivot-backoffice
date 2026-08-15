@@ -3,15 +3,16 @@ package inboundRepository_test
 import (
 	"context"
 	"database/sql"
+	"testing"
+
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/inbound"
+	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/inbound"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/inbound"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"testing"
 )
 
 func TestGetList(t *testing.T) {

@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 )
 
 // GetInvestigationSummary retrieves summary statistics for investigation statuses

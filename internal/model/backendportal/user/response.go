@@ -3,7 +3,7 @@ package user
 import (
 	"encoding/json"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/tnc"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/tnc"
 )
 
 type ValidateInvitationResponse struct {

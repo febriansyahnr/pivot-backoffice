@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/outbound"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/outbound"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/outbound"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/stretchr/testify/assert"

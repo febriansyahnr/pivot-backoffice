@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcardCoreProcessor"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcardCoreProcessor"
 	"github.com/stretchr/testify/assert"
 )
 

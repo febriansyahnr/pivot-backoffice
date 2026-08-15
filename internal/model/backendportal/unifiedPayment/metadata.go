@@ -4,9 +4,9 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/fee"
-	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
-	splitRoutingPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/splitRoutingPayment"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
+	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
+	splitRoutingPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/splitRoutingPayment"
 
 	"github.com/paper-indonesia/pdk/v2/encrypt"
 )

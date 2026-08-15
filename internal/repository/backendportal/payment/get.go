@@ -8,11 +8,11 @@ import (
 	"slices"
 	"strings"
 
+	"github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	paymentConstant "github.com/paper-indonesia/pivot-backoffice/constant/payment"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
-	"github.com/paper-indonesia/pdk/v2/logger"
 )
 
 func (r *PaymentRepository) GetPaymentById(ctx context.Context, id string) (*paymentModel.Payment, error) {

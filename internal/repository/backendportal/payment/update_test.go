@@ -10,7 +10,7 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	paymentConstant "github.com/paper-indonesia/pivot-backoffice/constant/payment"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 

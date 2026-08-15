@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	industryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/industry"
-	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
+	industryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/industry"
+	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

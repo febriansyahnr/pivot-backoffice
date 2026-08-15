@@ -3,7 +3,7 @@ package settlementModel
 import (
 	"time"
 
-	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 )
 
 type AccountTransactionMetadataObject struct {

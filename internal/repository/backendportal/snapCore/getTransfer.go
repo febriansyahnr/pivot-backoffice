@@ -3,7 +3,7 @@ package snapCoreRepository
 import (
 	"context"
 
-	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/routingProcessor/bankTransfer"
+	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/routingProcessor/bankTransfer"
 )
 
 func (r *snapCoreRepository) GetTransferById(ctx context.Context, id string, forceFailed bool) (*routingProcessorModel.BankTransferResponseData, error) {

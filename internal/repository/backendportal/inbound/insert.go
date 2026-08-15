@@ -2,8 +2,9 @@ package inboundRepository
 
 import (
 	"context"
-	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/inbound"
+
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
+	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/inbound"
 )
 
 // This process does not use the “New Relic Span” because it run behind the scenes (Goroutine)

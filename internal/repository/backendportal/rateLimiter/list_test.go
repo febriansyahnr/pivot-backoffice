@@ -5,10 +5,10 @@ import (
 	"database/sql"
 	"testing"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	ratelimiterModel "github.com/paper-indonesia/pivot-backoffice/internal/model/rateLimiter"
-	mysqlMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	pdkLog "github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	ratelimiterModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/rateLimiter"
+	mysqlMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

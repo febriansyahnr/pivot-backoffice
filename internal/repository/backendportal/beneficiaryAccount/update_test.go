@@ -5,11 +5,11 @@ import (
 	"errors"
 	"testing"
 
+	loggerMock "github.com/paper-indonesia/pdk/v2/logger"
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	beneficiaryAccountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/beneficiaryAccount"
+	beneficiaryAccountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/beneficiaryAccount"
 	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/beneficiaryAccount"
 	mysqlMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
-	loggerMock "github.com/paper-indonesia/pdk/v2/logger"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

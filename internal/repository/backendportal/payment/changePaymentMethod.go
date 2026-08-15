@@ -3,7 +3,7 @@ package paymentRepository
 import (
 	"context"
 
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 

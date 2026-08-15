@@ -9,7 +9,7 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	model "github.com/paper-indonesia/pivot-backoffice/internal/model/merchantTopUp"
+	model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchantTopUp"
 	"github.com/paper-indonesia/pivot-backoffice/internal/repository"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 

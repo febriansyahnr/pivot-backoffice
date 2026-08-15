@@ -6,8 +6,8 @@ import (
 	"errors"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	model "github.com/paper-indonesia/pivot-backoffice/internal/model/merchantTopUp"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchantTopUp"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"

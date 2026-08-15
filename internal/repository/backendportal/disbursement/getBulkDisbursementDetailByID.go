@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 

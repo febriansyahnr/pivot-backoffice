@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcard"
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcardCoreProcessor"
 	"github.com/google/uuid"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcard"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcardCoreProcessor"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -78,10 +78,10 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 				MerchantID:        "merchant-minimal",
 				ClientReferenceID: "client-ref-minimal",
 				CardRequest: EncryptCardDetailRequest{
-					Number:     "5555555555554444",
+					Number:      "5555555555554444",
 					ExpiryMonth: "01",
 					ExpiryYear:  "30",
-					NameOnCard: "Jane Smith",
+					NameOnCard:  "Jane Smith",
 				},
 				DeviceInformation: DeviceInformation{
 					Type: "mobile",
@@ -91,11 +91,11 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 				MerchantID:        "merchant-minimal",
 				ClientReferenceID: "client-ref-minimal",
 				CardRequest: creditcardCoreProcessorModel.EncryptCardDetailRequest{
-					Number:     "5555555555554444",
+					Number:      "5555555555554444",
 					ExpiryMonth: "01",
 					ExpiryYear:  "30",
-					CVC:        "",
-					NameOnCard: "Jane Smith",
+					CVC:         "",
+					NameOnCard:  "Jane Smith",
 				},
 				DeviceInformation: creditcardCoreProcessorModel.DeviceInformation{
 					Type:           "mobile",
@@ -117,11 +117,11 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 				MerchantID:        "merchant-special-chars-!@#$%",
 				ClientReferenceID: "client-ref-special-测试",
 				CardRequest: EncryptCardDetailRequest{
-					Number:     "378282246310005",
+					Number:      "378282246310005",
 					ExpiryMonth: "12",
 					ExpiryYear:  "99",
-					CVC:        "1234",
-					NameOnCard: "José María García-López",
+					CVC:         "1234",
+					NameOnCard:  "José María García-López",
 				},
 				DeviceInformation: DeviceInformation{
 					Type:           "tablet",
@@ -144,11 +144,11 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 				MerchantID:        "merchant-special-chars-!@#$%",
 				ClientReferenceID: "client-ref-special-测试",
 				CardRequest: creditcardCoreProcessorModel.EncryptCardDetailRequest{
-					Number:     "378282246310005",
+					Number:      "378282246310005",
 					ExpiryMonth: "12",
 					ExpiryYear:  "99",
-					CVC:        "1234",
-					NameOnCard: "José María García-López",
+					CVC:         "1234",
+					NameOnCard:  "José María García-López",
 				},
 				DeviceInformation: creditcardCoreProcessorModel.DeviceInformation{
 					Type:           "tablet",
@@ -174,11 +174,11 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 				MerchantID:        "",
 				ClientReferenceID: "",
 				CardRequest: EncryptCardDetailRequest{
-					Number:     "",
+					Number:      "",
 					ExpiryMonth: "",
 					ExpiryYear:  "",
-					CVC:        "",
-					NameOnCard: "",
+					CVC:         "",
+					NameOnCard:  "",
 				},
 				DeviceInformation: DeviceInformation{
 					Type:           "",
@@ -197,11 +197,11 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 				MerchantID:        "",
 				ClientReferenceID: "",
 				CardRequest: creditcardCoreProcessorModel.EncryptCardDetailRequest{
-					Number:     "",
+					Number:      "",
 					ExpiryMonth: "",
 					ExpiryYear:  "",
-					CVC:        "",
-					NameOnCard: "",
+					CVC:         "",
+					NameOnCard:  "",
 				},
 				DeviceInformation: creditcardCoreProcessorModel.DeviceInformation{
 					Type:           "",
@@ -223,11 +223,11 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 				MerchantID:        "merchant-with-very-long-identifier-that-exceeds-normal-length-requirements",
 				ClientReferenceID: "client-reference-id-with-extremely-long-value-that-might-cause-issues-in-some-systems",
 				CardRequest: EncryptCardDetailRequest{
-					Number:     "6011111111111117",
+					Number:      "6011111111111117",
 					ExpiryMonth: "06",
 					ExpiryYear:  "28",
-					CVC:        "999",
-					NameOnCard: "Alexander Bartholomew Christopher Maximilian Van Der Berg-Johnson III",
+					CVC:         "999",
+					NameOnCard:  "Alexander Bartholomew Christopher Maximilian Van Der Berg-Johnson III",
 				},
 				DeviceInformation: DeviceInformation{
 					Type:           "desktop",
@@ -253,11 +253,11 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 				MerchantID:        "merchant-with-very-long-identifier-that-exceeds-normal-length-requirements",
 				ClientReferenceID: "client-reference-id-with-extremely-long-value-that-might-cause-issues-in-some-systems",
 				CardRequest: creditcardCoreProcessorModel.EncryptCardDetailRequest{
-					Number:     "6011111111111117",
+					Number:      "6011111111111117",
 					ExpiryMonth: "06",
 					ExpiryYear:  "28",
-					CVC:        "999",
-					NameOnCard: "Alexander Bartholomew Christopher Maximilian Van Der Berg-Johnson III",
+					CVC:         "999",
+					NameOnCard:  "Alexander Bartholomew Christopher Maximilian Van Der Berg-Johnson III",
 				},
 				DeviceInformation: creditcardCoreProcessorModel.DeviceInformation{
 					Type:           "desktop",
@@ -286,11 +286,11 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 				MerchantID:        "merchant-nil-metadata",
 				ClientReferenceID: "client-ref-nil-metadata",
 				CardRequest: EncryptCardDetailRequest{
-					Number:     "4000000000000002",
+					Number:      "4000000000000002",
 					ExpiryMonth: "03",
 					ExpiryYear:  "26",
-					CVC:        "456",
-					NameOnCard: "Test User",
+					CVC:         "456",
+					NameOnCard:  "Test User",
 				},
 				DeviceInformation: DeviceInformation{
 					Type:      "mobile",
@@ -303,11 +303,11 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 				MerchantID:        "merchant-nil-metadata",
 				ClientReferenceID: "client-ref-nil-metadata",
 				CardRequest: creditcardCoreProcessorModel.EncryptCardDetailRequest{
-					Number:     "4000000000000002",
+					Number:      "4000000000000002",
 					ExpiryMonth: "03",
 					ExpiryYear:  "26",
-					CVC:        "456",
-					NameOnCard: "Test User",
+					CVC:         "456",
+					NameOnCard:  "Test User",
 				},
 				DeviceInformation: creditcardCoreProcessorModel.DeviceInformation{
 					Type:           "mobile",
@@ -359,9 +359,9 @@ func TestEncryptCardRequest_ToProcessorRequestModel(t *testing.T) {
 
 func TestToCardResponseModel(t *testing.T) {
 	tests := []struct {
-		name               string
-		processorResponse  *creditcardCoreProcessorModel.EncryptedCardResponse
-		expected           *EncryptedCardResponse
+		name              string
+		processorResponse *creditcardCoreProcessorModel.EncryptedCardResponse
+		expected          *EncryptedCardResponse
 	}{
 		{
 			name: "complete_card_response",
@@ -545,8 +545,8 @@ func TestToCardResponseModel(t *testing.T) {
 				CreatedAt: "2023-10-01T16:45:30Z",
 				Metadata: map[string]string{
 					"unicode_field_测试": "value_with_special_chars_!@#$%",
-					"empty_field":        "",
-					"html_content":       "<div>HTML content &amp; entities</div>",
+					"empty_field":      "",
+					"html_content":     "<div>HTML content &amp; entities</div>",
 				},
 			},
 			expected: &EncryptedCardResponse{
@@ -590,8 +590,8 @@ func TestToCardResponseModel(t *testing.T) {
 				CreatedAt: "2023-10-01T16:45:30Z",
 				Metadata: map[string]string{
 					"unicode_field_测试": "value_with_special_chars_!@#$%",
-					"empty_field":        "",
-					"html_content":       "<div>HTML content &amp; entities</div>",
+					"empty_field":      "",
+					"html_content":     "<div>HTML content &amp; entities</div>",
 				},
 			},
 		},

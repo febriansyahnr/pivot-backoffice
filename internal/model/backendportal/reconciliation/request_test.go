@@ -3,7 +3,7 @@ package reconciliation_test
 import (
 	"testing"
 
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/reconciliation"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/reconciliation"
 	"github.com/stretchr/testify/assert"
 )
 

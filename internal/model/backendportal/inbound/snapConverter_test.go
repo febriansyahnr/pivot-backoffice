@@ -7,7 +7,7 @@ import (
 
 	"github.com/jmoiron/sqlx/types"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/unifiedPayment"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/unifiedPayment"
 	"github.com/stretchr/testify/assert"
 )
 

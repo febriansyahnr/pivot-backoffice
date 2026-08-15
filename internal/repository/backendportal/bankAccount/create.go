@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	model "github.com/paper-indonesia/pivot-backoffice/internal/model/bankAccount"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/bankAccount"
 )
 
 func (r *bankAccountRepository) Create(ctx context.Context, req *model.BankAccount) error {

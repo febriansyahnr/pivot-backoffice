@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 )
 
 func (r *DisbursementRepository) ReconfirmXB(ctx context.Context, request *disbursementModel.ReconfirmXBRequest) error {

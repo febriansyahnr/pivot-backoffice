@@ -6,10 +6,10 @@ import (
 	"errors"
 	"fmt"
 
-	snapCoreBankConfigModel "github.com/paper-indonesia/pivot-backoffice/internal/model/snapCore/bankConfig"
+	"github.com/paper-indonesia/pdk/v2/logger"
+	snapCoreBankConfigModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/bankConfig"
 	pkgErrors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	httpResponse "github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
-	"github.com/paper-indonesia/pdk/v2/logger"
 )
 
 func (r *snapCoreRepository) GetBankCodeList(ctx context.Context, filter *snapCoreBankConfigModel.GetBankCodeListRequest) (*snapCoreBankConfigModel.BankCodeListResponseData, error) {
