@@ -15,7 +15,6 @@ import (
 	webhandler "github.com/paper-indonesia/pivot-backoffice/handler/web"
 	dashboardhandler "github.com/paper-indonesia/pivot-backoffice/handler/web/dashboard"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/application"
-	disbursementService "github.com/paper-indonesia/pivot-backoffice/internal/service/v1/disbursement"
 	"github.com/spf13/cobra"
 )
 
@@ -39,15 +38,11 @@ var servewebcmd = &cobra.Command{
 		defer app.Recover()
 		defer app.Closer()
 
-		disbursementSvc := disbursementService.New(
-			cfg, app.GetLogger(), app.GetMerchantRepository(), app.GetDisbursementRepository(),
-			app.GetSnapCoreRepository(), app.GetBankAccountRepository(),
-			disbursementService.WithStatusHistoriesRepository(app.GetStatusHistoriesRepository()),
-		)
-		defer disbursementSvc.WPRelease()
+		app.Setup()
+		defer app.ReleaseServices()
 
 		dasboardHandler := dashboardhandler.NewDashboard(
-			dashboardhandler.WithDisbursementService(disbursementSvc),
+			dashboardhandler.WithDisbursementService(app.GetDisbursementService()),
 		)
 
 		handlers := []webhandler.Handler{

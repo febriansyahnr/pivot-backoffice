@@ -1,4 +1,4 @@
-package snapCoreModel
+package banktransfer
 
 type UpdateTransferStatusPayload struct {
 	ExternalID      string `json:"externalId"`

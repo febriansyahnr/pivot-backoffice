@@ -1,4 +1,4 @@
-package snapCoreModel_test
+package banktransfer_test
 
 import (
 	"testing"

@@ -5,6 +5,10 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/paper-indonesia/pdk/go/monitoring"
+	pdkLogger "github.com/paper-indonesia/pdk/v2/logger"
+	pdkNewRelic "github.com/paper-indonesia/pdk/v2/newRelicExt"
+	"github.com/paper-indonesia/pdk/v2/otelExt"
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/bigquery"
@@ -18,10 +22,6 @@ import (
 	"github.com/paper-indonesia/pivot-backoffice/pkg/redisExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/validatorExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/vault"
-	"github.com/paper-indonesia/pdk/go/monitoring"
-	pdkLogger "github.com/paper-indonesia/pdk/v2/logger"
-	pdkNewRelic "github.com/paper-indonesia/pdk/v2/newRelicExt"
-	"github.com/paper-indonesia/pdk/v2/otelExt"
 )
 
 type Application struct {
@@ -42,6 +42,9 @@ type Application struct {
 	encryptGcs        encryption.GCSClient
 	vaultClient       *vault.Client
 	bqClient          bigquery.IBigQueryService
+
+	repo    AppRepository
+	service AppService
 
 	closes []func()
 }
@@ -162,4 +165,9 @@ func (a *Application) Closer() {
 	for _, close := range a.closes {
 		close()
 	}
+}
+
+func (a *Application) Setup() {
+	a.SetupRepositories()
+	a.SetupServices()
 }

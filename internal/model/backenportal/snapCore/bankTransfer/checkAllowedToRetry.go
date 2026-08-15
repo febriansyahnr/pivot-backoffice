@@ -1,4 +1,4 @@
-package snapCoreModel
+package banktransfer
 
 type CheckAllowedToRetryRequest struct {
 	Force      bool   `json:"force"`

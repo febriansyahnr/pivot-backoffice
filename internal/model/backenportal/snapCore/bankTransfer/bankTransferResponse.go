@@ -1,4 +1,4 @@
-package snapCoreModel
+package banktransfer
 
 import (
 	"fmt"

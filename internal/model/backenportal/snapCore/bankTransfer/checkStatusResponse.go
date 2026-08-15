@@ -1,4 +1,4 @@
-package snapCoreModel
+package banktransfer
 
 import commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
 
