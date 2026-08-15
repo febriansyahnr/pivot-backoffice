@@ -29,8 +29,6 @@ type IJwt interface {
 	TerminateTokenOtherDevices(ctx context.Context, email, deviceId string) (err error)
 	TerminateTokenOfUserRoleChanged(ctx context.Context, email string) (err error)
 
-	GenerateTokenForOTP(ctx context.Context, id string, identifier constant.OTPIdentifier) (token string, err error)
-	GenerateTokenForFeature2FA(ctx context.Context, id string, identifier constant.OTPIdentifier) (token string, err error)
 	ValidateTokenFromOTP(ctx context.Context, tokenString string) (claims *otpModel.TokenOTPClaims, err error)
 	ValidateTokenFromFeature2FA(ctx context.Context, tokenString string) (claims *otpModel.TokenOTPClaims, err error)
 
@@ -128,21 +126,8 @@ func (c *jwtConfig) GenerateRefreshToken(
 	return newToken.SignedString([]byte(c.Secret.JWTSignatureKey.UserKey))
 }
 
-func (c *jwtConfig) GenerateTokenForOTP(ctx context.Context, id string, identifier constant.OTPIdentifier) (string, error) {
-	return c.generateTokenOTP(ctx, c.Secret.JWTSignatureKey.TokenOTPKey, &otpModel.TokenOTPClaims{
-		UUID: id, Identifier: identifier,
-	})
-}
-
-func (c *jwtConfig) GenerateTokenForFeature2FA(ctx context.Context, id string, identifier constant.OTPIdentifier) (string, error) {
-	return c.generateTokenOTP(ctx, c.Secret.JWTSignatureKey.TokenOTPFeatureKey, &otpModel.TokenOTPClaims{
-		UUID: id, Identifier: identifier,
-	})
-}
-
 func (c *jwtConfig) generateTokenOTP(_ context.Context, key string, data *otpModel.TokenOTPClaims) (string, error) {
 	data.Issuer = c.Config.ServiceName
-	data.ExpiresAt = goJwt.NewNumericDate(time.Now().UTC().Add(data.Identifier.ExpireDuration()))
 
 	return goJwt.NewWithClaims(goJwt.SigningMethodHS256, data).
 		SignedString([]byte(key))

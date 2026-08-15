@@ -30,40 +30,6 @@ func LoadConfig(configPath, secretPath string) (*Config, *Secret, error) {
 	}
 
 	env = config.Environment
-	otpConfig = config.UserOTPConfig
-	defEmailSender = config.PaperCommunication.EmailSender
-	emailLogoURL = config.PaperCommunication.EmailLogoURL
-	creditCardReferences = config.CreditCardReferences
-	gcpConfig = config.GCPConfig
-	paymentFeeDefault = config.PaymentFeeDefaults
-	installmentDefaultFeeConfig = config.InstallmentFee.Default
-	installmentDefaultChannelFeeConfig = buildInstallmentDefaultChannelFeeConfig(&config)
-	config.VccTerminal.TravelAgents.KeyToUpperCase()
 
 	return &config, &secret, nil
-}
-
-func buildInstallmentDefaultChannelFeeConfig(config *Config) map[string]InstallmentDefaultFeeConfig {
-	installmentTenorFeeMap := map[string]InstallmentDefaultFeeConfig{}
-	defaultFee := config.InstallmentFee.Default
-	for channel, feeDetail := range config.InstallmentFee.Channel {
-		for i, tenor := range feeDetail.Tenor {
-			channelFeeKey := fmt.Sprintf("%s_%dM", channel, tenor)
-			channelFeeConfig := InstallmentDefaultFeeConfig{}
-			if i < len(feeDetail.Amount) {
-				channelFeeConfig.Amount = feeDetail.Amount[i]
-			} else {
-				channelFeeConfig.Amount = defaultFee.Amount
-			}
-
-			if i < len(feeDetail.Percentage) {
-				channelFeeConfig.Percentage = feeDetail.Percentage[i]
-			} else {
-				channelFeeConfig.Percentage = defaultFee.Percentage
-			}
-
-			installmentTenorFeeMap[channelFeeKey] = channelFeeConfig
-		}
-	}
-	return installmentTenorFeeMap
 }

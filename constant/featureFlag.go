@@ -1,15 +1,11 @@
 package constant
 
 import (
-	"context"
 	"encoding/json"
 	"slices"
 	"time"
 
-	"github.com/paper-indonesia/pivot-backoffice/config"
-
 	"github.com/google/uuid"
-	"github.com/paper-indonesia/pdk/v2/logger"
 	ffclient "github.com/thomaspoignant/go-feature-flag"
 	"github.com/thomaspoignant/go-feature-flag/ffcontext"
 )
@@ -91,10 +87,6 @@ type AdvanceAiFeatureFlag struct {
 	JourneyID string `json:"journeyId"`
 }
 
-type DukcapilFeatureFlag struct {
-	FieldThresholds config.DukcapilFieldThresholds `json:"fieldThresholds"`
-}
-
 type MandatoryAddressEnforcementConfig struct {
 	CutoffDate  string   `json:"cutoffDate"`
 	MerchantIds []string `json:"merchantIds"`
@@ -169,74 +161,6 @@ func GetAdvanceAiFeatureFlag(key string) *AdvanceAiFeatureFlag {
 	}
 
 	return &result
-}
-
-func GetDukcapilFeatureFlag(key string, log logger.ILogger) *DukcapilFeatureFlag {
-	ctx := context.Background()
-	flagEval := ffcontext.NewEvaluationContext(key)
-	flagEval.AddCustomAttribute(FeatureFlagTargetQueryNameEnv, key)
-
-	dataJson, err := ffclient.JSONVariation(FeatureFlagKeyDukcapilConfig, flagEval, nil)
-	if err != nil || dataJson == nil {
-		if log != nil {
-			log.Warn(ctx, "Failed to get Dukcapil feature flag",
-				logger.String("environment", key),
-				logger.String("flag_key", FeatureFlagKeyDukcapilConfig),
-				logger.Error(err))
-		}
-		return nil
-	}
-
-	dataBytes, err := json.Marshal(dataJson)
-	if err != nil {
-		if log != nil {
-			log.Error(ctx, "Failed to marshal Dukcapil feature flag data",
-				logger.String("environment", key),
-				logger.Error(err))
-		}
-		return nil
-	}
-
-	var result DukcapilFeatureFlag
-	err = json.Unmarshal(dataBytes, &result)
-	if err != nil {
-		if log != nil {
-			log.Error(ctx, "Failed to unmarshal Dukcapil feature flag",
-				logger.String("environment", key),
-				logger.Error(err))
-		}
-		return nil
-	}
-
-	return &result
-}
-
-func GetDukcapilMinimumThreshold(environment string, fallbackConfig *config.DukcapilConfig, log logger.ILogger) int {
-	dukcapilFF := GetDukcapilFeatureFlag(environment, log)
-	var fieldThresholds config.DukcapilFieldThresholds
-
-	if dukcapilFF != nil {
-		fieldThresholds = dukcapilFF.FieldThresholds
-	} else {
-		fieldThresholds = fallbackConfig.FieldThresholds
-	}
-
-	minThreshold := 100
-	thresholdValues := []int{
-		fieldThresholds.Name, fieldThresholds.Gender,
-		fieldThresholds.DOB, fieldThresholds.POB, fieldThresholds.Job,
-		fieldThresholds.Address, fieldThresholds.RT, fieldThresholds.RW,
-		fieldThresholds.Village, fieldThresholds.District, fieldThresholds.Regency,
-		fieldThresholds.Province,
-	}
-
-	for _, threshold := range thresholdValues {
-		if threshold < minThreshold {
-			minThreshold = threshold
-		}
-	}
-
-	return minThreshold
 }
 
 func IsQrGenerateSeparateDbFeatureEnabled(merchantID string) bool {

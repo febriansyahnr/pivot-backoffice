@@ -9,7 +9,6 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/config"
-	"github.com/paper-indonesia/pivot-backoffice/constant"
 	accountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/account"
 	account_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/account"
 	activityModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/activity"
@@ -26,7 +25,6 @@ import (
 	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcardCoreProcessor"
 	customerModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/customer"
 	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
-	dukcapilmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/dukcapil"
 	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fdsProcessor/fdsCommon"
 	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
 	fraudrulesmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fraudRules"
@@ -42,7 +40,6 @@ import (
 	merchantforbiddenusecaseModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchantForbiddenUsecase"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchantTopUp"
 	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
-	otpModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/otp"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paperCommunication"
 	partitionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/partition"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/passwordHistories"
@@ -631,19 +628,6 @@ type IAccountService interface {
 	BulkCreateAccount(ctx context.Context, request *accountModel.BulkCreateAccountRequest) error
 }
 
-type IOTP interface {
-	SendGenerateOTPCode(ctx context.Context, request *otpModel.GenerateOTPCodeRequest) (string, error)
-	ValidateOTPCode(ctx context.Context, data *otpModel.VerifyOTP) (token string, err error)
-	ValidateTOTPCode(ctx context.Context, request *otpModel.VerifyTOTPRequest) (bool, error)
-
-	IOTPGenerator
-}
-
-type IOTPGenerator interface {
-	GenerateOTPCode(ctx context.Context, id, email string, feature constant.OTPIdentifier) (token string, err error)
-	GenerateTOTPVerifyToken(ctx context.Context, request otpModel.GenerateTOTPVerifyTokenRequest) (token string, err error)
-}
-
 type IAdjustmentService interface {
 	CreateManualTopup(ctx context.Context, req *adjustModel.ManualTopupRequest) (id string, err error)
 	CreateBalanceAdjustmentFromManualTopUp(ctx context.Context, req *adjustModel.BalanceAdjustmentRequest) (id string, err error)
@@ -1024,10 +1008,6 @@ type IAmlService interface {
 type ICountryService interface {
 	GetAll(ctx context.Context, filter *countryModel.SearchFilterRequest) ([]*countryModel.Country, error)
 	FindByCode(ctx context.Context, code string) (*countryModel.Country, error)
-}
-
-type IDukcapilService interface {
-	VerifyIdentity(ctx context.Context, request *dukcapilmodel.IdentityVerificationRequest) (*dukcapilmodel.IdentityVerificationResponse, error)
 }
 
 type ITablePartitionService interface {

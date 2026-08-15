@@ -1,7 +1,7 @@
 package config
 
 type Secret struct {
-	MySQLSecret                   MySQLSecret                   `mapstructure:"DATABASE"`
+	MySQLSecret                   Databases                     `mapstructure:"DATABASE"`
 	RedisSecret                   RedisSecret                   `mapstructure:"REDIS"`
 	RabbitMQSecret                RabbitMQSecret                `mapstructure:"RABBITMQ"`
 	RabbitMQStream                RabbitMQSecret                `mapstructure:"RABBITMQ_STREAM"`
@@ -18,14 +18,15 @@ type Secret struct {
 	StatsdPort                    string                        `mapstructure:"STATSD_PORT"`
 	WalletBackendSecret           WalletBackendSecret           `mapstructure:"WALLET_BACKEND"`
 	GoogleKMSKey                  string                        `mapstructure:"GOOGLE_KMS_KEY"`
-	FraudNetSecret                FraudNetSecret                `mapstructure:"FRAUD_NET"`
-	Sokratech                     SokratechSecret               `mapstructure:"SOKRATECH"`
 	CreditcardCoreProcessorSecret CreditcardCoreProcessorSecret `mapstructure:"CREDIT_CARD_CORE"`
-	AdvanceAISecret               AdvanceAISecret               `mapstructure:"ADVANCE_AI"`
-	Dukcapil                      DukcapilSecret                `mapstructure:"DUKCAPIL"`
 	Vault                         VaultSecret                   `mapstructure:"VAULT"`
 	Conductor                     ConductorSecret               `mapstructure:"CONDUCTOR"`
 	Payment                       PaymentSecret                 `mapstructure:"PAYMENT"`
+}
+
+type Databases struct {
+	Service       MySQLSecret `mapstructure:"SERVICE"`
+	BackendPortal MySQLSecret `mapstructure:"BACKEND_PORTAL"`
 }
 
 type MySQLSecret struct {
@@ -53,4 +54,43 @@ type MongoDBSecret struct {
 	Database string `mapstructure:"DATABASE"`
 	Username string `mapstructure:"USERNAME"`
 	Password string `mapstructure:"PASSWORD"`
+}
+
+type CrmSecret struct {
+	ApiKey string `mapstructure:"API_KEY"`
+}
+
+type ConsulSecret struct {
+	Token string `mapstructure:"TOKEN"`
+}
+
+type XbCoreProcessorSecret struct {
+	InternalServiceKey string `mapstructure:"INTERNAL_SERVICE_KEY"`
+}
+
+type WalletBackendSecret struct {
+	InternalServiceKey string `mapstructure:"INTERNAL_SERVICE_KEY"`
+}
+
+type CreditcardCoreProcessorSecret struct {
+	InternalServiceKey        string `mapstructure:"INTERNAL_SERVICE_KEY"`
+	EncryptionPublicKeySecret string `mapstructure:"ENCRYPTION_PUBLIC_KEY_SECRET"`
+	EncryptionPublicKeyIV     string `mapstructure:"ENCRYPTION_PUBLIC_KEY_IV"`
+}
+
+type VaultSecret struct {
+	Token string `mapstructure:"TOKEN"`
+}
+
+type ConductorSecret struct {
+	BasicAuth *ConductorSecretBasicAuth `mapstructure:"BASIC_AUTH"`
+}
+
+type ConductorSecretBasicAuth struct {
+	Username string `mapstructure:"USERNAME"`
+	Password string `mapstructure:"PASSWORD"`
+}
+
+type PaymentSecret struct {
+	KeyEncryptionKey string `mapstructure:"KEY_ENCRYPTION_KEY"`
 }

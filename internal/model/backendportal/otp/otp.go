@@ -2,7 +2,6 @@ package otp
 
 import (
 	"encoding/json"
-	"errors"
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
@@ -36,7 +35,6 @@ func (o *OTPCache) GetLatestOTP() *OTPList {
 
 type SendOTPReq struct {
 	Email               string                   `json:"email" validate:"required,email"`
-	Event               constant.OTPIdentifier   `json:"event" validate:"required"`
 	TwoFactorAuthMethod constant.TwoFactorMethod `json:"twoFactorAuthMethod" validate:"omitempty,oneof=AUTO OTP TOTP"`
 }
 
@@ -48,28 +46,6 @@ func (s *SendOTPReq) UnmarshalJSON(buf []byte) error {
 	if err := json.Unmarshal(buf, &data); err != nil {
 		return err
 	}
-
-	switch data.Event {
-	case constant.OTPForgotPasswordName:
-		data.Event = constant.OTPIdentifierForgotPassword
-
-	case constant.OTPResetPINName:
-		data.Event = constant.OTPIdentifierResetPIN
-
-	case constant.OTPUserLoginName:
-		data.Event = constant.OTPIdentifierUserLogin
-
-	case constant.OTPFirstTimeLoginName:
-		data.Event = constant.OTPIdentifierFirstTimeLogin
-
-	case constant.OTPChangePasswordName:
-		data.Event = constant.OTPIdentifierChangePassword
-
-	default:
-		return errors.New("event not registered")
-	}
-
-	*s = SendOTPReq(data)
 
 	return nil
 }
@@ -89,15 +65,13 @@ type VerifyOTP struct {
 	ID                  string
 	Email               string
 	OTPCode             string
-	Identifier          constant.OTPIdentifier
 	TwoFactorAuthMethod constant.TwoFactorMethod
 }
 
 type TokenOTPClaims struct {
-	UUID       string                 `json:"uuid"`
-	Identifier constant.OTPIdentifier `json:"identifier"`
-	Email      string                 `json:"-"` // Feature authorization
-	VerifyOTP  VerifyOTPToken         `json:"-"` // Verify OTP code
+	UUID      string         `json:"uuid"`
+	Email     string         `json:"-"` // Feature authorization
+	VerifyOTP VerifyOTPToken `json:"-"` // Verify OTP code
 	jwt.RegisteredClaims
 }
 
@@ -123,13 +97,11 @@ type VerifyTOTPRequest struct {
 type GenerateTOTPVerifyTokenRequest struct {
 	UserId    string
 	UserEmail string
-	Feature   constant.OTPIdentifier
 }
 
 type GenerateOTPCodeRequest struct {
 	UserId              string
 	UserEmail           string
-	Event               constant.OTPIdentifier
 	TwoFactorAuthMethod constant.TwoFactorMethod
 }
 

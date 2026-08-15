@@ -398,28 +398,6 @@ type DormantConditionConfig struct {
 	NoTransactionInDays  int `mapstructure:"NO_TRANSACTION_IN_DAYS"`
 }
 
-type CrmSecret struct {
-	ApiKey string `mapstructure:"API_KEY"`
-}
-
-type ConsulSecret struct {
-	Token string `mapstructure:"TOKEN"`
-}
-
-type XbCoreProcessorSecret struct {
-	InternalServiceKey string `mapstructure:"INTERNAL_SERVICE_KEY"`
-}
-
-type WalletBackendSecret struct {
-	InternalServiceKey string `mapstructure:"INTERNAL_SERVICE_KEY"`
-}
-
-type CreditcardCoreProcessorSecret struct {
-	InternalServiceKey        string `mapstructure:"INTERNAL_SERVICE_KEY"`
-	EncryptionPublicKeySecret string `mapstructure:"ENCRYPTION_PUBLIC_KEY_SECRET"`
-	EncryptionPublicKeyIV     string `mapstructure:"ENCRYPTION_PUBLIC_KEY_IV"`
-}
-
 type WithdrawalConfig struct {
 	MinAmount                                  float64                 `mapstructure:"MIN_AMOUNT"`
 	MaxAmount                                  float64                 `mapstructure:"MAX_AMOUNT"`
@@ -616,23 +594,6 @@ type DukcapilSecret struct {
 	UserID   string `mapstructure:"USER_ID"`
 	Password string `mapstructure:"PASSWORD"`
 	IP       string `mapstructure:"IP"`
-}
-
-type VaultSecret struct {
-	Token string `mapstructure:"TOKEN"`
-}
-
-type ConductorSecret struct {
-	BasicAuth *ConductorSecretBasicAuth `mapstructure:"BASIC_AUTH"`
-}
-
-type ConductorSecretBasicAuth struct {
-	Username string `mapstructure:"USERNAME"`
-	Password string `mapstructure:"PASSWORD"`
-}
-
-type PaymentSecret struct {
-	KeyEncryptionKey string `mapstructure:"KEY_ENCRYPTION_KEY"`
 }
 
 var defEmailSender string

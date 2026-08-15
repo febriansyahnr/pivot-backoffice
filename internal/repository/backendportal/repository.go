@@ -24,7 +24,6 @@ import (
 	customerModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/customer"
 	dailyAccountTransactionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/dailyAccountTransaction"
 	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
-	dukcapilmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/dukcapil"
 	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fdsProcessor/fdsCommon"
 	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
 	fraudrulesmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fraudRules"
@@ -1033,10 +1032,6 @@ type IAmlProcessorRepository interface {
 type ICountryRepository interface {
 	GetAll(ctx context.Context, filter *countryModel.SearchFilterRequest) ([]*countryModel.Country, error)
 	FindByCode(ctx context.Context, code string) (*countryModel.Country, error)
-}
-
-type IDukcapilGatewayRepository interface {
-	VerifyIdentity(ctx context.Context, req *dukcapilmodel.VerifyRequest) (*dukcapilmodel.VerifyResult, error)
 }
 
 type IStatusHistoriesRepository interface {

@@ -5,8 +5,6 @@ package mocks
 import (
 	context "context"
 
-	constant "github.com/paper-indonesia/pivot-backoffice/constant"
-
 	merchant "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 
 	mock "github.com/stretchr/testify/mock"
@@ -130,62 +128,6 @@ func (_m *IJwt) GenerateRefreshToken(ctx context.Context, _a1 *user.User, expire
 
 	if rf, ok := ret.Get(1).(func(context.Context, *user.User, time.Time) error); ok {
 		r1 = rf(ctx, _a1, expiredAt)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
-// GenerateTokenForFeature2FA provides a mock function with given fields: ctx, id, identifier
-func (_m *IJwt) GenerateTokenForFeature2FA(ctx context.Context, id string, identifier constant.OTPIdentifier) (string, error) {
-	ret := _m.Called(ctx, id, identifier)
-
-	if len(ret) == 0 {
-		panic("no return value specified for GenerateTokenForFeature2FA")
-	}
-
-	var r0 string
-	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, string, constant.OTPIdentifier) (string, error)); ok {
-		return rf(ctx, id, identifier)
-	}
-	if rf, ok := ret.Get(0).(func(context.Context, string, constant.OTPIdentifier) string); ok {
-		r0 = rf(ctx, id, identifier)
-	} else {
-		r0 = ret.Get(0).(string)
-	}
-
-	if rf, ok := ret.Get(1).(func(context.Context, string, constant.OTPIdentifier) error); ok {
-		r1 = rf(ctx, id, identifier)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
-// GenerateTokenForOTP provides a mock function with given fields: ctx, id, identifier
-func (_m *IJwt) GenerateTokenForOTP(ctx context.Context, id string, identifier constant.OTPIdentifier) (string, error) {
-	ret := _m.Called(ctx, id, identifier)
-
-	if len(ret) == 0 {
-		panic("no return value specified for GenerateTokenForOTP")
-	}
-
-	var r0 string
-	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, string, constant.OTPIdentifier) (string, error)); ok {
-		return rf(ctx, id, identifier)
-	}
-	if rf, ok := ret.Get(0).(func(context.Context, string, constant.OTPIdentifier) string); ok {
-		r0 = rf(ctx, id, identifier)
-	} else {
-		r0 = ret.Get(0).(string)
-	}
-
-	if rf, ok := ret.Get(1).(func(context.Context, string, constant.OTPIdentifier) error); ok {
-		r1 = rf(ctx, id, identifier)
 	} else {
 		r1 = ret.Error(1)
 	}

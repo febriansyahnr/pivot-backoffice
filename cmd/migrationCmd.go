@@ -34,11 +34,11 @@ func executeMigration(cmd *cobra.Command, args []string) {
 
 	// Build DSN Connection
 	dbConnection := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local&multiStatements=true",
-		secret.MySQLSecret.Username,
-		secret.MySQLSecret.Password,
+		secret.MySQLSecret.Service.Username,
+		secret.MySQLSecret.Service.Password,
 		cfg.MySQLConfig.Host,
 		cfg.MySQLConfig.Port,
-		secret.MySQLSecret.Database)
+		secret.MySQLSecret.Service.Database)
 
 	// Init Variable
 	migrationDir := migrationFile

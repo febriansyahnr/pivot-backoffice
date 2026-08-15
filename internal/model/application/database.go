@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"time"
 
+	pdkMySql "github.com/paper-indonesia/pdk/v2/mySqlExt"
+	pdkRedis "github.com/paper-indonesia/pdk/v2/redisExt"
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/redisExt"
-	pdkMySql "github.com/paper-indonesia/pdk/v2/mySqlExt"
-	pdkRedis "github.com/paper-indonesia/pdk/v2/redisExt"
 )
 
 func newDatabase(cfg *config.MySQLConfig, secret *config.MySQLSecret, app *Application) (mySqlExt.IMySqlExt, error) {
@@ -35,7 +35,7 @@ func newDatabase(cfg *config.MySQLConfig, secret *config.MySQLSecret, app *Appli
 func (a *Application) setupDatabase() {
 	var err error
 	// Init MySql Database
-	a.mySqlDB, err = newDatabase(&a.cfg.MySQLConfig, &a.secret.MySQLSecret, a)
+	a.mySqlDB, err = newDatabase(&a.cfg.MySQLConfig, &a.secret.MySQLSecret.Service, a)
 	if err != nil {
 		fmt.Printf("Unable to init mysql, %v", err)
 		panic(err)
