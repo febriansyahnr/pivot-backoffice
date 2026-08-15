@@ -9,7 +9,7 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	xbCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/xbCoreProcessor"
+	xbCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/xbCoreProcessor"
 	pkgErrs "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util/response"
 
@@ -388,10 +388,10 @@ func TestFieldNameTransformationFromSnakeCaseToCamelCase(t *testing.T) {
 	ctx := context.WithValue(context.Background(), constant.CtxTraceIdKey, "test-trace-123")
 
 	tests := []struct {
-		name              string
-		snakeCaseFields   []string
-		expectedFields    []string
-		messages          []string
+		name            string
+		snakeCaseFields []string
+		expectedFields  []string
+		messages        []string
 	}{
 		{
 			name:            "country_code should transform to countryCode",

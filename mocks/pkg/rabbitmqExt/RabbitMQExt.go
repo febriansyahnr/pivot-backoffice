@@ -6,17 +6,17 @@ import (
 	amqp "github.com/paper-indonesia/pdk/v2/amqp"
 	amqp091 "github.com/rabbitmq/amqp091-go"
 
-	callback "github.com/paper-indonesia/pivot-backoffice/internal/model/proto/messages/callback"
+	callback "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/messages/callback"
 
 	context "context"
 
 	io "io"
 
-	messagingQueueModel "github.com/paper-indonesia/pivot-backoffice/internal/model/messagingQueue"
+	messagingQueueModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/messagingQueue"
 
 	mock "github.com/stretchr/testify/mock"
 
-	notification "github.com/paper-indonesia/pivot-backoffice/internal/model/notification"
+	notification "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/notification"
 
 	rabbitMqExt "github.com/paper-indonesia/pivot-backoffice/pkg/rabbitMqExt"
 

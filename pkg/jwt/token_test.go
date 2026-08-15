@@ -11,8 +11,8 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	otpModel "github.com/paper-indonesia/pivot-backoffice/internal/model/otp"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/user"
+	otpModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/otp"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/user"
 	mockRedis "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/redisExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/redisExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"

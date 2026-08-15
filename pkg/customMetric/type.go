@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/monitoring"
 	"github.com/paper-indonesia/pdk/v2/otelExt"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/monitoring"
 )
 
 var otelMetric otelExt.IOtelExt

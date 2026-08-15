@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	xbCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/xbCoreProcessor"
+	xbCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/xbCoreProcessor"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/dictionary"
 	errors "github.com/paper-indonesia/pivot-backoffice/pkg/error"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"

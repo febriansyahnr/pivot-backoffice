@@ -9,10 +9,10 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
-	otpModel "github.com/paper-indonesia/pivot-backoffice/internal/model/otp"
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
-	userModel "github.com/paper-indonesia/pivot-backoffice/internal/model/user"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
+	otpModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/otp"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
+	userModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/user"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/redisExt"
 
 	goJwt "github.com/golang-jwt/jwt/v5"

@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"time"
 
+	pdkLogger "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	messagingQueueModel "github.com/paper-indonesia/pivot-backoffice/internal/model/messagingQueue"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/proto/messages/callback"
-	pdkLogger "github.com/paper-indonesia/pdk/v2/logger"
+	messagingQueueModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/messagingQueue"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/messages/callback"
 
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pdk/v2/amqp"

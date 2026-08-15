@@ -8,7 +8,7 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 	mockRedis "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/redisExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 

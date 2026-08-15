@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 
 	goJwt "github.com/golang-jwt/jwt/v5"
 )

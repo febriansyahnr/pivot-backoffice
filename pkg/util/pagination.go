@@ -9,9 +9,9 @@ import (
 	"strings"
 	"sync"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
-	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pdk/v2/logger"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"golang.org/x/sync/errgroup"
 )
 

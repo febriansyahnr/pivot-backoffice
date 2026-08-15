@@ -1,7 +1,7 @@
 package application
 
 import (
-	"github.com/paper-indonesia/pivot-backoffice/internal/service"
+	service "github.com/paper-indonesia/pivot-backoffice/internal/service/backendportal"
 	disbursementService "github.com/paper-indonesia/pivot-backoffice/internal/service/backendportal/disbursement"
 )
 

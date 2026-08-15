@@ -9,11 +9,11 @@ import (
 	"io"
 	"time"
 
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/notification"
-	activitypb "github.com/paper-indonesia/pivot-backoffice/internal/model/proto/messages/activity"
 	pdkConst "github.com/paper-indonesia/pdk/v2/constant"
 	pdkLogger "github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/notification"
+	activitypb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/messages/activity"
 
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pdk/v2/amqp"
