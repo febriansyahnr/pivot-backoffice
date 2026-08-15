@@ -5,9 +5,9 @@ package mocks
 import (
 	context "context"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
-	merchant "github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	merchant "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 
 	mock "github.com/stretchr/testify/mock"
 

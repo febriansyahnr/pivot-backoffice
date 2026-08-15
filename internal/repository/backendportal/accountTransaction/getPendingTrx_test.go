@@ -6,7 +6,7 @@ import (
 	"time"
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/accountTransaction"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/accountTransaction"
 	mySqlExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/jmoiron/sqlx/types"

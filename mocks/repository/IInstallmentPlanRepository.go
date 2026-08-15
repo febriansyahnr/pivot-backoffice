@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	installmentPlanModel "github.com/paper-indonesia/pivot-backoffice/internal/model/installmentPlan"
+	installmentPlanModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/installmentPlan"
 	mock "github.com/stretchr/testify/mock"
 )
 

@@ -10,7 +10,7 @@ import (
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	snapCoreModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/qris"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/snapCore"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/snapCore"
 	httpReqMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/httpRequestExt"
 
 	"github.com/stretchr/testify/assert"

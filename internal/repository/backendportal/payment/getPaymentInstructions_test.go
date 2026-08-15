@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/consul/api"
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/payment"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/payment"
 	"github.com/paper-indonesia/pivot-backoffice/test"
 	"github.com/stretchr/testify/assert"
 )

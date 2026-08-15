@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	adjustment "github.com/paper-indonesia/pivot-backoffice/internal/model/adjustment"
+	adjustment "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/adjustment"
 
 	mock "github.com/stretchr/testify/mock"
 )

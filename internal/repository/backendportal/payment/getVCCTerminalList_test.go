@@ -8,7 +8,7 @@ import (
 	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/payment"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/payment"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"

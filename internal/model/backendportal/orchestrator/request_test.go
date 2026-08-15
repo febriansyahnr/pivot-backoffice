@@ -7,8 +7,8 @@ import (
 
 	"github.com/jmoiron/sqlx/types"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	account_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/account"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/orchestrator"
+	account_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/account"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"

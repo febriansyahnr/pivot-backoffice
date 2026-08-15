@@ -3,7 +3,7 @@ package disbursementModel
 import (
 	"time"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 )
 
 type ApproveActionObject struct {

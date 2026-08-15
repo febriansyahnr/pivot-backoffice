@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"time"
 
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/disbursement"
-	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/merchant"
-	xbModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/xb"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
+	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
+	xbModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/xb"
 
 	"github.com/jmoiron/sqlx/types"
 	"github.com/shopspring/decimal"

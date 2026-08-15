@@ -4,11 +4,11 @@ import (
 	"context"
 	"strconv"
 
+	"github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	"github.com/paper-indonesia/pivot-backoffice/internal/repository"
+	repository "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/httpRequestExt"
-	"github.com/paper-indonesia/pdk/v2/logger"
 	"go.opentelemetry.io/otel"
 )
 

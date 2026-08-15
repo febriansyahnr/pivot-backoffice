@@ -4,8 +4,8 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcardCoreProcessor"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcardCoreProcessor"
 	"github.com/shopspring/decimal"
 )
 

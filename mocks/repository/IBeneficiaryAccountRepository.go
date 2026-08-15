@@ -3,8 +3,8 @@
 package mocks
 
 import (
-	beneficiaryAccountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/beneficiaryAccount"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	beneficiaryAccountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/beneficiaryAccount"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
 	context "context"
 

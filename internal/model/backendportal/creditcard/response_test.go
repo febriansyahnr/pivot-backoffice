@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	"github.com/google/uuid"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
-	card "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcard"
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcardCoreProcessor"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	card "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcard"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcardCoreProcessor"
 	"github.com/stretchr/testify/assert"
 )
 

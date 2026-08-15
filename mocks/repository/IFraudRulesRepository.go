@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	fraudrulesmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/fraudRules"
+	fraudrulesmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fraudRules"
 	mock "github.com/stretchr/testify/mock"
 )
 

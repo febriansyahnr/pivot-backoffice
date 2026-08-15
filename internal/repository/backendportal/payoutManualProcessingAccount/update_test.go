@@ -7,7 +7,7 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	payoutManualProcessingAccountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payoutManualProcessingAccount"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/payoutManualProcessingAccount"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/payoutManualProcessingAccount"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 

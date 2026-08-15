@@ -4,7 +4,7 @@ import (
 	"io"
 	"time"
 
-	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/proto/messages/disbursement"
+	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/messages/disbursement"
 
 	"github.com/shopspring/decimal"
 )

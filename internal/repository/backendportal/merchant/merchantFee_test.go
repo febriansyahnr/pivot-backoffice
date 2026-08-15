@@ -7,7 +7,7 @@ import (
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/merchant"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/merchant"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/stretchr/testify/assert"

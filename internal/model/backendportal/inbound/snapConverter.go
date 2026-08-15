@@ -11,8 +11,8 @@ import (
 	"github.com/jmoiron/sqlx/types"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/unifiedPayment"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/unifiedPayment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 	snap_signature "github.com/paper-indonesia/pivot-backoffice/pkg/util/snap/signature"
 )

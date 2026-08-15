@@ -8,7 +8,7 @@ import (
 	"github.com/jmoiron/sqlx/types"
 	"github.com/stretchr/testify/assert"
 
-	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/inbound"
+	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/inbound"
 )
 
 func TestToResponse(t *testing.T) {

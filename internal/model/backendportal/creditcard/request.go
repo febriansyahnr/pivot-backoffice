@@ -4,8 +4,8 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcardCoreProcessor"
-	splitRoutingPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/splitRoutingPayment"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcardCoreProcessor"
+	splitRoutingPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/splitRoutingPayment"
 	"github.com/shopspring/decimal"
 )
 

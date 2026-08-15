@@ -6,7 +6,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/orchestrator"
+	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 )
 
 type CreateNewLedgerEntryRequest struct {

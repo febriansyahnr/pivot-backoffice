@@ -7,7 +7,7 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	walletTransactionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/wallet/transaction"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/wallet/transaction"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/wallet/transaction"
 	mySqlExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/jmoiron/sqlx/types"

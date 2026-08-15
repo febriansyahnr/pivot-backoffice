@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcardCoreProcessor"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcardCoreProcessor"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	"github.com/google/uuid"

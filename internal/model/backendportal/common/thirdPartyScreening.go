@@ -1,8 +1,8 @@
 package commonModel
 
 import (
-	amlcommon "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/amlProcessor"
-	dukcapilmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/dukcapil"
+	amlcommon "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/amlProcessor"
+	dukcapilmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/dukcapil"
 )
 
 // ThirdPartyScreeningData represents unified storage structure for all third-party screening providers

@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	account_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/account"
+	account_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/account"
 
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx/types"

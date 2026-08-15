@@ -7,7 +7,7 @@ import (
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 
-	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/merchant"
+	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 )
 
 func TestAccount_ToBeneficiaryAccount(t *testing.T) {

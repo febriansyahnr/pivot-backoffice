@@ -9,7 +9,7 @@ import (
 	pdkLog "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	ratelimiter "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/rateLimiter"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/rateLimiter"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/rateLimiter"
 	mysqlMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )

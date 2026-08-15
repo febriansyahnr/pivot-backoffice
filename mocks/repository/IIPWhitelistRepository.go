@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	ipwhitelistModel "github.com/paper-indonesia/pivot-backoffice/internal/model/ipWhitelist"
+	ipwhitelistModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/ipWhitelist"
 	mock "github.com/stretchr/testify/mock"
 )
 

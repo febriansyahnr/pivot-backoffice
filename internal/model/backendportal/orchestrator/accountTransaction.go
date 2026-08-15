@@ -12,8 +12,8 @@ import (
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx/types"
 
-	creditcardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcard"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/fee"
+	creditcardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcard"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
 )
 
 type AccountTransaction struct {

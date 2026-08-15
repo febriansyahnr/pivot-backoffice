@@ -5,8 +5,8 @@ import (
 
 	"github.com/shopspring/decimal"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
-	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/proto/common"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/common"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	paperCommunication "github.com/paper-indonesia/pivot-backoffice/internal/model/paperCommunication"
+	paperCommunication "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paperCommunication"
 	mock "github.com/stretchr/testify/mock"
 )
 

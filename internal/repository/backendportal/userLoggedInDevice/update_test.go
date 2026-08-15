@@ -2,12 +2,13 @@ package userLoggedInDeviceRepository_test
 
 import (
 	"context"
-	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/userLoggedInDevice"
-	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
-	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
+	"github.com/paper-indonesia/pivot-backoffice/constant"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/userLoggedInDevice"
+	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestSetRememberDevice(t *testing.T) {

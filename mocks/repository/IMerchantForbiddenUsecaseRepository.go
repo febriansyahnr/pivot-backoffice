@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	merchantForbiddenUsecase "github.com/paper-indonesia/pivot-backoffice/internal/model/merchantForbiddenUsecase"
+	merchantForbiddenUsecase "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchantForbiddenUsecase"
 	mock "github.com/stretchr/testify/mock"
 )
 

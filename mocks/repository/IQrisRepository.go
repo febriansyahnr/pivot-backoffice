@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	qris "github.com/paper-indonesia/pivot-backoffice/internal/model/qris"
+	qris "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/qris"
 	mock "github.com/stretchr/testify/mock"
 )
 

@@ -8,8 +8,8 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	cardFundedPayoutModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/cardFundedPayout"
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/unifiedPayment"
+	cardFundedPayoutModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cardFundedPayout"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/unifiedPayment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 )
 

@@ -12,7 +12,7 @@ import (
 	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	beneficiaryAccountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/beneficiaryAccount"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/beneficiaryAccount"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/beneficiaryAccount"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )

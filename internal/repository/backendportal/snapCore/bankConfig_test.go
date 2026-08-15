@@ -9,7 +9,7 @@ import (
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	snapCoreBankConfigModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/snapCore/bankConfig"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/snapCore"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/snapCore"
 	httpMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/httpRequestExt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

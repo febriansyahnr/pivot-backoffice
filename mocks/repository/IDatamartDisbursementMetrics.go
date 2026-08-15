@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 
 	mock "github.com/stretchr/testify/mock"
 )

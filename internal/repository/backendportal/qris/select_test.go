@@ -7,7 +7,7 @@ import (
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/qris"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/qris"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/qris"
 	mySqlExt "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/google/uuid"

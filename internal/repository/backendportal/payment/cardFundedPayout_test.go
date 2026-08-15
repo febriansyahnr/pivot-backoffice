@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cardFundedPayout"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/payment"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/payment"
 	mySqlExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/stretchr/testify/assert"

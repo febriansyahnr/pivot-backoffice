@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcard"
-	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/proto/messages/callback"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcard"
+	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/messages/callback"
 	"github.com/stretchr/testify/assert"
 )
 

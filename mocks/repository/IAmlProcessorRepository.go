@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	amlcommon "github.com/paper-indonesia/pivot-backoffice/internal/model/amlProcessor"
+	amlcommon "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/amlProcessor"
 
 	mock "github.com/stretchr/testify/mock"
 )

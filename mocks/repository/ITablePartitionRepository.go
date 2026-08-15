@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	partitionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/partition"
+	partitionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/partition"
 	mock "github.com/stretchr/testify/mock"
 )
 

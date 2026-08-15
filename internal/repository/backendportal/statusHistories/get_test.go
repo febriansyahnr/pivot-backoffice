@@ -6,7 +6,7 @@ import (
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	statusHistoriesModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/statusHistory"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/statusHistories"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/statusHistories"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

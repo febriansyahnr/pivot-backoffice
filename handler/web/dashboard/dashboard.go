@@ -6,7 +6,7 @@ import (
 	"github.com/a-h/templ"
 	"github.com/go-chi/chi/v5"
 	webhandler "github.com/paper-indonesia/pivot-backoffice/handler/web"
-	"github.com/paper-indonesia/pivot-backoffice/internal/service"
+	service "github.com/paper-indonesia/pivot-backoffice/internal/service/backendportal"
 	"github.com/paper-indonesia/pivot-backoffice/views/dashboard"
 	"github.com/paper-indonesia/pivot-backoffice/views/errorpages"
 )

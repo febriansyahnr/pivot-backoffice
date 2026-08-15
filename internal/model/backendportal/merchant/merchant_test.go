@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/proto/messages/merchant"
+	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/messages/merchant"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 	"google.golang.org/protobuf/types/known/timestamppb"
 

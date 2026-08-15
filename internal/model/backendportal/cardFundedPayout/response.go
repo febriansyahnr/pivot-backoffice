@@ -3,9 +3,9 @@ package cardFundedPayoutModel
 import (
 	"time"
 
-	common "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/disbursement"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/fee"
+	common "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
 
 	"github.com/jmoiron/sqlx/types"
 	"github.com/shopspring/decimal"

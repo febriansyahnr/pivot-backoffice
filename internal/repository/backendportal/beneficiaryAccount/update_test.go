@@ -8,7 +8,7 @@ import (
 	loggerMock "github.com/paper-indonesia/pdk/v2/logger"
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	beneficiaryAccountModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/beneficiaryAccount"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/beneficiaryAccount"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/beneficiaryAccount"
 	mysqlMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/stretchr/testify/assert"

@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	paymentCaptureModel "github.com/paper-indonesia/pivot-backoffice/internal/model/paymentCapture"
+	paymentCaptureModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paymentCapture"
 	mock "github.com/stretchr/testify/mock"
 )
 

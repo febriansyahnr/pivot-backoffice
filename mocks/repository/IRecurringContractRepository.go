@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	recurringContractModel "github.com/paper-indonesia/pivot-backoffice/internal/model/recurringContract"
+	recurringContractModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/recurringContract"
 	mock "github.com/stretchr/testify/mock"
 )
 

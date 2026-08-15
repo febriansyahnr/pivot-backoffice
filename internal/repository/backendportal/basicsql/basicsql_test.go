@@ -7,7 +7,7 @@ import (
 
 	"github.com/jmoiron/sqlx"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/basicsql"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/basicsql"
 	mysqlPkgMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"go.opentelemetry.io/otel"

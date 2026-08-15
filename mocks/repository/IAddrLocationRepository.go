@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	location "github.com/paper-indonesia/pivot-backoffice/internal/model/location"
+	location "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/location"
 	mock "github.com/stretchr/testify/mock"
 )
 

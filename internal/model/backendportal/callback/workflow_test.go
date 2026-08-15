@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	modelSdk "github.com/conductor-sdk/conductor-go/sdk/model"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/callback"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
 
 	"github.com/stretchr/testify/assert"
 )

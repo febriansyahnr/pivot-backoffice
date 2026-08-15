@@ -1,7 +1,7 @@
 package qris
 
 import (
-	"github.com/paper-indonesia/pivot-backoffice/internal/repository"
+	repository "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"go.opentelemetry.io/otel"
 )

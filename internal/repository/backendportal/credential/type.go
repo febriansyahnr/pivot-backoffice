@@ -1,7 +1,7 @@
 package credential
 
 import (
-	port "github.com/paper-indonesia/pivot-backoffice/internal/repository"
+	port "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"go.opentelemetry.io/otel"
 )

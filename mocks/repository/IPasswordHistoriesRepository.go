@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	passwordHistories "github.com/paper-indonesia/pivot-backoffice/internal/model/passwordHistories"
+	passwordHistories "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/passwordHistories"
 	mock "github.com/stretchr/testify/mock"
 )
 

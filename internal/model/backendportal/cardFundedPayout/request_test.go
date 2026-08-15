@@ -5,10 +5,10 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/cardFundedPayout"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/fee"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/vendor"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cardFundedPayout"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
+	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/vendor"
 
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"

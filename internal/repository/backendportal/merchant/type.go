@@ -2,8 +2,8 @@ package merchant
 
 import (
 	"github.com/paper-indonesia/pivot-backoffice/config"
-	"github.com/paper-indonesia/pivot-backoffice/internal/repository"
-	"github.com/paper-indonesia/pivot-backoffice/internal/repository/basicsql"
+	repository "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal"
+	"github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/basicsql"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 
 	"github.com/paper-indonesia/pdk/v2/logger"

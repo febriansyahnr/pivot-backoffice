@@ -11,7 +11,7 @@ import (
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/withdrawal"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/withdrawal"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/withdrawal"
 	mysqlMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/google/uuid"

@@ -6,7 +6,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/callback"
+	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 	"github.com/stretchr/testify/assert"
 )

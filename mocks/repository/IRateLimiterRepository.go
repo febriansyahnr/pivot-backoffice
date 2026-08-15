@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	ratelimiter "github.com/paper-indonesia/pivot-backoffice/internal/model/rateLimiter"
+	ratelimiter "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/rateLimiter"
 	mock "github.com/stretchr/testify/mock"
 )
 

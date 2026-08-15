@@ -6,7 +6,7 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/unifiedPayment"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/unifiedPayment"
 	"github.com/shopspring/decimal"
 )
 

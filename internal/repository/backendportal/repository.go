@@ -16,7 +16,6 @@ import (
 	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
 	cardFundedPayoutModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cardFundedPayout"
 	cdcModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cdc"
-	cimbProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cimbProcessor"
 	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 	countryModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/country"
 	credModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/credential"
@@ -25,7 +24,6 @@ import (
 	customerModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/customer"
 	dailyAccountTransactionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/dailyAccountTransaction"
 	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
-	disbursementDashboardModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursementDashboard"
 	dukcapilmodel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/dukcapil"
 	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fdsProcessor/fdsCommon"
 	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
@@ -40,7 +38,6 @@ import (
 	menuModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/menu"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 	merchantForbiddenUseCaseModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchantForbiddenUsecase"
-	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchantRcn"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchantTopUp"
 	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/outbound"
@@ -617,42 +614,6 @@ type IDisbursementRepository interface {
 	// Sum
 	SumAmountByIDs(ctx context.Context, ids []string) (*disbursementModel.SumAmountResponse, error)
 
-	// Count
-	CountByIDsAndMerchantID(ctx context.Context, ids []string, merchantID string) int
-	CountByBulkID(ctx context.Context, bulkID string) int
-	CountWaitingSingleDisbursement(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) (disbursementDashboardModel.SummaryTransactionDTO, error)
-	CountWaitingBulkDisbursement(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) (disbursementDashboardModel.SummaryTransactionDTO, error)
-	CountPendingSingleDisbursement(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) (disbursementDashboardModel.SummaryTransactionDTO, error)
-	CountPendingBulkDisbursement(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) (disbursementDashboardModel.SummaryTransactionDTO, error)
-	CountByMerchantAndReference(ctx context.Context, merchantID, referenceID string) int
-	CountStatusInProgressByBulkID(ctx context.Context, bulkID string) int
-
-	// Summary
-	GetSummaryAll(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	GetSummarySuccess(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	GetSummaryFailed(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	GetSummaryInProgress(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	SummaryWaitingToday(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	SummarySingleWaitingToday(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	SummaryBulkWaitingToday(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	SummaryWaitingForTopUpToday(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	SummarySingleWaitingForTopUpToday(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	SummaryBulkWaitingForTopUpToday(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	GetSummaryRejected(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	GetSummaryApproved(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter) disbursementDashboardModel.SummaryTransactionDTO
-	GetXbPayoutDashboardInsights(ctx context.Context, request disbursementModel.GetXbPayoutDashboardInsightRequest) (*disbursementModel.XbPayoutDashboardInsights, error)
-
-	SummarySuccessByBulkID(ctx context.Context, bulkID string) disbursementDashboardModel.SummaryTransactionDTO
-	SummaryFailedByBulkID(ctx context.Context, bulkID string) disbursementDashboardModel.SummaryTransactionDTO
-	SummaryCancelledByBulkID(ctx context.Context, bulkID string) disbursementDashboardModel.SummaryTransactionDTO
-	SummaryPendingByBulkID(ctx context.Context, bulkID string) disbursementDashboardModel.SummaryTransactionDTO
-	GetSummaryByReasonType(
-		ctx context.Context,
-		filter disbursementDashboardModel.GetDisbursementDashboardFilter,
-		transactionStatus string,
-	) ([]disbursementDashboardModel.SummaryTransactionByReasonType, error)
-	GetSummaryByDisbursementStatus(ctx context.Context, filter disbursementDashboardModel.GetDisbursementDashboardFilter, disbursementStatus string) disbursementDashboardModel.SummaryTransactionDTO
-	GetActionTransactionSummary(ctx context.Context, merchantId string, disbursementIds []string) (*disbursementModel.ActionTransactionSummary, error)
 	GetDetailForCardFundedPayoutByID(ctx context.Context, id string) (*disbursementModel.Disbursement, error)
 	GetCardFundedPayoutList(ctx context.Context, filter *cardFundedPayoutModel.FilterGetPayoutList) (*commonModel.PaginationResponse, error)
 	GetCardFundedPayoutDetail(ctx context.Context, request *cardFundedPayoutModel.GetPayoutDetailRequest) (*cardFundedPayoutModel.GetPayoutDetailResponse, error)
@@ -1022,14 +983,6 @@ type IWalletTransactionRepository interface {
 	) (resp []walletTransactionModel.MerchantTransactionHistoryListResp, totalRows int64, err error)
 	GetMerchantTransactionHistoryListForExport(ctx context.Context, req walletTransactionModel.MerchantTransactionHistoryListReq) ([]walletTransactionModel.MerchantTransactionHistoryListResp, error)
 	GetMerchantTransactionDetail(ctx context.Context, merchantId, id string) (*walletTransactionModel.MerchantTransactionDetailResp, error)
-}
-
-type IMerchantRcnRepository interface {
-	FindByIDAndMerchantID(ctx context.Context, id string, merchantId string) (*merchantRcn.MerchantRcn, error)
-}
-type ICimbProcessorRepository interface {
-	InquiryCorporateCreditCard(ctx context.Context, request *cimbProcessorModel.InquiryCorporateCreditCardRequest) (*cimbProcessorModel.InquiryCorporateCreditCardResponse, error)
-	InquiryTransactionCorporateCreditCard(ctx context.Context, request *cimbProcessorModel.InquiryTransactionCorporateCreditCardRequest) (*vccSettlement.ProcessorVccTransactionInquiryResponse, error)
 }
 
 type IFraudRulesRepository interface {

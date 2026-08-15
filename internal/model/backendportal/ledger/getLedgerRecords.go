@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/orchestrator"
+	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 )
 
 type GetLedgerTransactionRequest struct {

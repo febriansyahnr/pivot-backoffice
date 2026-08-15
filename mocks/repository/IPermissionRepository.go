@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	permissionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/permission"
+	permissionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/permission"
 	mock "github.com/stretchr/testify/mock"
 )
 

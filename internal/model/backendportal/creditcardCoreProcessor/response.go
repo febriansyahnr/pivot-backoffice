@@ -2,7 +2,7 @@ package creditcardCoreProcessorModel
 
 import (
 	"github.com/google/uuid"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 	"github.com/shopspring/decimal"
 )
 

@@ -3,8 +3,8 @@
 package mocks
 
 import (
-	callback_model "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	callback_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
 	context "context"
 

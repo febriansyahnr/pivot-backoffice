@@ -3,20 +3,18 @@
 package mocks
 
 import (
-	callback_model "github.com/paper-indonesia/pivot-backoffice/internal/model/callback"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	callback_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
 	config "github.com/paper-indonesia/pivot-backoffice/config"
 
 	context "context"
 
-	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/disbursement"
+	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
 
 	mock "github.com/stretchr/testify/mock"
 
-	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/routingProcessor/bankTransfer"
-
-	service "github.com/paper-indonesia/pivot-backoffice/internal/service"
+	routingProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/routingProcessor/bankTransfer"
 
 	time "time"
 )
@@ -1269,36 +1267,6 @@ func (_m *IDisbursementService) ValidateBatchPayoutItems(ctx context.Context, re
 
 	if rf, ok := ret.Get(1).(func(context.Context, *disbursementModel.ApprovalActionsRequest) error); ok {
 		r1 = rf(ctx, request)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
-// ValidateDailyTransactionLimit provides a mock function with given fields: ctx, merchantId, totalAmount
-func (_m *IDisbursementService) ValidateDailyTransactionLimit(ctx context.Context, merchantId string, totalAmount float64) (service.ITransactionCloser, error) {
-	ret := _m.Called(ctx, merchantId, totalAmount)
-
-	if len(ret) == 0 {
-		panic("no return value specified for ValidateDailyTransactionLimit")
-	}
-
-	var r0 service.ITransactionCloser
-	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, string, float64) (service.ITransactionCloser, error)); ok {
-		return rf(ctx, merchantId, totalAmount)
-	}
-	if rf, ok := ret.Get(0).(func(context.Context, string, float64) service.ITransactionCloser); ok {
-		r0 = rf(ctx, merchantId, totalAmount)
-	} else {
-		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(service.ITransactionCloser)
-		}
-	}
-
-	if rf, ok := ret.Get(1).(func(context.Context, string, float64) error); ok {
-		r1 = rf(ctx, merchantId, totalAmount)
 	} else {
 		r1 = ret.Error(1)
 	}

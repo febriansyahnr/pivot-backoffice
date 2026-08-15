@@ -5,9 +5,9 @@ package mocks
 import (
 	context "context"
 
-	card "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcard"
+	card "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcard"
 
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/creditcardCoreProcessor"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcardCoreProcessor"
 
 	mock "github.com/stretchr/testify/mock"
 )

@@ -5,11 +5,11 @@ package mocks
 import (
 	context "context"
 
-	account_model "github.com/paper-indonesia/pivot-backoffice/internal/model/account"
+	account_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/account"
 
-	customerModel "github.com/paper-indonesia/pivot-backoffice/internal/model/customer"
+	customerModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/customer"
 
-	merchant "github.com/paper-indonesia/pivot-backoffice/internal/model/merchant"
+	merchant "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
 
 	mock "github.com/stretchr/testify/mock"
 

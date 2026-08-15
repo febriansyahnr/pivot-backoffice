@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	outbound "github.com/paper-indonesia/pivot-backoffice/internal/model/outbound"
+	outbound "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/outbound"
 	mock "github.com/stretchr/testify/mock"
 )
 

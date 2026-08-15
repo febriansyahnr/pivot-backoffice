@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/disbursement"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/disbursement"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/jmoiron/sqlx/types"

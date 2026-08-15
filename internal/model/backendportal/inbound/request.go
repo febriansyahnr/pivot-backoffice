@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"time"
 
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/unifiedPayment"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/unifiedPayment"
 )
 
 type InboundRequest struct {

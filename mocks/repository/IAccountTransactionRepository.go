@@ -5,17 +5,17 @@ package mocks
 import (
 	context "context"
 
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
-	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/fdsProcessor/fdsCommon"
+	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fdsProcessor/fdsCommon"
 
-	ledger_model "github.com/paper-indonesia/pivot-backoffice/internal/model/ledger"
+	ledger_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/ledger"
 
 	mock "github.com/stretchr/testify/mock"
 
-	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
+	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 
-	reconciliation "github.com/paper-indonesia/pivot-backoffice/internal/model/reconciliation"
+	reconciliation "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/reconciliation"
 
 	time "time"
 

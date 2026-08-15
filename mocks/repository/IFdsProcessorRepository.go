@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/fdsProcessor/fdsCommon"
+	fdscommon "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fdsProcessor/fdsCommon"
 	mock "github.com/stretchr/testify/mock"
 )
 

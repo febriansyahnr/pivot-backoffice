@@ -3,11 +3,11 @@ package card
 import (
 	"encoding/json"
 
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/fee"
-	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/merchant"
-	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/paymentMethod"
-	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/proto/messages/callback"
-	splitRoutingPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/splitRoutingPayment"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
+	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
+	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paymentMethod"
+	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/messages/callback"
+	splitRoutingPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/splitRoutingPayment"
 )
 
 type CreditcardMetadata struct {

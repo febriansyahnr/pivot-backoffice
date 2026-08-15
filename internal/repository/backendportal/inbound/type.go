@@ -2,8 +2,8 @@ package inboundRepository
 
 import (
 	"go.opentelemetry.io/otel"
-	
-	port "github.com/paper-indonesia/pivot-backoffice/internal/repository"
+
+	port "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 )
 

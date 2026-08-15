@@ -9,7 +9,7 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	inboundModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/inbound"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/inbound"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/inbound"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 )
 

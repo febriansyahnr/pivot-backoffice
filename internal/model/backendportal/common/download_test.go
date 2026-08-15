@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

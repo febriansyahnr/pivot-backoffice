@@ -3,8 +3,8 @@
 package mocks
 
 import (
-	activityModel "github.com/paper-indonesia/pivot-backoffice/internal/model/activity"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	activityModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/activity"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
 	context "context"
 

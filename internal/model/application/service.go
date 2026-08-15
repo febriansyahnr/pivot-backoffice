@@ -2,7 +2,7 @@ package application
 
 import (
 	"github.com/paper-indonesia/pivot-backoffice/internal/service"
-	disbursementService "github.com/paper-indonesia/pivot-backoffice/internal/service/v1/disbursement"
+	disbursementService "github.com/paper-indonesia/pivot-backoffice/internal/service/backendportal/disbursement"
 )
 
 type AppService struct {

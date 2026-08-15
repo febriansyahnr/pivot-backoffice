@@ -1,6 +1,6 @@
 package dashboardhandler
 
-import "github.com/paper-indonesia/pivot-backoffice/internal/service"
+import service "github.com/paper-indonesia/pivot-backoffice/internal/service/backendportal"
 
 type dashboardOption func(*Dashboard)
 

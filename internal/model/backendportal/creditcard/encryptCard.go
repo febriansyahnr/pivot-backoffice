@@ -1,6 +1,6 @@
 package card
 
-import creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcardCoreProcessor"
+import creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcardCoreProcessor"
 
 type EncryptCardRequest struct {
 	MerchantID        string                   `json:"merchantId"`

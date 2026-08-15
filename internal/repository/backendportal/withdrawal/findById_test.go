@@ -7,7 +7,7 @@ import (
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/withdrawal"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/withdrawal"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/withdrawal"
 	mysqlMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/stretchr/testify/assert"

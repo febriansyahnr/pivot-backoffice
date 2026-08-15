@@ -11,10 +11,10 @@ import (
 	"github.com/shopspring/decimal"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/fee"
-	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/merchant"
-	statusHistoriesModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/statusHistory"
-	xbModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/xb"
+	feeModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/fee"
+	merchantModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/merchant"
+	statusHistoriesModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/statusHistory"
+	xbModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/xb"
 )
 
 type Disbursement struct {

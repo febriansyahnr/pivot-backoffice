@@ -5,7 +5,7 @@ package menu
 import (
 	context "context"
 
-	menuModel "github.com/paper-indonesia/pivot-backoffice/internal/model/menu"
+	menuModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/menu"
 	mock "github.com/stretchr/testify/mock"
 )
 

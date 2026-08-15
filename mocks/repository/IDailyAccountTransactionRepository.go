@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	dailyAccountTransactionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/dailyAccountTransaction"
+	dailyAccountTransactionModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/dailyAccountTransaction"
 	mock "github.com/stretchr/testify/mock"
 )
 

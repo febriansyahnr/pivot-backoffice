@@ -14,7 +14,7 @@ import (
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
-	paymentRepository "github.com/paper-indonesia/pivot-backoffice/internal/repository/payment"
+	paymentRepository "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/payment"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 )
 

@@ -5,7 +5,7 @@ import (
 	"time"
 
 	cardFundedPayoutModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cardFundedPayout"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/disbursement"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/disbursement"
 	mocks "github.com/paper-indonesia/pivot-backoffice/mocks/pdk/logger"
 	mySqlExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 

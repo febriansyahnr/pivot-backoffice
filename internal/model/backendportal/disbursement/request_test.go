@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/disbursement"
-	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/proto/messages/disbursement"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
+	pb "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/proto/messages/disbursement"
 
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"

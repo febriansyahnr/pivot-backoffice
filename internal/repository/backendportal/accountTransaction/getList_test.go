@@ -10,7 +10,7 @@ import (
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
-	"github.com/paper-indonesia/pivot-backoffice/internal/repository"
+	repository "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 

@@ -8,7 +8,7 @@ import (
 	loggerMocks "github.com/paper-indonesia/pdk/v2/logger"
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
-	callbackRepository "github.com/paper-indonesia/pivot-backoffice/internal/repository/callback"
+	callbackRepository "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/callback"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/mySqlExt"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"

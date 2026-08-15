@@ -3,16 +3,16 @@
 package mocks
 
 import (
-	cdcModel "github.com/paper-indonesia/pivot-backoffice/internal/model/cdc"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/common"
+	cdcModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cdc"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
 
 	context "context"
 
 	mock "github.com/stretchr/testify/mock"
 
-	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/orchestrator"
+	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 
-	reportingModel "github.com/paper-indonesia/pivot-backoffice/internal/model/reporting"
+	reportingModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/reporting"
 
 	time "time"
 )

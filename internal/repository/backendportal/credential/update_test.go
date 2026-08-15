@@ -6,7 +6,7 @@ import (
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/credential"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/credential"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/credential"
 	mysqlMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/google/uuid"

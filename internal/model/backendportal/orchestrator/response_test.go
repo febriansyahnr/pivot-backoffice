@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/common"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/orchestrator"
+	commonModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/common"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	"github.com/google/uuid"

@@ -5,8 +5,8 @@ package mocks
 import (
 	context "context"
 
-	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/payment"
-	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/paymentMethod"
+	paymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
+	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paymentMethod"
 	mock "github.com/stretchr/testify/mock"
 )
 

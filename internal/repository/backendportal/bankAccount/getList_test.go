@@ -9,7 +9,7 @@ import (
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	"github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/bankAccount"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/bankAccount"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/bankAccount"
 	mySqlExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/google/uuid"

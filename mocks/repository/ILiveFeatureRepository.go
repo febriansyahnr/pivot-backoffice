@@ -7,7 +7,7 @@ import (
 
 	config "github.com/paper-indonesia/pivot-backoffice/config"
 
-	liveFeature "github.com/paper-indonesia/pivot-backoffice/internal/model/liveFeature"
+	liveFeature "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/liveFeature"
 
 	mock "github.com/stretchr/testify/mock"
 )

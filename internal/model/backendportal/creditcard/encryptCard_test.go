@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcard"
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcardCoreProcessor"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcard"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcardCoreProcessor"
 	"github.com/stretchr/testify/assert"
 )
 

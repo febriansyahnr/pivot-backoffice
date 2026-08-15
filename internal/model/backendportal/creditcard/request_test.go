@@ -4,11 +4,11 @@ import (
 	"testing"
 	"time"
 
-	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcardCoreProcessor"
+	creditcardCoreProcessorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcardCoreProcessor"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/google/uuid"
-	card "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/creditcard"
+	card "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/creditcard"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 )

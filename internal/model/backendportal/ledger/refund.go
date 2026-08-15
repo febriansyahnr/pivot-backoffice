@@ -2,7 +2,7 @@ package ledger_model
 
 import (
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/orchestrator"
+	orchestratorModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
 )
 
 func NewRefundTransactions(request *CreateNewLedgerEntryRequest) ([]*orchestratorModel.AccountTransaction, error) {

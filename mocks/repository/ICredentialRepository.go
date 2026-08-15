@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	credential "github.com/paper-indonesia/pivot-backoffice/internal/model/credential"
+	credential "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/credential"
 	mock "github.com/stretchr/testify/mock"
 )
 

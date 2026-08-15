@@ -8,7 +8,7 @@ import (
 
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	disbursementModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/disbursement"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/disbursement"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/disbursement"
 	mySqlExtMock "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 
 	"github.com/stretchr/testify/assert"

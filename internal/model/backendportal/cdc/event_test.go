@@ -3,7 +3,7 @@ package cdcModel_test
 import (
 	"testing"
 
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/cdc"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/cdc"
 
 	"github.com/stretchr/testify/assert"
 )

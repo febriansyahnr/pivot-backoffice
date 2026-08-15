@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	callbackModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/callback"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/callback"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/repository/backendportal/callback"
 	pdkLogMock "github.com/paper-indonesia/pivot-backoffice/mocks/pdk/logger"
 	mysqlMocks "github.com/paper-indonesia/pivot-backoffice/mocks/pkg/mySqlExt"
 

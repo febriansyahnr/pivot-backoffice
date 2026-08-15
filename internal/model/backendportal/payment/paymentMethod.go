@@ -8,8 +8,8 @@ import (
 	"github.com/paper-indonesia/pivot-backoffice/config"
 	c "github.com/paper-indonesia/pivot-backoffice/constant"
 	constant "github.com/paper-indonesia/pivot-backoffice/constant/payment"
-	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/paymentMethod"
-	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/unifiedPayment"
+	paymentMethodModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/paymentMethod"
+	unifiedPaymentModel "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/unifiedPayment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	"github.com/jmoiron/sqlx/types"

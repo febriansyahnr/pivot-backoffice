@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/paper-indonesia/pivot-backoffice/constant"
-	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/orchestrator"
-	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/backendportal/payment"
+	orchestrator_model "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/orchestrator"
+	. "github.com/paper-indonesia/pivot-backoffice/internal/model/backendportal/payment"
 	"github.com/paper-indonesia/pivot-backoffice/pkg/util"
 
 	"github.com/stretchr/testify/assert"
